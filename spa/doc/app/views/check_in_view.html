@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head><title>app/views/check_in_view</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="app/views/check_in_view"><meta name="groc-project-path" content="app/views/check_in_view.js"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/views/check_in_view.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>= check_in_view.js</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">var</span> View = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./view'</span>),
+  locSvc = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lib/location'</span>),
+  poiSvc = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lib/places'</span>),
+  notifications = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lib/notifications'</span>),
+  store = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lib/persistence'</span>),
+  connectivity = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lib/connectivity'</span>);
+
+module.exports = View.extend({
+  template: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./templates/check_in'</span>),
+  listTemplate: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./templates/places'</span>),</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>convention backbone pour catcher les events :
+equivalent jq : $(&#39;header button&#39;).on(&#39;click&#39;, this.fetchPlaces)</p></div></div><div class="code"><div class="wrapper">  events: {
+    <span class="hljs-string">'click header button'</span>: <span class="hljs-string">'fetchPlaces'</span>,</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>backbone fait automatiquement de la délégation d&#39;évènements
+correspond à $(&#39;#places&#39;).on(&#39;click&#39;, &#39;li&#39;, this.selectPlace)</p></div></div><div class="code"><div class="wrapper">    <span class="hljs-string">'click #places li'</span>: <span class="hljs-string">'selectPlace'</span>,
+    <span class="hljs-string">'submit'</span>: <span class="hljs-string">'checkIn'</span>
+  },
+  getRenderData: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkInGetRenderData</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> {
+      placeList: <span class="hljs-keyword">this</span>.listTemplate({
+        places: <span class="hljs-keyword">this</span>.places
+      })
+    };
+  },
+  afterRender: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkInAfterRender</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">this</span>.fetchPlaces();
+  },
+  $submitter: <span class="hljs-literal">null</span>,
+  $currentPlace: <span class="hljs-literal">null</span>,
+  $comment: <span class="hljs-literal">null</span>,</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Chargement initial des places</p></div></div><div class="code"><div class="wrapper">  fetchPlaces: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fetchPlaces</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">if</span>(!connectivity.isOnline()) <span class="hljs-keyword">return</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>on vide la liste</p></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">this</span>.places = [];
+    <span class="hljs-keyword">this</span>.renderPlaces();
+
+    <span class="hljs-keyword">var</span> that = <span class="hljs-keyword">this</span>;
+    locSvc.getCurrentLocation(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(lt, lg)</span> {</span>
+      that.$el.find(<span class="hljs-string">'#geoloc'</span>).text(lt.toFixed(<span class="hljs-number">5</span>) + <span class="hljs-string">' '</span> + lg.toFixed(<span class="hljs-number">5</span>));
+      poiSvc.lookupPlaces(lt, lg, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(places)</span> {</span>
+        <span class="hljs-comment">//console.table(places);</span>
+        that.places = places;
+        that.renderPlaces();
+      });
+    });
+  },
+  renderPlaces: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderPlaces</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">this</span>.$el.find(<span class="hljs-string">'#places'</span>).html(
+      <span class="hljs-keyword">this</span>.getRenderData().placeList
+    );
+  },
+  selectPlace: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">selectplace</span><span class="hljs-params">(e)</span> {</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>console.log(this);
+console.log(e.target);
+console.log(e.currentTarget);</p></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">var</span> current = $(e.currentTarget),
+      active = <span class="hljs-keyword">this</span>.$(<span class="hljs-string">'#places li.active'</span>);
+    <span class="hljs-keyword">if</span> (active[<span class="hljs-number">0</span>] === current[<span class="hljs-number">0</span>]) {
+      <span class="hljs-keyword">return</span>;
+    }
+    current.addClass(<span class="hljs-string">'active'</span>);
+    active.removeClass(<span class="hljs-string">'active'</span>);
+    <span class="hljs-keyword">this</span>.$currentPlace = current;
+
+    <span class="hljs-keyword">this</span>.updateUI(<span class="hljs-literal">true</span>);
+  },
+  updateUI: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateUI</span><span class="hljs-params">(enabled)</span> {</span>
+    <span class="hljs-keyword">this</span>.$submitter = <span class="hljs-keyword">this</span>.$submitter || <span class="hljs-keyword">this</span>.$el.find(<span class="hljs-string">'button[type="submit"]'</span>, <span class="hljs-string">'form#submission'</span>);
+    <span class="hljs-keyword">this</span>.$comment = <span class="hljs-keyword">this</span>.$comment || <span class="hljs-keyword">this</span>.$el.find(<span class="hljs-string">'#comment'</span>);
+    <span class="hljs-keyword">if</span> (enabled) {
+      <span class="hljs-keyword">this</span>.$submitter.attr(<span class="hljs-string">'disabled'</span>, <span class="hljs-literal">false</span>);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">this</span>.$submitter.attr(<span class="hljs-string">'disabled'</span>, <span class="hljs-literal">true</span>);
+      <span class="hljs-keyword">this</span>.$comment.val(<span class="hljs-string">''</span>);
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.$currentPlace) {
+        <span class="hljs-keyword">this</span>.$currentPlace.removeClass(<span class="hljs-string">'active'</span>);
+      }
+      <span class="hljs-keyword">this</span>.$currentPlace = <span class="hljs-literal">null</span>;
+    }
+  },
+  checkIn: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkIn</span><span class="hljs-params">(e)</span> {</span>
+    e.preventDefault();
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.$currentPlace) <span class="hljs-keyword">return</span>;
+    <span class="hljs-keyword">var</span> placeId = <span class="hljs-keyword">this</span>.$currentPlace.attr(<span class="hljs-string">'data-place-id'</span>),
+      place = _.findWhere(<span class="hljs-keyword">this</span>.places, {
+        id: placeId
+      }),
+      data = {
+        placeId: place.id,
+        name: place.name,
+        vicinity: place.vicinity,
+        icon: place.icon,
+        userName: notifications.userName,
+        comment: <span class="hljs-keyword">this</span>.$comment.val(),
+        stamp: moment().format(<span class="hljs-string">'HH:mm'</span>)
+      };
+    <span class="hljs-keyword">this</span>.updateUI(<span class="hljs-literal">false</span>);
+    <span class="hljs-comment">//console.log(data);</span>
+    store.addCheckIn(data);
+  }
+});</div></div></div></div></body></html>

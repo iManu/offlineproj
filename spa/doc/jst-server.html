@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en"><head><title>jst-server</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="jst-server"><meta name="groc-project-path" content="jst-server.coffee"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path">jst-server.coffee</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">fs       = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>)
+http     = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>)
+express  = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>)
+socketio = <span class="hljs-built_in">require</span>(<span class="hljs-string">'socket.io'</span>)
+
+DB = []
+
+<span class="hljs-function"><span class="hljs-title">loadDB</span> = -&gt;</span>
+  path = <span class="hljs-string">"<span class="hljs-subst">#{__dirname}</span>/db.json"</span>
+  fs.stat path, <span class="hljs-function"><span class="hljs-params">(err, stat)</span> -&gt;</span>
+    <span class="hljs-keyword">if</span> (err || !stat.isFile())
+      <span class="hljs-built_in">console</span>.log <span class="hljs-string">"[DB Load] DB could not be loaded: DB file missing or invalid."</span>
+      <span class="hljs-keyword">return</span>
+    fs.readFile path, <span class="hljs-function"><span class="hljs-params">(err, data)</span> -&gt;</span>
+      <span class="hljs-keyword">if</span> err
+        <span class="hljs-built_in">console</span>.log <span class="hljs-string">"[DB Load Error]: <span class="hljs-subst">#{err}</span>"</span>
+      <span class="hljs-keyword">else</span>
+        DB = JSON.parse(data)
+        <span class="hljs-built_in">console</span>.log <span class="hljs-string">"[DB Load] starts with <span class="hljs-subst">#{DB.length}</span> item(s)"</span>
+
+<span class="hljs-function"><span class="hljs-title">persistDB</span> = -&gt;</span>
+  fs.writeFile <span class="hljs-string">"<span class="hljs-subst">#{__dirname}</span>/db.json"</span>, JSON.stringify(DB)
+  <span class="hljs-built_in">console</span>.log <span class="hljs-string">"[DB Save] Persisted BD with <span class="hljs-subst">#{DB.length}</span> item(s)"</span>
+
+<span class="hljs-built_in">module</span>.<span class="hljs-built_in">exports</span> = <span class="hljs-attribute">startServer</span>:<span class="hljs-function"> -&gt;</span>
+  loadDB()
+  app = express()
+  server = http.createServer(app)
+  io = socketio.listen(server)</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The basics</p></div></div><div class="code"><div class="wrapper">  app.configure<span class="hljs-function"> -&gt;</span>
+    app.use express.static <span class="hljs-string">"<span class="hljs-subst">#{__dirname}</span>/public"</span>
+    app.use express.errorHandler <span class="hljs-attribute">dumpExceptions</span>: <span class="hljs-literal">true</span>, <span class="hljs-attribute">showStack</span>: <span class="hljs-literal">true</span>
+    app.use express.logger <span class="hljs-attribute">format</span>: <span class="hljs-string">':method :url'</span>
+    app.use express.urlencoded()
+    app.use express.json()
+    app.use express.methodOverride()
+
+  app.get <span class="hljs-string">'/'</span>, <span class="hljs-function"><span class="hljs-params">(request, response)</span> -&gt;</span>
+    response.sendfile <span class="hljs-string">'public/index.html'</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Sync endpoints (Ajax)</p></div></div><div class="code"><div class="wrapper">  app.get <span class="hljs-string">'/checkins'</span>, <span class="hljs-function"><span class="hljs-params">(request, response)</span> -&gt;</span>
+    response.json DB.slice(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>)
+
+  app.post <span class="hljs-string">'/checkins'</span>, <span class="hljs-function"><span class="hljs-params">(request, response)</span> -&gt;</span>
+    checkIn = request.body
+    checkIn.id = DB.length
+    DB.unshift checkIn
+    persistDB()
+    response.json { <span class="hljs-attribute">id</span>: checkIn.id }, <span class="hljs-number">201</span>
+    io.sockets.emit <span class="hljs-string">'checkin'</span>, checkIn
+
+  server.listen <span class="hljs-number">3333</span>,<span class="hljs-function"> -&gt;</span>
+    <span class="hljs-built_in">console</span>.log <span class="hljs-string">"Listening on port 3333… WebSockets enabled."</span></div></div></div></div></body></html>

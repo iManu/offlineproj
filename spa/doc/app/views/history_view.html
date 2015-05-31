@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en"><head><title>app/views/history_view</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="app/views/history_view"><meta name="groc-project-path" content="app/views/history_view.js"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/views/history_view.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">var</span> View = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./view'</span>),
+  store = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lib/persistence'</span>);
+
+module.exports = View.extend({
+  template: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./templates/history'</span>),
+  listTemplate: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./templates/check_ins'</span>),</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>subscriptions = convention de Backbone Mediator</p></div></div><div class="code"><div class="wrapper">  subscriptions: {
+    <span class="hljs-string">'checkins:reset'</span>: <span class="hljs-string">'render'</span>,
+    <span class="hljs-string">'checkins:new'</span>: <span class="hljs-string">'addCheckIn'</span>
+  },
+  getRenderData: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">historyViewGetRenderData</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> {
+      checkIns: <span class="hljs-keyword">this</span>.listTemplate(store.getCheckIns)
+    };
+  },
+  afterRender: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">historyViewAfterRender</span><span class="hljs-params">()</span> {</span>},
+  addCheckIn: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addCheckIn</span><span class="hljs-params">(checkIn)</span> {</span>
+    checkIn.extra_class = <span class="hljs-string">'new'</span>;
+    <span class="hljs-keyword">this</span>.$(<span class="hljs-string">'#history'</span>).prepend(<span class="hljs-keyword">this</span>.listTemplate([checkIn]));
+    <span class="hljs-keyword">var</span> that = <span class="hljs-keyword">this</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>on enlève la classe .new pour lancer l&#39;anim css</p></div></div><div class="code"><div class="wrapper">    _.defer(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+      that.$(<span class="hljs-string">'#history li.new'</span>).removeClass(<span class="hljs-string">'new'</span>);
+    });
+  }
+});</div></div></div></div></body></html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head><title>app/views/home_view</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="app/views/home_view"><meta name="groc-project-path" content="app/views/home_view.js"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path">app/views/home_view.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">var</span> View = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./view'</span>),
+  notifications = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lib/notifications'</span>),
+  HistoryView = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./history_view'</span>),
+  connectivity = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lib/connectivity'</span>),
+  CheckInView = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./check_in_view'</span>); <span class="hljs-comment">// charge le js de la vue check_in</span>
+
+module.exports = View.extend({
+  template: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./templates/home'</span>),
+  subscriptions: {
+    <span class="hljs-string">'connectivity:online'</span>:<span class="hljs-string">'syncMarker'</span>,
+    <span class="hljs-string">'connectivity:offline'</span>:<span class="hljs-string">'syncMarker'</span>
+  },
+  getRenderData: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">homeViewGetRenderData</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> {
+      userName: notifications.userName,
+      now: moment().format(<span class="hljs-string">'dddd D MMMM YYYY HH:mm:ss'</span>)
+    };
+  },
+  afterRender: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">homeViewAfterRender</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">this</span>.startClock();
+    <span class="hljs-keyword">this</span>.syncMarker();</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>on instancie la vue check_in_view... convention Backbone</p></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">new</span> CheckInView({
+      el: <span class="hljs-keyword">this</span>.$el.find(<span class="hljs-string">'#checkInUI'</span>)
+    }).render(); <span class="hljs-comment">// render</span>
+    <span class="hljs-keyword">new</span> HistoryView({
+      el: <span class="hljs-keyword">this</span>.$(<span class="hljs-string">'#historyUI'</span>)
+    }).render(); <span class="hljs-comment">// terminé par un render</span>
+  },
+  onlineMarker: <span class="hljs-literal">null</span>,
+  startClock: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startClock</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">this</span>.clock = <span class="hljs-keyword">this</span>.clock || <span class="hljs-keyword">this</span>.$el.find(<span class="hljs-string">'#ticker'</span>);
+    <span class="hljs-keyword">var</span> that = <span class="hljs-keyword">this</span>;
+    setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+      that.clock.text(that.getRenderData().now);
+    }, <span class="hljs-number">1000</span>);
+  },
+  syncMarker: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">syncMarker</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">this</span>.onlineMarker = <span class="hljs-keyword">this</span>.onlineMarker || <span class="hljs-keyword">this</span>.$(<span class="hljs-string">'#onlineMarker'</span>);
+    <span class="hljs-keyword">this</span>.onlineMarker[ connectivity.isOnline() ? <span class="hljs-string">'show'</span> : <span class="hljs-string">'hide'</span>]();
+  }
+});</div></div></div></div></body></html>
