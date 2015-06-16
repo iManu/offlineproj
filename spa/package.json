@@ -21,15 +21,14 @@
     }
   },
   "dependencies": {
-    "express": "~3.4.0",
-    "javascript-brunch": "> 1.0 < 1.8",
-    "less-brunch": "> 1.0 < 1.8",
-    "stylus-brunch": "> 1.0 < 1.8",
+    "appcache-brunch": "> 1.0 < 1.8",
+    "sass-brunch": "^1.8.10",
+    "clean-css-brunch": "> 1.0 < 1.8",
     "css-brunch": "> 1.0 < 1.8",
     "handlebars-brunch": "> 1.0 < 1.8",
+    "javascript-brunch": "> 1.0 < 1.8",
     "uglify-js-brunch": "> 1.0 < 1.8",
-    "clean-css-brunch": "> 1.0 < 1.8",
-    "appcache-brunch": "> 1.0 < 1.8",
+    "express": "~3.4.0",
     "socket.io": "~0.9.16"
   },
   "devDependencies": {

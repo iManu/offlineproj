@@ -43,16 +43,8 @@ module.exports = startServer: ->
 
   # Sync endpoints (Ajax)
 
-  app.get '/checkins', (request, response) ->
+  app.get '/apps', (request, response) ->
     response.json DB.slice(0, 10)
-
-  app.post '/checkins', (request, response) ->
-    checkIn = request.body
-    checkIn.id = DB.length
-    DB.unshift checkIn
-    persistDB()
-    response.json { id: checkIn.id }, 201
-    io.sockets.emit 'checkin', checkIn
 
   server.listen 3333, ->
     console.log "Listening on port 3333… WebSockets enabled."

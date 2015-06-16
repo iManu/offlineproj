@@ -2,33 +2,36 @@
  * = persistence.js
  */
 
-var CheckInsCollection = require('models/collection'),
+var AppsCollection = require('models/collection'),
   connectivity = require('lib/connectivity'),
   localStore = new Lawnchair({
-    name:'checkins'
+    name:'apps'
   }, $.noop), // il faut un callback à Lawnchair du fait de son orientation asynchrone..
   // du coup on utilise noop qui est une fonction anonyme jQuery, equivalent à : function() {}),
-  collection = new CheckInsCollection();
+  collection = new AppsCollection();
 
-function addCheckIn(checkIn) {
-  checkIn.key = Date.now(); // timestamp pour Lawnchair
-  if(collection.findWhere( _.pick(checkIn, 'key', 'name'))) return;
+
+function addAppList(appList) {
+  appList.key = Date.now(); // timestamp pour Lawnchair
+  if(collection.findWhere( _.pick(appList, 'key', 'name'))) return;
   // create fait un add + un request et si le serveur répond 201, il fait un sync
-  collection['id' in checkIn ? 'add' : 'create'](checkIn);
+  collection['id' in appList ? 'add' : 'create'](appList);
 }
-exports.addCheckIn = addCheckIn;
+exports.addAppList = addAppList;
 
-function getCheckIns() {
+
+
+function getAppList() {
   // toJSON permet de revoyer un objet clean sans toutes les méthodes BBone
   return collection.toJSON();
 }
-exports.getCheckIns = getCheckIns;
+exports.getAppList = getAppList;
 
 // au chargement, récupération de la DB
 function initialLoad() {
   // d'abord fetch du local
-  localStore.all(function (checkIns) {
-    collection.reset(checkIns);
+  localStore.all(function (appList) {
+    collection.reset(appList);
   });
   /*
   // si pas de connection, on sort
@@ -42,21 +45,23 @@ function initialLoad() {
 }
 // pour éviter le problème de la vue chargée avant que la requête ne revienne
 collection.on('reset', function() {
-  Backbone.Mediator.publish('checkins:reset');
+  Backbone.Mediator.publish('apps:reset');
 });
+/*
 // POST d'un checkin
 collection.on('add', function(checkIn) {
   Backbone.Mediator.publish('checkins:new', checkIn.toJSON());
   localStore.save(checkIn.toJSON());
-});
-initialLoad();
+});*/
 
+initialLoad();
+/*
 // si pas de connection, on coupe le sync du POST
 collection.model.prototype.sync = function sync(method, model, options) {
   if (!connectivity.isOnline()) return;
   return Backbone.sync(method, model, options);
-};
-
+};*/
+/*
 Backbone.Mediator.subscribe('connectivity:online', syncPending);
 
 function syncPending() {
@@ -88,4 +93,4 @@ function syncPending() {
 collection.on('sync', function (model) {
   // comme ça on stocke même les checks d'autres utilisateurs
   localStore.save(model.toJSON());
-});
+});*/

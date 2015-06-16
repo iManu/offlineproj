@@ -15,21 +15,16 @@ exports.config =
         ]
 
     stylesheets:
+      defaultExtension: 'scss'
       joinTo:
-        'stylesheets/app.css': /^app|bootstrap\.less/
+        'stylesheets/app.css': /^app\/styles/
 
     templates:
       joinTo: 'javascripts/app.js'
 
   plugins:
     appcache:
-      externalCacheEntries: [
-        'http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png'
-        'http://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png'
-        'http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png'
-        'http://maps.gstatic.com/mapfiles/place_api/icons/wine-71.png'
-        '/socket.io/socket.io.js'
-      ]
+      externalCacheEntries: []
       network: ['*', 'http://*', 'https://*']
 
   server:
