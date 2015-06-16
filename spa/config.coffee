@@ -26,6 +26,7 @@ exports.config =
     appcache:
       externalCacheEntries: []
       network: ['*', 'http://*', 'https://*']
+      manifestFile: "appcache.manifest"
 
   server:
     path: 'jst-server.coffee'

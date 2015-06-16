@@ -1,7 +1,6 @@
 [
   {
     "id": "randomgenerateduniquelongkeywichisthenameoficonandvisualsfolderforthisapp",
-    "key":1427788898326,
     "icon": "icon.ext",
     "title": "Application name",
     "baseline": "Impressive app to make coffee",
@@ -33,7 +32,6 @@
   },
   {
     "id": "randomgenerateduniquelongkeywichisthenameoficonandvisualsfolderforthisapp2",
-    "key":1429768898326,
     "icon": "icon.ext",
     "title": "Other Application",
     "baseline": "Null app serve nothing",
