@@ -1,3 +1,8 @@
+// Classe de contrôleur étendu
+// ===========================
+
+'use strict';
+
 require('lib/view_helper');
 
 // Classe de base pour toutes les vues.  Presque pile

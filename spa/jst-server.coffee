@@ -1,29 +1,8 @@
-fs       = require('fs')
 http     = require('http')
 express  = require('express')
 socketio = require('socket.io')
 
-DB = []
-
-loadDB = ->
-  path = "#{__dirname}/db.json"
-  fs.stat path, (err, stat) ->
-    if (err || !stat.isFile())
-      console.log "[DB Load] DB could not be loaded: DB file missing or invalid."
-      return
-    fs.readFile path, (err, data) ->
-      if err
-        console.log "[DB Load Error]: #{err}"
-      else
-        DB = JSON.parse(data)
-        console.log "[DB Load] starts with #{DB.length} item(s)"
-
-persistDB = ->
-  fs.writeFile "#{__dirname}/db.json", JSON.stringify(DB)
-  console.log "[DB Save] Persisted BD with #{DB.length} item(s)"
-
 module.exports = startServer: ->
-  loadDB()
   app = express()
   server = http.createServer(app)
   io = socketio.listen(server)
@@ -40,11 +19,6 @@ module.exports = startServer: ->
 
   app.get '/', (request, response) ->
     response.sendfile 'public/index.html'
-
-  # Sync endpoints (Ajax)
-
-  app.get '/apps', (request, response) ->
-    response.json DB.slice(0, 10)
 
   server.listen 3333, ->
     console.log "Listening on port 3333… WebSockets enabled."

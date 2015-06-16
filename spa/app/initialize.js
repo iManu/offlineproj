@@ -1,3 +1,8 @@
+// Point d'entrée de l'appli
+// =========================
+
+'use strict';
+
 // L'initialiseur applicatif.  Se contente de faire deux choses :
 //
 // 1. Instancier l'application JS et l'initialiser
