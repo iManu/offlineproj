@@ -12,7 +12,7 @@
 // quand c'est possible et de toute une série de fallbacks sympa).
 
 // On importe le modèle pour surcharger sa fonction d'I/O serveur…
-var Apps = require('models/apps_list');
+//var Apps = require('models/apps_list');
 
 // On a évidemment besoin de la collection pour l'instancier
 var AppsListCollection = require('models/collection');
@@ -20,7 +20,7 @@ var AppsListCollection = require('models/collection');
 // …et on est *très* sensibles à la connectivité, pour déterminer
 // quand mettre en attente les synchros et quand réconcilier avec
 // la couche serveur.
-var cnxSvc = require('lib/connectivity');
+//var cnxSvc = require('lib/connectivity');
 
 // Instantiations de la collection Backbone et du datastore
 // persistent côté client.
@@ -29,7 +29,7 @@ var localStore = new Lawnchair({ name: 'appslist' }, $.noop);
 
 // Une des deux fonctions exposées par l'API : enregistre un nouveau
 // check-in.
-function addAppsList(applist) {
+/*function addAppsList(applist) {
   // Assurer une clé de stockage pour le datastore côté client (ici,
   // c'est Lawnchair qui repose sur `key`).
   applist.key = applist.key || Date.now();
@@ -40,7 +40,7 @@ function addAppsList(applist) {
     return;
 
   collection['id' in applist ? 'add' : 'create'](applist);
-}
+}*/
 
 // La 2ème fonction exposée par l'API : renvoie la collection actuelle
 // dans son ensemble (utilisé principalement au lancement et suite à
@@ -52,14 +52,14 @@ function getAppsList() {
 // Cette fonction interne est appelée au chargement pour initialiser
 // la collection Backbone sur la base du datastore persistent côté client.
 function initialLoad() {
-  localStore.all(function(checkins) {
-    collection.reset(checkins);
+  localStore.all(function(appslist) {
+    collection.reset(appslist);
   });
 }
 
 // Fonction interne de réconciliation client/serveur, au chargement ou
 // suite à un retour online.
-function syncPending() {
+/*function syncPending() {
   if (!cnxSvc.isOnline())
     return;
 
@@ -87,16 +87,16 @@ function syncPending() {
     // depuis le serveur.
     collection.fetch({ reset: true });
   }
-}
+}*/
 
 // Surcharge du gestionnaire Backbone de persistence.  Primo, pour
 // éviter toute requête XHR alors qu'on est offline.
-Apps.prototype.sync = function sync(method, model, options) {
+/*Apps.prototype.sync = function sync(method, model, options) {
   console.log('Checkin::sync(', method, ', ', model, ', ', options, ') -- cnxSvc.isOnline() -> ', cnxSvc.isOnline());
   if (!cnxSvc.isOnline())
     return;
   return Backbone.sync(method, model, options);
-};
+};*/
 
 // Gestionnaires d'événements (collection et app-wide) afin
 // d'assurer la synchro client/serveur.
@@ -114,34 +114,34 @@ collection.on('reset', function() {
 
 // Ajout d'un checkin à la collection : ajouter au datastore client
 // persistent (pour la couche serveur, Backbone s'en occupe tout seul).
-collection.on('add', function(model) {
+/*collection.on('add', function(model) {
   localStore.save(model.toJSON());
 
   // L'événement app-wide qui va bien (la vue historique va s'en
   // servir pour insérer le check-in de façon animée tout en haut).
   Backbone.Mediator.publish('appslist:new', model.toJSON());
-});
+});*/
 
 // La collection sync : la couche serveur a retourné un accusé de
 // sauvegarde pour un nouveau check-in.  On a donc le champ `id`,
 // ce qu’il faut absolument refléter dans le datastore client persistent
 // pour éviter de le réconcilier par erreur plus tard en le prenant
 // à tort pour un _pending save_…
-collection.on('sync', function(model) {
+/*collection.on('sync', function(model) {
   if (model instanceof Apps)
     localStore.save(model.toJSON());
 });
 
-Backbone.Mediator.subscribe('connectivity:online', syncPending);
+Backbone.Mediator.subscribe('connectivity:online', syncPending);*/
 
 // Initialisation au chargement
 
 initialLoad();
-syncPending();
+//syncPending();
 
 // Deux fonctions seulements publiées, comme indiqué plus haut.
 
 module.exports = {
-  addAppsList: addAppsList,
+  //addAppsList: addAppsList,
   getAppsList: getAppsList
 };

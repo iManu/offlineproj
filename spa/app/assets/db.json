@@ -30,5 +30,37 @@
 
     "url": "http://adress.com/to/app"
 
+  },
+  {
+    "id": "randomgenerateduniquelongkeywichisthenameoficonandvisualsfolderforthisapp2",
+    "key":1429768898326,
+    "icon": "icon.ext",
+    "title": "Other Application",
+    "baseline": "Null app serve nothing",
+    "pictos": {
+      "onpremise": true,
+      "smb": false
+    },
+    "craft": {},
+    "category": {},
+    "order": {},
+
+    "details": {
+      "title": "Médias",
+      "list": [
+        "Detail 01 described in one line",
+        "Detail 02 described in another line",
+        "Detail 03 described in one more line"
+      ]
+    },
+    "visuals": [
+      "image001.jpg",
+      "image002.jpg",
+      "image003.jpg",
+      "image004.jpg"
+    ],
+
+    "url": "http://adress.com/to/app"
+
   }
 ]
