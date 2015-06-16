@@ -14,7 +14,7 @@ module.exports = Backbone.Collection.extend({
   // Du coup, on peut passer juste des hashes d'attributs, ça
   // convertit tout seul.
   model: require('models/apps_list'),
-  url: '/db.json',
+  url: 'db.json',
   parse: function (response) {
     return response;
   }
