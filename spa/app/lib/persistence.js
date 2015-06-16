@@ -27,6 +27,8 @@ var AppsListCollection = require('models/collection');
 var collection = new AppsListCollection();
 var localStore = new Lawnchair({ name: 'appslist' }, $.noop);
 
+collection.fetch({ reset: true });
+
 // Une des deux fonctions exposées par l'API : enregistre un nouveau
 // check-in.
 /*function addAppsList(applist) {
