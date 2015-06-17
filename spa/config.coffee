@@ -30,8 +30,7 @@ exports.config =
       manifestFile: "appcache.manifest"
 
   server:
-    path: 'jst-server.coffee'
-    run: yes
+    command: 'node jst-server.coffee'
 
   watcher:
     # If on Windows and you don't see new files / modified files, make this true
