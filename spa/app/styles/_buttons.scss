@@ -17,14 +17,14 @@
         @include grid-media-query(desk) {
             padding: 10px 52px 12px 50px;
         }
-        background-color: colors('form', 'button', 'cta');
+        //background-color: colors('form', 'button', 'cta');
         color: colors('basic', 'white');
         &:link, &:visited {
-            background-color: colors('form', 'button', 'cta');
+            //background-color: colors('form', 'button', 'cta');
             color: colors('basic', 'white');
         }
         &:hover, &:active, &.active {
-            background-color: darken(colors('form', 'button', 'cta'), 15%);
+            //background-color: darken(colors('form', 'button', 'cta'), 15%);
         }
     }
     &--home,
@@ -49,11 +49,11 @@
     &--valid {
         background: unset !important; // override samsung style
         //&:link, &:visited, &:hover, &:active {
-            background: colors('form', 'button', 'cta') !important;
+            //background: colors('form', 'button', 'cta') !important;
             color: colors('basic', 'white');
         //}
         &:hover, &:active {
-            background: darken(colors('form', 'button', 'cta'), 15%) !important;
+            //background: darken(colors('form', 'button', 'cta'), 15%) !important;
         }
     }
     &--reset {

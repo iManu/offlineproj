@@ -20,25 +20,6 @@
             font-weight: 900;
         }
     }
-
-    &-color {
-        &--samsung {
-            color: colors('title', 'common');
-        }
-        &--step {
-
-            &-first {
-                color: colors('steps', 'first');
-            }
-            &-middle {
-                color: colors('steps', 'middle');
-            }
-            &-last {
-                color: colors('steps', 'last');
-            }
-        }
-
-    }
 }
 
 .hidden {
