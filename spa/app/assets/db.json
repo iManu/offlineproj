@@ -1,16 +1,17 @@
 [
   {
-    "id": "randomgenerateduniquelongkeywichisthenameoficonandvisualsfolderforthisapp",
-    "icon": "icon.ext",
+    "id": "randomgenerateduniquelongkeyforthisapp",
+    "folder": "app_001",
+    "icon": "icon.jpg",
     "title": "Application name",
     "baseline": "Impressive app to make coffee",
     "pictos": {
       "onpremise": true,
       "smb": false
     },
-    "craft": {},
-    "category": {},
-    "order": {},
+    "craft": [],
+    "category": [],
+    "action": [],
 
     "details": {
       "title": "Médias",
@@ -21,27 +22,28 @@
       ]
     },
     "visuals": [
-      "image001.jpg",
-      "image002.jpg",
-      "image003.jpg",
-      "image004.jpg"
+      "visual_001.jpg",
+      "visual_002.jpg",
+      "visual_003.jpg",
+      "visual_004.jpg"
     ],
 
     "url": "http://adress.com/to/app"
 
   },
   {
-    "id": "randomgenerateduniquelongkeywichisthenameoficonandvisualsfolderforthisapp2",
-    "icon": "icon.ext",
+    "id": "randomgenerateduniquelongkeyforthisapp2",
+    "folder": "app_002",
+    "icon": "icon.jpg",
     "title": "Other Application",
     "baseline": "Null app serve nothing",
     "pictos": {
       "onpremise": true,
       "smb": false
     },
-    "craft": {},
-    "category": {},
-    "order": {},
+    "craft": [],
+    "category": [],
+    "action": [],
 
     "details": {
       "title": "Médias",
@@ -52,10 +54,10 @@
       ]
     },
     "visuals": [
-      "image001.jpg",
-      "image002.jpg",
-      "image003.jpg",
-      "image004.jpg"
+      "visual_001.jpg",
+      "visual_002.jpg",
+      "visual_003.jpg",
+      "visual_004.jpg"
     ],
 
     "url": "http://adress.com/to/app"

@@ -1,0 +1,85 @@
+/**
+ * common.scss
+ */
+
+/* Basic inits =================================== */
+
+html {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+body {
+	background-color: colors('basic', 'white');
+	color: colors('basic', 'black');
+	font-family: Interface, Arial, Helvetica, "Sans-Serif";
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+
+label,
+input[type="checkbox"],
+input[type="radio"] {
+	cursor: pointer;
+}
+
+.Nav {
+	background: #111;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+}
+
+.Wrapper {
+	min-height: 100%;
+  min-width: 100%;
+  background-color: white; /* Needs a background or else the nav will show through */
+  //position: relative;
+  position: absolute;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+
+}
+/**
+ * Pure css Burger menu
+ */
+// http://www.sitepoint.com/pure-css-off-screen-navigation-menu/
+.nav-trigger {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+  /* critical positioning styles */
+  position: fixed;
+  left: 15px; top: 15px;
+  z-index: 2;
+
+  /* non-critical apperance styles */
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+  background-size: contain;
+}
+
+/* Make the Magic Happen */
+.nav-trigger + label, .Wrapper {
+  transition: left 0.2s;
+}
+
+.nav-trigger:checked + label {
+  left: 215px;
+}
+
+.nav-trigger:checked ~ .Wrapper {
+  left: 200px;
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+}

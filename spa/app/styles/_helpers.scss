@@ -1,0 +1,137 @@
+/**
+ * helpers.scss
+ */
+
+.hlp {
+
+    &-upper {
+        text-transform: uppercase;
+    }
+
+    &-interface {
+        font-family: Interface, Arial, Helvetica, "Sans-Serif";
+        &--reg {
+            font-weight: 400;
+        }
+        &--bd {
+            font-weight: 700;
+        }
+        &--blk {
+            font-weight: 900;
+        }
+    }
+
+    &-color {
+        &--samsung {
+            color: colors('title', 'common');
+        }
+        &--step {
+
+            &-first {
+                color: colors('steps', 'first');
+            }
+            &-middle {
+                color: colors('steps', 'middle');
+            }
+            &-last {
+                color: colors('steps', 'last');
+            }
+        }
+
+    }
+}
+
+.hidden {
+    display:none;
+}
+// Use .instant-hide for JS DOM manipulations
+// Technique to reduce paints & reflows : addClass > manipulate element > removeClass
+.instant-hide {
+    display: none;
+    visibility: hidden;
+}
+
+.show {
+    &--palm {
+        display: none;
+        @include grid-media-query(palm) {
+            display: block;
+        }
+    }
+    &--lap {
+        display: none;
+        @include grid-media-query(lap) {
+            display: block;
+        }
+    }
+    &--desk {
+        display: none;
+        @include grid-media-query(desk) {
+            display: block;
+        }
+    }
+}
+
+/**
+ * inline-block
+ */
+%inlineblock {
+    display: inline-block;
+    *display:inline;
+}
+/**
+ * nakedlist
+ */
+%nakedlist {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/**
+ * Text alignment
+ */
+.text--left     { text-align:left  !important; }
+.text--center   { text-align:center!important; }
+.text--right    { text-align:right !important; }
+
+/**
+ * zoom image fx
+ */
+.zoom-image {
+    background-size: 105%;
+    transition: background-size .4s linear;
+    &:hover {
+        background-size: 110%;
+    }
+}
+
+/**
+ * Hide content off-screen without resorting to `display:none;`, also provide
+ * breakpoint specific hidden elements.
+ */
+@mixin accessibility{
+    border:0!important;
+    clip:rect(0 0 0 0)!important;
+    height:1px!important;
+    margin:-1px!important;
+    overflow:hidden!important;
+    padding:0!important;
+    position: absolute!important;
+    width:1px!important;
+}
+.accessibility,
+.visuallyhidden{
+    @include accessibility;
+}
+@if $responsive{
+    @each $state in palm, lap, portable, desk {
+        @include grid-media-query(#{$state}){
+            .accessibility--#{$state},
+            .visuallyhidden--#{$state}{
+                @include accessibility;
+            }
+        }
+    }
+}

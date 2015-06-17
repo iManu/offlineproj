@@ -1,0 +1,283 @@
+/**
+ * vars.scss
+ */
+
+@mixin font-face($font-url, $font-filename, $font-aliasname, $weight: normal, $style: normal, $variant: normal) {
+  @font-face {
+    font: {
+      family: $font-aliasname;
+      weight: $weight;
+      style: $style;
+      variant: $variant;
+    }
+    src: url($font-url + "/" + $font-filename + ".eot");
+    src: url($font-url + "/" + $font-filename + ".eot?#stopIE678here") format('embedded-opentype'),
+    url($font-url + "/" + $font-filename + ".woff") format("woff"),
+    url($font-url + "/" + $font-filename + ".ttf") format("truetype");
+  }
+}
+$fonts-path: '../fonts';
+@include font-face($fonts-path, 'SamsungIF_Rg', 'Interface', 400, normal);
+@include font-face($fonts-path, 'SamsungIF_Bd', 'Interface', 700, normal);
+@include font-face($fonts-path, 'SamsungIF_Blk', 'Interface', 900, normal);
+//@include font-face($fonts-path, 'zozial', 'zozial', 100, normal);
+
+
+ [class^="zicon-"]:before, [class*=" zicon-"]:before {
+  font-family: "zozial";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.zicon-facebook:before { content: '\e800'; } /* '' */
+.zicon-gplus:before { content: '\e801'; } /* '' */
+.zicon-twitter:before { content: '\e802'; } /* '' */
+.zicon-linkedin:before { content: '\e803'; } /* '' */
+
+/**
+ * map-deep-get
+ * this function because sass not -already- supported deep get
+ */
+ @function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+$map-colors: (
+  "basic" : (
+    "white": #ffffff,
+    "black": #000000,
+    "red": #e34650,
+    "grey": #b5b5b5,
+    "borderdark": #a8a8a8,
+    "greytext": #484747
+  ),
+  "title" : (
+    "common": #02548d,
+    "inactive": #5e656d,
+    "upload": #464b4f
+  ),
+  "text" : (
+    "spec" : #575756,
+    "popin" : #0071cd,
+    "uplist": #b9c6d1,
+    "upformats": #98a3ac
+  ),
+  "steps": (
+    "first" : #102861,
+    "middle" : #468f72,
+    "last" : #c8794e
+  ),
+  "bg" : (
+    "greylight" : #f0efee,
+    "greyblue" : #c2c9cc,
+    "greyform" : #e4e3e3,
+    "greypage" : #f5f5f5,
+    "greydark" : #292f36,
+    "upload": #ebebeb,
+    "crop": #424242
+  ),
+  "form" : (
+    "input-bg": #e0e0e0,
+    "button" : ( "submit": #3b6892, "gradStart": #4e84b7, "gradEnd": #2e5273, "cta": #0071cd),
+    "label": #464b4f,
+    "minitxt" : #949191,
+    "checked" : #0071bf,
+    "border" : #c5c5c5
+  ),
+  "social-network" : (
+    "facebook":     #3b5997,
+    "twitter":      #00aced,
+    "foursquare":   #2ebbe2,
+    "gplus":        #db4937,
+    "youtube":      #ed2828,
+    "linkedin":     #0077b5
+  )
+);
+@function colors($colors...) {
+  @return map-deep-get($map-colors, $colors...);
+}
+
+/**
+ * z-layers
+ */
+$z-layers: (
+    "hightop":      9001,
+    "section": (
+        "part1":  2,
+        "part2":  3,
+        "part3":  4
+    ),
+    "deco-bann": 4,
+    "footer":    6,
+    "default":   1,
+    "below":     -1
+);
+@function z($layers...) {
+  @return map-deep-get($z-layers, $layers...);
+}
+
+/**
+ * Sass vars
+ */
+
+@if $global-border-box == true{
+    /**
+    * Let’s make the box model all nice, shall we...?
+    */
+
+    // SPECIAL CASE : Header & footer for samsung.com don't support border-box !!
+    // so, it's applied only for #content childrens
+    #content *{
+        &,
+        &:before,
+        &:after{
+            box-sizing: border-box;
+        }
+    }
+}
+
+/* ================= MIXINS */
+
+/**
+ * Create a fully formed type style (sizing and vertical rhythm) by passing in a
+ * single value, e.g.:
+ *
+   `@include font-size(10px);`
+ *
+ * Thanks to @redclov3r for the `line-height` Sass:
+ * twitter.com/redclov3r/status/250301539321798657
+ */
+$base-font-size:    16px!default;
+$base-line-height:  24px!default;
+
+@mixin font-size($font-size, $line-height:true){
+    font-size:$font-size;
+    font-size:($font-size / $base-font-size)*1rem;
+    @if $line-height == true{
+        line-height:ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+    }
+}
+
+/**
+ * =Animations mixins
+ */
+
+ /*
+ * Courtesy of @integralist: twitter.com/integralist/status/260484115315437569
+ */
+@mixin keyframe ($animation-name){
+    @-webkit-keyframes #{$animation-name}{
+        @content;
+    }
+    @-moz-keyframes #{$animation-name}{
+        @content;
+    }
+    @-ms-keyframes #{$animation-name}{
+        @content;
+    }
+    @-o-keyframes #{$animation-name}{
+        @content;
+    }
+    @keyframes #{$animation-name}{
+        @content;
+    }
+}
+
+/**
+ * If you are building a non-responsive site but would still like to use
+ * csswizardry-grids, set this to ‘false’:
+ */
+$responsive:            true !default;
+/**
+ * Define your breakpoints. The first value is the prefix that shall be used for
+ * your classes (e.g. `.palm--one-half`), the second value is the media query
+ * that the breakpoint fires at.
+ */
+$breakpoints: (
+    'palm' '(max-width: 480px)',
+    'lap' '(min-width: 481px) and (max-width: 1024px)',
+    'lapandup' '(min-width: 481px)',
+    'portable' '(max-width: 1024px)',
+    'desk' '(min-width: 1025px)'
+) !default;
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/**
+ * These mixins are for the library to use only, you should not need to modify
+ * them at all.
+ *
+ * Enclose a block of code with a media query as named in `$breakpoints`.
+ */
+@mixin grid-media-query($media-query) {
+    $breakpoint-found: false;
+
+    @each $breakpoint in $breakpoints {
+        $name: nth($breakpoint, 1);
+        $declaration: nth($breakpoint, 2);
+
+        @if $media-query == $name and $declaration {
+            $breakpoint-found: true;
+
+            @media only screen and #{$declaration} {
+                @content;
+            }
+        }
+    }
+
+    @if not $breakpoint-found {
+        @warn "Breakpoint ‘#{$media-query}’ does not exist";
+    }
+}
+
+
+// Responsive helper to JS technique
+body:after {
+  display:block;
+  @include grid-media-query(palm) {
+    content: 'palm';
+  }
+  @include grid-media-query(lap) {
+    content: 'lap';
+  }
+  @include grid-media-query(desk) {
+    content: 'desk';
+  }
+  /*@include grid-media-query(desk-wide) {
+    content: 'desk-wide';
+  }*/
+}
+
+
+

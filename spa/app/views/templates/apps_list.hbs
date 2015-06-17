@@ -1,10 +1,16 @@
 {{#each .}}
 <li class="{{extra_class}}">
-  <div class="icon"><img class="img-responsive" src="{{icon}}"></div>
+  <div class="icon"><img class="img-responsive" src="{{folder}}/{{icon}}"></div>
   <div class="details">
     <strong title="{{title}}">{{title}}</strong>
     <time>{{baseline}}</time>
     <address>{{details.title}}</address>
+
+    <figure>
+      <p>big image</p>
+      <img src="{{folder}}/{{visuals.[0]}}" alt="" style="max-height:200px">
+    </figure>
+
     {{#if comment}}
       <q>{{comment}}</q>
     {{/if}}

@@ -26,6 +26,7 @@ exports.config =
     appcache:
       externalCacheEntries: []
       network: ['*', 'http://*', 'https://*']
+      ignore: /[/][.]|(visual_)[0-9]{3}(\.jpg)+/
       manifestFile: "appcache.manifest"
 
   server:

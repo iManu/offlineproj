@@ -7,7 +7,6 @@ var View = require('./view');
 //var CheckInView = require('./check_in_view');
 var AppsView = require('./apps_view');
 var cnxSvc = require('lib/connectivity');
-//var userName = require('lib/notifications').userName;
 
 module.exports = View.extend({
   // Les événements app-wide (pub/sub) auxquels on réagit
@@ -21,10 +20,9 @@ module.exports = View.extend({
   // Après le rendering complet (initial), on procède aux initialisations
   // de comportements et injections des vues imbriquées
   afterRender: function() {
-    // On met en cache le marqueur online/offline et on lui colle un tooltip façon Bootstrap
+    // On met en cache le marqueur online/offline
     this.syncMarker();
-    // On lance l'horloge (en haut à droite)
-    //this.startClock();
+
     // On initialise et on render à la volée les deux vues imbriquées
     //new CheckInView({ el: this.$('#checkInUI') }).render();
     new AppsView({ el: this.$('#appsUI') }).render();
@@ -34,22 +32,17 @@ module.exports = View.extend({
   // peuple le template principal avec ces données.
   getRenderData: function() {
     // Moment.js c'est que du bonheur…
-    //return { now: moment().format('dddd D MMMM YYYY HH:mm:ss'), userName: userName };
     return { now: moment().format('dddd D MMMM YYYY HH:mm:ss') };
   },
-
-  // Lancement de l'horloge.  Un simple setInterval suffit…
-  /*startClock: function() {
-    this.clock = this.clock || this.$('#ticker');
-    var that = this;
-    setInterval(function() {
-      that.clock.text(that.getRenderData().now);
-    }, 1000);
-  },*/
 
   // Réaction à la notif de passage online/offline : on ajuste le marqueur
   syncMarker: function() {
     this._onlineMarker = this._onlineMarker || this.$('#onlineMarker').tooltip({ placement: 'bottom' });
-    this._onlineMarker[cnxSvc.isOnline() ? 'show' : 'hide']('fast');
+    //this._onlineMarker[cnxSvc.isOnline() ? 'show' : 'hide']('fast');
+    if(cnxSvc.isOnline()) {
+      this._onlineMarker.html('online').css('color', 'green');
+    } else {
+      this._onlineMarker.html('offline').css('color', 'red');
+    }
   }
 });
