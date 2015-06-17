@@ -235,7 +235,7 @@ $breakpoints: (
 
 // Responsive helper to JS technique
 body:after {
-  display:block;
+  display:none;
   @include grid-media-query(palm) {
     content: 'palm';
   }

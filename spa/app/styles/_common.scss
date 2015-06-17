@@ -38,9 +38,9 @@ input[type="radio"] {
 .Wrapper {
 	min-height: 100%;
   min-width: 100%;
-  background-color: colors('basic', 'black'); /* Needs a background or else the nav will show through */
-  //position: relative;
-  position: absolute;
+  background-color: colors('basic', 'white'); /* Needs a background or else the nav will show through */
+  position: relative;
+  //position: absolute;
   top: 0;
   bottom: 100%;
   left: 0;
@@ -50,6 +50,7 @@ input[type="radio"] {
 /**
  * Pure css Burger menu
  */
+
 // http://www.sitepoint.com/pure-css-off-screen-navigation-menu/
 .nav-trigger {
     position: absolute;
@@ -76,10 +77,28 @@ label[for="nav-trigger"] {
 }
 
 .nav-trigger:checked + label {
-  left: 215px;
+  //left: calc(100% - 60px);
 }
 
 .nav-trigger:checked ~ .Wrapper {
-  left: 200px;
+  left: 100%; //calc(100% - 60px);
   box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
 }
+
+// for project's use case
+@include grid-media-query(lapandup) {
+	.nav-trigger,
+	label[for="nav-trigger"] {
+		top: -99999em;
+		position: absolute;
+	}
+	.nav-trigger + label {
+		left: 215px;
+	}
+	.nav-trigger ~ .Wrapper {
+		left: 200px;
+  		box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+	}
+}
+
+

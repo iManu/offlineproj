@@ -21,32 +21,35 @@
     </li>
   </ul>
 </nav>
-<input type="checkbox" id="nav-trigger" class="nav-trigger" checked="checked" />
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
 <label for="nav-trigger"></label>
 
 <div class="Wrapper">
-  <span id="onlineMarker" class="glyphicon glyphicon-signal" title="Vous êtes connecté(e)"></span>
-  <div class="col-md-8"><div id="appsUI" class="well"></div></div>
+	<span id="onlineMarker" class="glyphicon glyphicon-signal" title="Vous êtes connecté(e)"></span>
+	<div class="col-md-8"><div id="appsUI" class="well"></div></div>
+	<footer>
+		yeah
+	</footer>
+
+	<div class="modal fade" id="reloadPrompt">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title">Nouvelle version disponible !</h4>
+				</div>
+				<div class="modal-body">
+					<p>Une nouvelle version de cette application est disponible.</p>
+					<p>Souhaitez-vous la charger dès maintenant ?</p>
+				</div>
+				<div class="modal-footer">
+					<a href="" class="btn btn-primary">Mais carrément !</a>
+					<button type="button" class="btn btn-default" data-dismiss="modal">pas la peine</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
-  <div class="modal fade" id="reloadPrompt">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title">Nouvelle version disponible !</h4>
-        </div>
-        <div class="modal-body">
-          <p>Une nouvelle version de cette application est disponible.</p>
-          <p>Souhaitez-vous la charger dès maintenant ?</p>
-        </div>
-        <div class="modal-footer">
-          <a href="" class="btn btn-primary">Mais carrément !</a>
-          <button type="button" class="btn btn-default" data-dismiss="modal">pas la peine</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
