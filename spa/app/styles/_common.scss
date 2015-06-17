@@ -23,6 +23,10 @@ input[type="radio"] {
 	cursor: pointer;
 }
 
+/**
+ * There is a left panel menu
+ */
+
 .Nav {
 	background: colors('menu', 'bg', 'global');
 	width: 100%;
@@ -47,11 +51,12 @@ input[type="radio"] {
   z-index: z('default');
 
 }
+
 /**
  * Pure css Burger menu
+ * http://www.sitepoint.com/pure-css-off-screen-navigation-menu/
  */
 
-// http://www.sitepoint.com/pure-css-off-screen-navigation-menu/
 .nav-trigger {
     position: absolute;
     clip: rect(0, 0, 0, 0);
@@ -73,31 +78,35 @@ label[for="nav-trigger"] {
 
 /* Make the Magic Happen */
 .nav-trigger + label, .Wrapper {
-  transition: left 0.2s;
+	transition: left 0.2s;
 }
 
 .nav-trigger:checked + label {
+	left: 0;
   //left: calc(100% - 60px);
 }
 
 .nav-trigger:checked ~ .Wrapper {
-  left: 100%; //calc(100% - 60px);
-  box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+	left: 100%; //calc(100% - 60px);
+	//box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
 }
 
 // for project's use case
+// .Nav need to be always open in lapandup
 @include grid-media-query(lapandup) {
 	.nav-trigger,
 	label[for="nav-trigger"] {
 		top: -99999em;
 		position: absolute;
 	}
+	.nav-trigger:checked + label,
 	.nav-trigger + label {
 		left: 215px;
 	}
+	.nav-trigger:checked ~ .Wrapper,
 	.nav-trigger ~ .Wrapper {
 		left: 200px;
-  		box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+  		//box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
 	}
 }
 
