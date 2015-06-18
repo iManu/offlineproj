@@ -1,25 +1,27 @@
 <nav class="Nav">
-  <ul class="Nav__main">
-    <li>
-      <button>Nos Métiers</button>
-    </li>
-    <li>
-      <button>Catégories</button>
-    </li>
-    <li>
-      <input type="search" placeholder="Rechercher">
-    </li>
-  </ul>
-  <ul class="Nav__alphabet">
-    <li>
-      <input type="checkbox" id="alpha-a" value="a">
-      <label for="alpha-a">a</label>
-    </li>
-    <li>
-      <input type="checkbox" id="alpha-b" value="b">
-      <label for="alpha-b">b</label>
-    </li>
-  </ul>
+  <div class="Nav__left">
+    <ul class="Nav__filters">
+      <li>
+        <button>Nos Métiers</button>
+      </li>
+      <li>
+        <button>Catégories</button>
+      </li>
+      <li>
+        <input type="search" placeholder="Rechercher">
+      </li>
+    </ul>
+  </div><!--
+  --><div class="Nav__right">
+    <ul class="Nav__alphabet">
+      {{#each alphabet}}
+      <li>
+        <input type="checkbox" id="alpha-{{this}}" value="{{this}}">
+        <label for="alpha-{{this}}">{{this}}</label>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
 </nav>
 <input type="checkbox" id="nav-trigger" class="nav-trigger" />
 <label for="nav-trigger"></label>

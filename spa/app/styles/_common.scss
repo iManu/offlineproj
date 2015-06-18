@@ -61,9 +61,30 @@ $alphawidth-desk: 66px;
 	bottom: 0;
 	left: 0;
 	z-index: z('root');
-  /*@include grid-media-query(lapandup) {
-    width: 200px;
-  }*/
+  &__left,
+  &__right {
+    @extend %inlineblock;
+    vertical-align: top;
+  }
+  &__left {
+    width: 85%;
+    @include grid-media-query(lap) {
+      width: $panelwidth-lap - $alphawidth-lap;
+    }
+    @include grid-media-query(desk) {
+      width: $panelwidth-desk - $alphawidth-desk;
+    }
+  }
+  &__right {
+    background-color: colors('menu', 'bg', 'sub');
+    width: 15%;
+    @include grid-media-query(lap) {
+      width: $alphawidth-lap;
+    }
+    @include grid-media-query(desk) {
+      width: $alphawidth-desk;
+    }
+  }
 }
 
 /**
@@ -86,28 +107,6 @@ $alphawidth-desk: 66px;
   @include grid-media-query(desk) {
     padding: 4em calc(4em + #{$panelwidth-desk}) 4em 4em;
   }
-
-/*
-  &:after {
-    content: "";
-    position: absolute;
-    background-color: colors('basic', 'white');
-    //background-size: 200%;
-    background-repeat: repeat-y;
-    background-position: 0 0;
-    content: " ";
-    height: 100%;
-    left: 0;
-    -webkit-transform: translate3d(0%, 0px, 0px);
-    -moz-transform: translate3d(0%, 0px, 0px);
-    transform: translate3d(0%, 0px, 0px);
-    position: absolute;
-    //height: 9999em;
-    //bottom: -9999em;
-    width: 100%;
-    //left: 0;
-    z-index: -1;
-  }*/
 }
 
 /**
