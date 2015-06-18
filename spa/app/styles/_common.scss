@@ -56,6 +56,7 @@ $alphawidth-desk: 66px;
 	height: 100%;
   position: fixed;
 	//position: absolute;
+  overflow-y: scroll;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -86,6 +87,37 @@ $alphawidth-desk: 66px;
     }
   }
 }
+/**
+ * .Alphabet (in .Nav)
+ */
+.Alphabet {
+  padding: 35px 0;
+  &__item {
+
+  }
+  &__check {
+    position: absolute;
+    left: -99999em;
+    &:hover ~ .Alphabet__label {
+      opacity: .6;
+    }
+    &:checked ~ .Alphabet__label {
+      color: colors('menu', 'button', 'normal');
+    }
+  }
+  &__label {
+    color: colors('basic', 'white');
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    padding-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: color .1s linear;
+    width: 100%;
+  }
+}
+
 
 /**
  * .Wrapper

@@ -13,11 +13,11 @@
     </ul>
   </div><!--
   --><div class="Nav__right">
-    <ul class="Nav__alphabet">
+    <ul class="Nav__alphabet Alphabet">
       {{#each alphabet}}
-      <li>
-        <input type="checkbox" id="alpha-{{this}}" value="{{this}}">
-        <label for="alpha-{{this}}">{{this}}</label>
+      <li class="Alphabet__item">
+        <input type="checkbox" id="alpha-{{this}}" value="{{this}}" class="Alphabet__check">
+        <label for="alpha-{{this}}" class="Alphabet__label">{{this}}</label>
       </li>
       {{/each}}
     </ul>
