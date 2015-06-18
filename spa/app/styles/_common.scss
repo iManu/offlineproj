@@ -26,7 +26,7 @@ body {
     padding: 0;
     overflow: unset;
     position: relative;*/
-    &:after {
+    /*&:after {
       content: "";
       position: fixed;
       background-color: colors('basic', 'white');
@@ -42,7 +42,7 @@ body {
       //left: 0;
       z-index: 0;
 
-    }
+    }*/
   }
 }
 

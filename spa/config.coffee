@@ -28,6 +28,24 @@ exports.config =
       network: ['*', 'http://*', 'https://*']
       ignore: /[/][.]|(visual_)[0-9]{3}(\.jpg)+/
       manifestFile: "appcache.manifest"
+    postcss:
+      processors: [
+          require('autoprefixer')(['last 8 versions'])
+      ]
+    browserSync:
+      server:         false
+      online:         false
+      logConnections: false
+      logLevel:       'debug'
+      open:           false
+      port:           3333
+      proxy:          'local.samsung.com/tests/offlineproj/spa/public'
+      debugInfo:      true
+      notify:         true
+      snippetOptions:
+        rule:
+          match: /<\/body>/i
+
 
   server:
     command: 'node jst-server.coffee'

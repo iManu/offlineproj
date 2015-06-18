@@ -22,11 +22,13 @@
   },
   "dependencies": {
     "appcache-brunch": "> 1.0 < 1.8",
+    "autoprefixer": "^5.2.0",
     "clean-css-brunch": "> 1.0 < 1.8",
     "css-brunch": "> 1.0 < 1.8",
     "express": "~3.4.0",
     "handlebars-brunch": "> 1.0 < 1.8",
     "javascript-brunch": "> 1.0 < 1.8",
+    "postcss-brunch": "^0.4.1",
     "sass-brunch": "^1.8.10",
     "socket.io": "~0.9.16",
     "uglify-js-brunch": "> 1.0 < 1.8"
@@ -34,6 +36,7 @@
   "devDependencies": {
     "backbone": "~1.1.0",
     "blanket": "~1.1.0",
+    "browser-sync-brunch": "0.0.9",
     "mocha": "~1.14.0"
   }
 }
