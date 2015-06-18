@@ -16,6 +16,14 @@ var Application = {
 
     this.homeView = new HomeView();
     this.router = new Router();
+
+    /*this.isStandalone = false;
+    if (window.navigator.standalone) {
+      // The app is running in standalone mode. (webapp)
+      this.isStandalone = true;
+    }
+    console.log('is Standalone: ', this.isStandalone);*/
+
     if ('function' === typeof Object.freeze)
       Object.freeze(this);
   }

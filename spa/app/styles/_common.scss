@@ -9,6 +9,8 @@ html {
   width: 100%;
 	overflow-y: scroll;
 	overflow-x: hidden;
+  // Prevent text size change on orientation change.
+  -webkit-text-size-adjust: 100%;
 }
 body {
 	background-color: colors('basic', 'white');
@@ -19,30 +21,11 @@ body {
   width: 100%;
 	-webkit-font-smoothing: antialiased;
 	//overflow-x: hidden;
-  & > div {
-    /*height: unset;
-    width: unset;
-    margin: 0;
-    padding: 0;
-    overflow: unset;
-    position: relative;*/
-    /*&:after {
-      content: "";
-      position: fixed;
-      background-color: colors('basic', 'white');
-      //background-size: 200%;
-      background-repeat: repeat-y;
-      background-position: 0 0;
-      height: 100%;
-      left: 200px;
-      //transform: translate3d(0%, 0px, 0px);
-      //height: 9999em;
-      //bottom: -9999em;
-      width: 100%;
-      //left: 0;
-      z-index: 0;
 
-    }*/
+  @include grid-media-query(portable) {
+    // black-translucent 20px mobile top extra
+    // http://blog.teamtreehouse.com/optimizing-mobile-web-apps-ios
+    //padding-top: 20px;
   }
 }
 
@@ -55,6 +38,13 @@ input[type="radio"] {
 /**
  * There is a left panel menu
  */
+$panelwidth: 100%;
+$alphawidth: 46px;
+$panelwidth-lap: 235px;
+$alphawidth-lap: 46px;
+$panelwidth-desk: 266px;
+$alphawidth-desk: 66px;
+
 
 /**
  * .Nav
@@ -82,7 +72,7 @@ input[type="radio"] {
  */
 .Wrapper {
 	min-height: 100%;
-  min-width: 100%;
+  //min-width: 100%;
   background-color: colors('basic', 'white'); /* Needs a background or else the nav will show through */
   position: relative;
   top: 0;
@@ -90,7 +80,13 @@ input[type="radio"] {
   left: 0;
   z-index: z('default');
 
-  padding: 4em;
+  @include grid-media-query(lap) {
+    padding: 2em calc(2em + #{$panelwidth-lap}) 2em 2em;
+  }
+  @include grid-media-query(desk) {
+    padding: 4em calc(4em + #{$panelwidth-desk}) 4em 4em;
+  }
+
 /*
   &:after {
     content: "";
@@ -163,11 +159,21 @@ label[for="nav-trigger"] {
 	}
 	.nav-trigger:checked + label,
 	.nav-trigger + label {
-		left: 215px;
+    @include grid-media-query(lap) {
+      left: $panelwidth-lap + 15px;
+    }
+    @include grid-media-query(desk) {
+		  left: $panelwidth-desk + 15px;
+    }
 	}
 	.nav-trigger:checked ~ .Wrapper,
 	.nav-trigger ~ .Wrapper {
-		left: 200px;
+    @include grid-media-query(lap) {
+      left: $panelwidth-lap;
+    }
+    @include grid-media-query(desk) {
+      left: $panelwidth-desk;
+    }
   		//box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
 	}
 }

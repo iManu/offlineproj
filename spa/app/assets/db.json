@@ -1,17 +1,30 @@
 [
   {
     "id": "randomgenerateduniquelongkeyforthisapp",
+    "is-active": true,
     "folder": "app_001",
     "icon": "icon.jpg",
     "title": "Application name",
     "baseline": "Impressive app to make coffee",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
+
     "pictos": {
       "onpremise": true,
       "smb": false
     },
-    "craft": [],
-    "category": [],
-    "action": [],
+    "craft": [
+      "Permier métier de la liste des métiers",
+      "Deuxième métier",
+      "Troisième métier etc"
+    ],
+    "category": [
+      "Première catégorie",
+      "Seconde catégorie, etc"
+    ],
+    "action": [
+      "Action no 1",
+      "Action no 2"
+    ],
 
     "details": {
       "title": "Médias",
