@@ -23,7 +23,7 @@ module.exports = View.extend({
     return {
       appsList: this.listTemplate(store.getAppsList())
     };
-  },
+  }
 
   // Réagit à la notif de nouveau check-in en l'insérant en haut
   // de la liste.
