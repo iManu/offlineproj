@@ -77,7 +77,6 @@ $alphawidth-desk: 66px;
     }
   }
   &__right {
-    background-color: colors('menu', 'bg', 'sub');
     width: 15%;
     @include grid-media-query(lap) {
       width: $alphawidth-lap;
@@ -91,15 +90,23 @@ $alphawidth-desk: 66px;
  * .Alphabet (in .Nav)
  */
 .Alphabet {
+  background-color: colors('menu', 'bg', 'sub');
   padding: 35px 0;
   &__item {
-
+    background-color: colors('menu', 'bg', 'sub');
+    transition: background-color .3s ease-out;
+	&:hover {
+    	background-color: darken(colors('menu', 'bg', 'sub'), 3%);
+	}
   }
   &__check {
     position: absolute;
     left: -99999em;
-    &:hover ~ .Alphabet__label {
+    /*&:hover ~ .Alphabet__label {
       opacity: .6;
+    }*/
+    &:checked &:hover {
+    	background-color: lighten(colors('menu', 'bg', 'sub'), 3%);
     }
     &:checked ~ .Alphabet__label {
       color: colors('menu', 'button', 'normal');
