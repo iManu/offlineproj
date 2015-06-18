@@ -56,7 +56,7 @@ module.exports = View.extend({
       this.getRenderData().appList
     );
   },
-  selectApp: function selectplace(e) {
+  selectApp: function selectApp(e) {
     /*
     console.log(this);
     console.log(e.target);
