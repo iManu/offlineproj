@@ -1,5 +1,5 @@
-// Contrôleur zone historique
-// ==========================
+// Contrôleur zone des items applications
+// ======================================
 
 'use strict';
 

@@ -1,28 +1,4 @@
-<nav class="Nav" role="navigation">
-  <div class="Nav__left">
-    <ul class="Nav__filters" role="list">
-      <li role="list-item">
-        <button>Nos Métiers</button>
-      </li>
-      <li role="list-item">
-        <button>Catégories</button>
-      </li>
-      <li role="list-item">
-        <input type="search" placeholder="Rechercher" role="search">
-      </li>
-    </ul>
-  </div><!--
-  --><div class="Nav__right">
-    <ul class="Nav__alphabet Alphabet" role="list">
-      {{#each alphabet}}
-      <li class="Alphabet__item" role="list-item">
-        <input type="checkbox" id="alpha-{{this}}" value="{{this}}" class="Alphabet__check" role="checkbox" aria-checked="false">
-        <label for="alpha-{{this}}" class="Alphabet__label">{{this}}</label>
-      </li>
-      {{/each}}
-    </ul>
-  </div>
-</nav>
+<nav id="menuUI" class="Nav" role="navigation"></nav>
 <input type="checkbox" id="nav-trigger" class="nav-trigger" />
 <label for="nav-trigger"></label>
 

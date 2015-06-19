@@ -1,11 +1,11 @@
 /**
- * = check_in_view.js
+ * = app_list_view.js
  */
 var View = require('./view'),
   //locSvc = require('lib/location'),
   //poiSvc = require('lib/places'),
   //notifications = require('lib/notifications'),
-  store = require('lib/persistence'),
+  //store = require('lib/persistence'),
   connectivity = require('lib/connectivity');
 
 module.exports = View.extend({
@@ -13,13 +13,13 @@ module.exports = View.extend({
   listTemplate: require('./templates/captions'),
   // convention backbone pour catcher les events :
   // equivalent jq : $('header button').on('click', this.fetchPlaces)
-  events: {
+  /*events: {
     'click header button': 'fetchApps',
     // backbone fait automatiquement de la délégation d'évènements
     // correspond à $('#places').on('click', 'li', this.selectPlace)
     'click #places li': 'selectPlace',
     'submit': 'checkIn'
-  },
+  },*/
   getRenderData: function appListGetRenderData() {
     return {
       appList: this.listTemplate({
@@ -41,7 +41,7 @@ module.exports = View.extend({
     this.apps = [];
     this.renderApps();
 
-    var that = this;
+    //var that = this;
     /*locSvc.getCurrentLocation(function(lt, lg) {
       that.$el.find('#geoloc').text(lt.toFixed(5) + ' ' + lg.toFixed(5));
       poiSvc.lookupPlaces(lt, lg, function(places) {
@@ -56,7 +56,7 @@ module.exports = View.extend({
       this.getRenderData().appList
     );
   },
-  selectApp: function selectplace(e) {
+  selectApp: function selectApp(e) {
     /*
     console.log(this);
     console.log(e.target);

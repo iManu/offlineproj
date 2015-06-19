@@ -4,7 +4,7 @@
 'use strict';
 
 var View = require('./view');
-//var CheckInView = require('./check_in_view');
+var MenuView = require('./menu_items_view');
 var AppsView = require('./apps_view');
 var cnxSvc = require('lib/connectivity');
 
@@ -24,7 +24,7 @@ module.exports = View.extend({
     this.syncMarker();
 
     // On initialise et on render à la volée les deux vues imbriquées
-    //new CheckInView({ el: this.$('#checkInUI') }).render();
+    new MenuView({ el: this.$('#menuUI') }).render();
     new AppsView({ el: this.$('#appsUI') }).render();
   },
 
@@ -32,7 +32,7 @@ module.exports = View.extend({
   // peuple le template principal avec ces données.
   getRenderData: function() {
     return {
-      alphabet: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
+      mydata: 'fake',
       otherdata: 'fake'
     };
   },

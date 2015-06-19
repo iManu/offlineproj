@@ -1,40 +1,54 @@
 /**
- * = check_in_view.js
+ * = menu_items_view.js
  */
-var View = require('./view'),
-  //locSvc = require('lib/location'),
-  //poiSvc = require('lib/places'),
-  //notifications = require('lib/notifications'),
-  store = require('lib/persistence'),
-  connectivity = require('lib/connectivity');
+var View = require('./view')
+  //store = require('lib/persistence'),
+  //connectivity = require('lib/connectivity')
+;
 
 module.exports = View.extend({
-  template: require('./templates/app_list'),
-  listTemplate: require('./templates/captions'),
+  template: require('./templates/menu_items'),
+  //listTemplate: require('./templates/captions'),
   // convention backbone pour catcher les events :
   // equivalent jq : $('header button').on('click', this.fetchPlaces)
   events: {
-    'click header button': 'fetchApps',
+    //'click header button': 'fetchApps',
     // backbone fait automatiquement de la délégation d'évènements
     // correspond à $('#places').on('click', 'li', this.selectPlace)
-    'click #places li': 'selectPlace',
-    'submit': 'checkIn'
+    //'click #places li': 'selectPlace',
+    //'submit': 'checkIn'
+    'click .js-check-letter': 'letterCheck',
   },
-  getRenderData: function appListGetRenderData() {
+  getRenderData: function menuItemsGetRenderData() {
     return {
-      appList: this.listTemplate({
+      alphabet: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+      /*appList: this.listTemplate({
         apps: this.apps
-      })
+      })*/
     };
   },
-  afterRender: function appListAfterRender() {
-    this.fetchApps();
+  afterRender: function menuItemsAfterRender() {
+    //this.fetchApps();
   },
   $submitter: null,
-  $currentApp: null,
-  $comment: null,
+  $lettersList: [],
+  //$comment: null,
+  letterCheck: function letterCheck(e) {
+
+    var target = e.target,
+      letter = target.value,
+      checkElem = $(target)
+    ;
+    if( checkElem.is(':checked') ) {
+      this.$lettersList.push( letter );
+    } else {
+      this.$lettersList = _.without(this.$lettersList, letter);
+    }
+
+    console.log( this.$lettersList );
+  },
   // Chargement initial des apps
-  fetchApps: function fetchApps() {
+  /*fetchApps: function fetchApps() {
     if(!connectivity.isOnline()) return;
 
     // on vide la liste
@@ -42,27 +56,27 @@ module.exports = View.extend({
     this.renderApps();
 
     var that = this;
-    /*locSvc.getCurrentLocation(function(lt, lg) {
+    locSvc.getCurrentLocation(function(lt, lg) {
       that.$el.find('#geoloc').text(lt.toFixed(5) + ' ' + lg.toFixed(5));
       poiSvc.lookupPlaces(lt, lg, function(places) {
         //console.table(places);
         that.places = places;
         that.renderPlaces();
       });
-    });*/
+    });
   },
   renderApps: function renderApps() {
     this.$el.find('#apps').html(
       this.getRenderData().appList
     );
-  },
-  selectApp: function selectApp(e) {
+  },*/
+  //selectApp: function selectApp(e) {
     /*
     console.log(this);
     console.log(e.target);
     console.log(e.currentTarget);
     */
-    var current = $(e.currentTarget),
+ /*   var current = $(e.currentTarget),
       active = this.$('#apps li.active');
     if (active[0] === current[0]) {
       return;
@@ -85,8 +99,8 @@ module.exports = View.extend({
         this.$currentPlace.removeClass('active');
       }
       this.$currentPlace = null;*/
-    }
-  }/*,
+ /*   }
+  /*,
   checkIn: function checkIn(e) {
     e.preventDefault();
     if (!this.$currentPlace) return;
