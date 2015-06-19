@@ -1,14 +1,17 @@
 /**
  * = menu_items_view.js
  */
-var View = require('./view')
-  //store = require('lib/persistence'),
-  //connectivity = require('lib/connectivity')
+var View = require('./view'),
+  store = require('lib/persistence'),
+  connectivity = require('lib/connectivity')
 ;
 
 module.exports = View.extend({
   template: require('./templates/menu_items'),
   //listTemplate: require('./templates/captions'),
+  subscriptions: {
+    'filters:reset': 'render'
+  },
   // convention backbone pour catcher les events :
   // equivalent jq : $('header button').on('click', this.fetchPlaces)
   events: {
@@ -18,44 +21,94 @@ module.exports = View.extend({
     //'click #places li': 'selectPlace',
     //'submit': 'checkIn'
     'click .js-check-letter': 'letterCheck',
+    'click .js-check-craft': 'craftCheck',
+    'click .js-check-category': 'categoryCheck'
   },
   getRenderData: function menuItemsGetRenderData() {
+    var filters =  store.getFilters(),
+      filterCrafts = filters[0].crafts,
+      filterCategories = filters[0].categories,
+      filterActions = filters[0].actions
+    ;
+    //console.log('filters', filterCrafts);
     return {
-      alphabet: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-      /*appList: this.listTemplate({
-        apps: this.apps
-      })*/
+      alphabet: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
+      filterCrafts: filterCrafts,
+      filterCategories: filterCategories,
+      filterActions: filterActions
     };
   },
   afterRender: function menuItemsAfterRender() {
-    //this.fetchApps();
+    this.fetchFilters();
   },
   $submitter: null,
   $lettersList: [],
-  //$comment: null,
+  $craftsList: [],
+  $categoriesList: [],
+  $actionsList: [],
   letterCheck: function letterCheck(e) {
 
     var target = e.target,
       letter = target.value,
       checkElem = $(target)
     ;
+    // Les lettres de l'alphabet cochées/sécochées sont stockées dans un array
+    // ça servira pour les filtres
     if( checkElem.is(':checked') ) {
+      // on ajoute
       this.$lettersList.push( letter );
     } else {
+      // on retire de la liste
       this.$lettersList = _.without(this.$lettersList, letter);
     }
 
-    console.log( this.$lettersList );
+    //console.log( this.$lettersList );
   },
-  // Chargement initial des apps
-  /*fetchApps: function fetchApps() {
+  craftCheck: function craftCheck(e) {
+
+    var target = e.target,
+      checkElem = $(target),
+      craft = checkElem.data('craft')
+    ;
+    // Les ID métiers cochées/sécochées sont stockées dans un array
+    // ça servira pour les filtres
+    if( checkElem.is(':checked') ) {
+      // on ajoute
+      this.$craftsList.push( craft );
+    } else {
+      // on retire de la liste
+      this.$craftsList = _.without(this.$craftsList, craft);
+    }
+
+    //console.log('craft', this.$craftsList );
+  },
+  categoryCheck: function categoryCheck(e) {
+
+    var target = e.target,
+      checkElem = $(target),
+      category = checkElem.data('category')
+    ;
+    // Les ID catégories cochées/sécochées sont stockées dans un array
+    // ça servira pour les filtres
+    if( checkElem.is(':checked') ) {
+      // on ajoute
+      this.$categoriesList.push( category );
+    } else {
+      // on retire de la liste
+      this.$categoriesList = _.without(this.$categoriesList, category);
+    }
+
+    //console.log('categ', this.$categoriesList );
+  },
+  // Chargement initial des filtres
+  fetchFilters: function fetchFilters() {
     if(!connectivity.isOnline()) return;
 
     // on vide la liste
-    this.apps = [];
-    this.renderApps();
+    this.filters = [];
+    this.renderFilters();
 
-    var that = this;
+    /*var that = this;
     locSvc.getCurrentLocation(function(lt, lg) {
       that.$el.find('#geoloc').text(lt.toFixed(5) + ' ' + lg.toFixed(5));
       poiSvc.lookupPlaces(lt, lg, function(places) {
@@ -63,13 +116,14 @@ module.exports = View.extend({
         that.places = places;
         that.renderPlaces();
       });
-    });
+    });*/
   },
-  renderApps: function renderApps() {
-    this.$el.find('#apps').html(
-      this.getRenderData().appList
+  renderFilters: function renderFilters() {
+    this.$el.find('#filters').html(
+      this.getRenderData().filters
     );
-  },*/
+
+  },
   //selectApp: function selectApp(e) {
     /*
     console.log(this);

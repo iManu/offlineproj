@@ -1,10 +1,30 @@
 <div class="Nav__left">
   <ul class="Nav__filters" role="list">
-    <li role="list-item">
+    <li class="Filters" role="list-item">
       <button>Nos Métiers</button>
+      <ul class="Filters__list Filters__list--crafts" role="list">
+        {{#each filterCrafts}}
+          <li role="list-item">
+            <input type="checkbox" id="craft-{{this.id}}" class="Filters__input js-check-craft" data-craft="{{this.id}}">
+            <label for="craft-{{this.id}}" class="Filters__label">
+              {{this.item}}
+            </label>
+          </li>
+        {{/each}}
+      </ul>
     </li>
-    <li role="list-item">
+    <li class="Filters" role="list-item">
       <button>Catégories</button>
+      <ul class="Filters__list Filters__list--category" role="list">
+        {{#each filterCategories}}
+          <li role="list-item">
+            <input type="checkbox" id="category-{{this.id}}" class="Filters__input js-check-category" data-category="{{this.id}}">
+            <label for="category-{{this.id}}" class="Filters__label">
+              {{this.item}}
+            </label>
+          </li>
+        {{/each}}
+      </ul>
     </li>
     <li role="list-item">
       <input type="search" placeholder="Rechercher" role="search">

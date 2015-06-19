@@ -15,7 +15,8 @@
 //var Apps = require('models/apps_list');
 
 // On a évidemment besoin de la collection pour l'instancier
-var AppsListCollection = require('models/collection');
+var FiltersCollection = require('models/filters_collection');
+var AppsListCollection = require('models/apps_collection');
 
 // …et on est *très* sensibles à la connectivité, pour déterminer
 // quand mettre en attente les synchros et quand réconcilier avec
@@ -24,11 +25,15 @@ var AppsListCollection = require('models/collection');
 
 // Instantiations de la collection Backbone et du datastore
 // persistent côté client.
-var collection = new AppsListCollection();
-var localStore = new Lawnchair({ name: 'appslist' }, $.noop);
+var filters_collection = new FiltersCollection();
+var apps_collection = new AppsListCollection();
+
+var localStore_apps = new Lawnchair({ name: 'appslist' }, $.noop);
+var localStore_filters = new Lawnchair({ name: 'filters' }, $.noop);
 
 // popule localstore
-collection.fetch({ reset: true });
+filters_collection.fetch({ reset: true });
+apps_collection.fetch({ reset: true });
 
 // Une des deux fonctions exposées par l'API : enregistre un nouveau
 // check-in.
@@ -49,14 +54,20 @@ collection.fetch({ reset: true });
 // dans son ensemble (utilisé principalement au lancement et suite à
 // une réconciliation client/serveur).
 function getAppsList() {
-  return collection.toJSON();
+  return apps_collection.toJSON();
+}
+function getFilters() {
+  return filters_collection.toJSON();
 }
 
 // Cette fonction interne est appelée au chargement pour initialiser
 // la collection Backbone sur la base du datastore persistent côté client.
 function initialLoad() {
-  localStore.all(function(appslist) {
-    collection.reset(appslist);
+  localStore_apps.all(function(appslist) {
+    apps_collection.reset(appslist);
+  });
+  localStore_filters.all(function(filters) {
+    filters_collection.reset(filters);
   });
 }
 
@@ -108,11 +119,17 @@ function initialLoad() {
 // finalisée.  On remplace alors le datastore client persistent
 // et on publie un événement app-wide adapté pour que la vue d'historique
 // se rafraîchisse complètement.
-collection.on('reset', function() {
-  localStore.nuke(function() {
-    localStore.batch(collection.toJSON());
+apps_collection.on('reset', function() {
+  localStore_apps.nuke(function() {
+    localStore_apps.batch(apps_collection.toJSON());
   });
   Backbone.Mediator.publish('appslist:reset');
+});
+filters_collection.on('reset', function() {
+  localStore_filters.nuke(function() {
+    localStore_filters.batch(filters_collection.toJSON());
+  });
+  Backbone.Mediator.publish('filters:reset');
 });
 
 // Ajout d'un checkin à la collection : ajouter au datastore client
@@ -146,5 +163,6 @@ initialLoad();
 
 module.exports = {
   //addAppsList: addAppsList,
-  getAppsList: getAppsList
+  getAppsList: getAppsList,
+  getFilters: getFilters
 };

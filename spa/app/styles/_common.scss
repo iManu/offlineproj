@@ -29,6 +29,12 @@ body {
   }
 }
 
+::selection {
+    color: colors('basic', 'white');
+    background: colors('menu', 'bg', 'global');
+    text-shadow: none
+}
+
 label,
 input[type="checkbox"],
 input[type="radio"] {
@@ -109,6 +115,7 @@ $alphawidth-desk: 66px;
     	background-color: lighten(colors('menu', 'bg', 'sub'), 3%);
     }
     &:checked ~ .Alphabet__label {
+      //font-weight: bold;
       color: colors('menu', 'button', 'normal');
     }
   }
