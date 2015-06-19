@@ -3,17 +3,17 @@
     "crafts" : [
       { "id": 1, "item": "Premier métier" },
       { "id": 2, "item": "Deuxième métier" },
-      { "id": 3, "item": "etc" }
+      { "id": 3, "item": "etcetcetcetcetcetc" }
     ],
     "categories" : [
       { "id": 1, "item": "Première catégorie" },
       { "id": 2, "item": "Deuxième catégorie" },
-      { "id": 3, "item": "etc" }
+      { "id": 3, "item": "etcetcetcetcetcetc" }
     ],
     "actions" : [
       { "id": 1, "item": "Première catégorie" },
       { "id": 2, "item": "Deuxième catégorie" },
-      { "id": 3, "item": "etc" }
+      { "id": 3, "item": "etcetcetcetcetcetc" }
     ]
   }
 ]

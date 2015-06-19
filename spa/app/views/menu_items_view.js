@@ -22,7 +22,10 @@ module.exports = View.extend({
     //'submit': 'checkIn'
     'click .js-check-letter': 'letterCheck',
     'click .js-check-craft': 'craftCheck',
-    'click .js-check-category': 'categoryCheck'
+    'click .js-check-category': 'categoryCheck',
+    'keyup .js-search': 'searchBox',
+    'click .js-craft-button': 'toggleFilterList',
+    'click .js-category-button': 'toggleFilterList'
   },
   getRenderData: function menuItemsGetRenderData() {
     var filters =  store.getFilters(),
@@ -46,6 +49,14 @@ module.exports = View.extend({
   $craftsList: [],
   $categoriesList: [],
   $actionsList: [],
+  toggleFilterList : function toggleFilterList(e) {
+    var target = e.target,
+      buttonElem = $(target),
+      listElem = buttonElem.siblings('.Filters__list')
+    ;
+    console.log(listElem)
+    listElem[ ( listElem.hasClass('is-open') ? 'remove' : 'add' ) + 'Class' ]('is-open');
+  },
   letterCheck: function letterCheck(e) {
 
     var target = e.target,
@@ -63,6 +74,14 @@ module.exports = View.extend({
     }
 
     //console.log( this.$lettersList );
+  },
+  searchBox: function searchBox(e) {
+    var target = e.target,
+      searchElem = $(target),
+      research = searchElem.val()
+    ;
+
+    console.log('research: ', research);
   },
   craftCheck: function craftCheck(e) {
 
