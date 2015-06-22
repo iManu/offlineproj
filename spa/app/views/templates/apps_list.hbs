@@ -1,5 +1,6 @@
 {{#each .}}
-<li class="{{extra_class}}">
+{{#if is-active}}
+<li class="Isogrid-item{{#each craft}} craft-{{this}}{{/each}}{{#each category}} category-{{this}}{{/each}} letter-{{first_letter title}}">
   <div class="icon"><img class="img-responsive" src="{{folder}}/{{icon}}"></div>
   <div class="details">
     <strong title="{{title}}">{{title}}</strong>
@@ -16,4 +17,5 @@
     {{/if}}
   </div>
 </li>
+{{/if}}
 {{/each}}

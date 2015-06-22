@@ -3,13 +3,13 @@
     "id": "randomgenerateduniquelongkeyforthisapp",
     "is-active": true,
     "folder": "app_001",
-    "icon": "icon.jpg",
+    "icon": "icon.png",
     "title": "Application name",
     "baseline": "Impressive app to make coffee",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
 
     "pictos": {
-      "onpremise": true,
+      "gcn": true,
       "smb": false
     },
     "craft": [2,3],
@@ -38,7 +38,7 @@
     "id": "randomgenerateduniquelongkeyforthisapp2",
     "is-active": true,
     "folder": "app_002",
-    "icon": "icon.jpg",
+    "icon": "icon.png",
     "title": "Other Application",
     "baseline": "Null app serve nothing",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
@@ -46,6 +46,41 @@
     "pictos": {
       "onpremise": true,
       "smb": false
+    },
+    "craft": [2,3],
+    "category": [1],
+    "action": [3],
+
+    "details": {
+      "title": "Médias",
+      "list": [
+        "Detail 01 described in one line",
+        "Detail 02 described in another line",
+        "Detail 03 described in one more line"
+      ]
+    },
+    "visuals": [
+      "visual_001.jpg",
+      "visual_002.jpg",
+      "visual_003.jpg",
+      "visual_004.jpg"
+    ],
+
+    "url": "http://adress.com/to/app"
+
+  },
+  {
+    "id": "randomgenerateduniquelongkeyforthisapp3",
+    "is-active": true,
+    "folder": "app_003",
+    "icon": "icon.png",
+    "title": "Another Application",
+    "baseline": "Null app serve nothing",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
+
+    "pictos": {
+      "onpremise": true,
+      "smb": true
     },
     "craft": [2,3],
     "category": [1],

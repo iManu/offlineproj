@@ -17,6 +17,20 @@ module.exports = View.extend({
   // Le template principal
   template: require('./templates/apps'),
 
+  afterRender: function () {
+
+    // Isotope init (http://isotope.metafizzy.co/)
+    setTimeout(function() {
+      $('.Isogrid').isotope({
+        // options
+        itemSelector: '.Isogrid-item',
+        //layoutMode: 'fitRows',
+        percentPosition: true
+      });
+    }, 1);
+
+
+  },
   // Convention définie par notre classe mère View pour render : on
   // peuple le template principal avec ces données.
   getRenderData: function() {
