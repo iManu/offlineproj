@@ -41,8 +41,12 @@ module.exports = View.extend({
       filterActions: filterActions
     };
   },
+  /*initialize: function() {
+
+  },*/
   afterRender: function menuItemsAfterRender() {
     this.fetchFilters();
+    this.$isogrid = $('.Isogrid');
   },
   $submitter: null,
   $lettersList: [],
@@ -59,12 +63,12 @@ module.exports = View.extend({
     listElem[ ( listElem.hasClass('is-open') ? 'remove' : 'add' ) + 'Class' ]('is-open');
   },
   filterIsotope: function filterIsotope() {
-    // Ici les filtres choisis sont cancatenes et sont envoyes a isotope:filter
+    // Ici les filtres choisis sont concatenes et sont envoyes a isotope:filter
     var
       that = this,
       filterValue = ''
     ;
-    this.$isogrid = $('.Isogrid');
+
 
     if( this.$craftsList.length > 0 ) {
       filterValue += this.$craftsList.join();
@@ -76,16 +80,17 @@ module.exports = View.extend({
       filterValue += this.$lettersList.join();
     }
 
-    console.log(filterValue);
+    //console.log(filterValue);
 
-    setTimeout(function() {
+    //setTimeout(function() {
       // setTimeout : we need a dom repaint !
-      that.$isogrid.isotope({ filter: filterValue }); console.log(that.$isogrid.data('isotope'))
+      that.$isogrid.isotope({ filter: filterValue });
+      //console.log(that.$isogrid.data('isotope'))
       if ( !that.$isogrid.data('isotope').filteredItems.length ) {
         // Aucun résultats !
-        console.log('nothing');
+        alert('nothing');
       }
-    },1);
+    //},1);
   },
   letterCheck: function letterCheck(e) {
 
@@ -106,14 +111,24 @@ module.exports = View.extend({
     this.filterIsotope();
     //console.log( this.$lettersList );
   },
-  searchBox: function searchBox(e) {
+  searchBox: _.debounce(function searchBox(e) {
     var target = e.target,
       searchElem = $(target),
-      research = searchElem.val()
+      research = searchElem.val(),
+      qsRegex = new RegExp( research, 'gi' )
     ;
 
-    console.log('research: ', research);
-  },
+    //console.log('research: ', research);
+    //console.log(qsRegex, this.$isogrid.find('.Isogrid__title').text().match(  ) );
+
+    this.$isogrid.isotope({
+      filter: function() {
+        return qsRegex ? $(this).find('.Isogrid__title').text().match( qsRegex ) : true;
+      }
+    });
+
+
+  }, 500),
   craftCheck: function craftCheck(e) {
 
     var that = this,

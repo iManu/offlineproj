@@ -20,7 +20,7 @@ module.exports = View.extend({
   afterRender: function () {
 
     // Isotope init (http://isotope.metafizzy.co/)
-    setTimeout(function() {
+    //setTimeout(function() {
       // setTimeout : we need a dom repaint !
       $('.Isogrid').isotope({
         // options
@@ -39,7 +39,7 @@ module.exports = View.extend({
         },
         percentPosition: true
       });
-    }, 1);
+    //}, 1);
 
 
   },
