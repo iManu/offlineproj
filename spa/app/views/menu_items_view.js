@@ -3,7 +3,8 @@
  */
 var View = require('./view'),
   store = require('lib/persistence'),
-  connectivity = require('lib/connectivity')
+  connectivity = require('lib/connectivity'),
+  a11y = require('lib/a11y')
 ;
 
 module.exports = View.extend({
@@ -85,6 +86,31 @@ module.exports = View.extend({
       }
     //},1);
   },
+  elemCheck: function listCheck(e, elemName) {
+  	var that = this,
+      target = e.target,
+      checkElem = $(target),
+      id = (elemName === 'letter') ? target.value : checkElem.data(elemName)
+    ;
+    //console.log(checkElem)
+    // Les ID cochées/sécochées sont stockées dans un array
+    // ça servira pour les filtres
+    if( checkElem.is(':checked') ) {
+      // on ajoute
+      this.$idList[elemName].push( '.' + elemName + '-' + id );
+
+      //checkElem.attr('aria-checked', true);
+    } else {
+      // on retire de la liste
+      this.$idList[elemName] = _.without(this.$idList[elemName], '.' + elemName + '-' + id);
+      // a11y
+      //checkElem.attr('aria-checked', false);
+    }
+    // a11y
+    a11y.checkService(checkElem);
+    //
+    this.filterIsotope();
+  },
   searchBox: _.debounce(function searchBox(e) {
     var target = e.target,
       searchElem = $(target),
@@ -101,23 +127,6 @@ module.exports = View.extend({
       }
     });
   }, 250),
-  elemCheck: function listCheck(e, elemName) {
-  	var that = this,
-      target = e.target,
-      checkElem = $(target),
-      id = (elemName === 'letter') ? target.value : checkElem.data(elemName)
-    ;
-    // Les ID cochées/sécochées sont stockées dans un array
-    // ça servira pour les filtres
-    if( checkElem.is(':checked') ) {
-      // on ajoute
-      this.$idList[elemName].push( '.' + elemName + '-' + id );
-    } else {
-      // on retire de la liste
-      this.$idList[elemName] = _.without(this.$idList[elemName], '.' + elemName + '-' + id);
-    }
-    this.filterIsotope();
-  },
   // Chargement initial des filtres
   fetchFilters: function fetchFilters() {
     if(!connectivity.isOnline()) return;

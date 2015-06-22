@@ -1,3 +1,8 @@
+// Connectivity
+// ========================
+
+'use strict';
+
 // par defaut OK, on Fake la fonction
 exports.isOnline = function() { return true; };
 // si la propriété existe, on renvoi la bonne value

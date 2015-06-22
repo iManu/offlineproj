@@ -1,3 +1,8 @@
+// Router
+// ========================
+
+'use strict';
+
 // Le routeur le plus basique du monde…
 
 var application = require('application');

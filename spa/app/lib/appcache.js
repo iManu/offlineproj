@@ -1,6 +1,7 @@
-/**
- * = appcache.js
- */
+// Appcache
+// ========================
+
+'use strict';
 
 if('applicationCache' in window) {
   window.applicationCache.addEventListener('updateready', function () {
