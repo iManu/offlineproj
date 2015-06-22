@@ -49,13 +49,34 @@ module.exports = View.extend({
   $craftsList: [],
   $categoriesList: [],
   $actionsList: [],
+  $isogrid: {},
   toggleFilterList : function toggleFilterList(e) {
     var target = e.target,
       buttonElem = $(target),
       listElem = buttonElem.siblings('.Filters__list')
     ;
-    console.log(listElem)
+    //console.log(listElem)
     listElem[ ( listElem.hasClass('is-open') ? 'remove' : 'add' ) + 'Class' ]('is-open');
+  },
+  filterIsotope: function filterIsotope() {
+    var
+      that = this
+      filterValue = '',
+      this.$isogrid = $('.Isogrid')
+    ;
+    if( this.$craftsList.length > 0 ) {
+      filterValue += this.$craftsList.join();
+    }
+    if( this.$categoriesList.length > 0 ) {
+      filterValue += this.$categoriesList.join();
+    }
+    if( this.$lettersList.length > 0 ) {
+      filterValue += this.$lettersList.join();
+    }
+    console.log(filterValue)
+    setTimeout(function() {
+      that.$isogrid.isotope({ filter: filterValue });
+    },1);
   },
   letterCheck: function letterCheck(e) {
 
@@ -67,12 +88,13 @@ module.exports = View.extend({
     // ça servira pour les filtres
     if( checkElem.is(':checked') ) {
       // on ajoute
-      this.$lettersList.push( letter );
+      this.$lettersList.push( '.letter-' + letter );
     } else {
       // on retire de la liste
-      this.$lettersList = _.without(this.$lettersList, letter);
+      this.$lettersList = _.without(this.$lettersList, '.letter-' + letter);
     }
 
+    this.filterIsotope();
     //console.log( this.$lettersList );
   },
   searchBox: function searchBox(e) {
@@ -85,7 +107,8 @@ module.exports = View.extend({
   },
   craftCheck: function craftCheck(e) {
 
-    var target = e.target,
+    var that = this,
+      target = e.target,
       checkElem = $(target),
       craft = checkElem.data('craft')
     ;
@@ -93,12 +116,13 @@ module.exports = View.extend({
     // ça servira pour les filtres
     if( checkElem.is(':checked') ) {
       // on ajoute
-      this.$craftsList.push( craft );
+      this.$craftsList.push( '.craft-' + craft );
     } else {
       // on retire de la liste
-      this.$craftsList = _.without(this.$craftsList, craft);
+      this.$craftsList = _.without(this.$craftsList, '.craft-' + craft);
     }
 
+    this.filterIsotope();
     //console.log('craft', this.$craftsList );
   },
   categoryCheck: function categoryCheck(e) {
@@ -111,12 +135,13 @@ module.exports = View.extend({
     // ça servira pour les filtres
     if( checkElem.is(':checked') ) {
       // on ajoute
-      this.$categoriesList.push( category );
+      this.$categoriesList.push( '.category-' + category );
     } else {
       // on retire de la liste
-      this.$categoriesList = _.without(this.$categoriesList, category);
+      this.$categoriesList = _.without(this.$categoriesList, '.category-' + category);
     }
 
+    this.filterIsotope();
     //console.log('categ', this.$categoriesList );
   },
   // Chargement initial des filtres
