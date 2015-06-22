@@ -18,11 +18,10 @@ module.exports = View.extend({
     //'click header button': 'fetchApps',
     // backbone fait automatiquement de la délégation d'évènements
     // correspond à $('#places').on('click', 'li', this.selectPlace)
-    //'click #places li': 'selectPlace',
     //'submit': 'checkIn'
-    'click .js-check-letter': 'letterCheck',
-    'click .js-check-craft': 'craftCheck',
-    'click .js-check-category': 'categoryCheck',
+    'click .js-check-letter': function(e) { this.elemCheck(e, 'letter') },
+    'click .js-check-craft': function(e) { this.elemCheck(e, 'craft') },
+    'click .js-check-category': function(e) { this.elemCheck(e, 'category') },
     'keyup .js-search': 'searchBox',
     'click .js-craft-button': 'toggleFilterList',
     'click .js-category-button': 'toggleFilterList'
@@ -41,18 +40,12 @@ module.exports = View.extend({
       filterActions: filterActions
     };
   },
-  /*initialize: function() {
-
-  },*/
   afterRender: function menuItemsAfterRender() {
     this.fetchFilters();
     this.$isogrid = $('.Isogrid');
   },
   $submitter: null,
-  $lettersList: [],
-  $craftsList: [],
-  $categoriesList: [],
-  $actionsList: [],
+  $idList: {'craft':[], 'category': [], 'action':[], 'letter':[]},
   $isogrid: {},
   toggleFilterList : function toggleFilterList(e) {
     var target = e.target,
@@ -70,14 +63,14 @@ module.exports = View.extend({
     ;
 
 
-    if( this.$craftsList.length > 0 ) {
-      filterValue += this.$craftsList.join();
+    if( this.$idList.craft.length > 0 ) {
+      filterValue += this.$idList.craft.join();
     }
-    if( this.$categoriesList.length > 0 ) {
-      filterValue += this.$categoriesList.join();
+    if( this.$idList.category.length > 0 ) {
+      filterValue += this.$idList.category.join();
     }
-    if( this.$lettersList.length > 0 ) {
-      filterValue += this.$lettersList.join();
+    if( this.$idList.letter.length > 0 ) {
+      filterValue += this.$idList.letter.join();
     }
 
     //console.log(filterValue);
@@ -92,25 +85,6 @@ module.exports = View.extend({
       }
     //},1);
   },
-  letterCheck: function letterCheck(e) {
-
-    var target = e.target,
-      letter = target.value,
-      checkElem = $(target)
-    ;
-    // Les lettres de l'alphabet cochées/sécochées sont stockées dans un array
-    // ça servira pour les filtres
-    if( checkElem.is(':checked') ) {
-      // on ajoute
-      this.$lettersList.push( '.letter-' + letter );
-    } else {
-      // on retire de la liste
-      this.$lettersList = _.without(this.$lettersList, '.letter-' + letter);
-    }
-
-    this.filterIsotope();
-    //console.log( this.$lettersList );
-  },
   searchBox: _.debounce(function searchBox(e) {
     var target = e.target,
       searchElem = $(target),
@@ -123,50 +97,26 @@ module.exports = View.extend({
 
     this.$isogrid.isotope({
       filter: function() {
-        return qsRegex ? $(this).find('.Isogrid__title').text().match( qsRegex ) : true;
+        return qsRegex ? $(this).find('.js-sort-title').text().match( qsRegex ) : true;
       }
     });
-
-
-  }, 500),
-  craftCheck: function craftCheck(e) {
-
-    var that = this,
+  }, 250),
+  elemCheck: function listCheck(e, elemName) {
+  	var that = this,
       target = e.target,
       checkElem = $(target),
-      craft = checkElem.data('craft')
+      id = (elemName === 'letter') ? target.value : checkElem.data(elemName)
     ;
-    // Les ID métiers cochées/sécochées sont stockées dans un array
+    // Les ID cochées/sécochées sont stockées dans un array
     // ça servira pour les filtres
     if( checkElem.is(':checked') ) {
       // on ajoute
-      this.$craftsList.push( '.craft-' + craft );
+      this.$idList[elemName].push( '.' + elemName + '-' + id );
     } else {
       // on retire de la liste
-      this.$craftsList = _.without(this.$craftsList, '.craft-' + craft);
+      this.$idList[elemName] = _.without(this.$idList[elemName], '.' + elemName + '-' + id);
     }
-
     this.filterIsotope();
-    //console.log('craft', this.$craftsList );
-  },
-  categoryCheck: function categoryCheck(e) {
-
-    var target = e.target,
-      checkElem = $(target),
-      category = checkElem.data('category')
-    ;
-    // Les ID catégories cochées/sécochées sont stockées dans un array
-    // ça servira pour les filtres
-    if( checkElem.is(':checked') ) {
-      // on ajoute
-      this.$categoriesList.push( '.category-' + category );
-    } else {
-      // on retire de la liste
-      this.$categoriesList = _.without(this.$categoriesList, '.category-' + category);
-    }
-
-    this.filterIsotope();
-    //console.log('categ', this.$categoriesList );
   },
   // Chargement initial des filtres
   fetchFilters: function fetchFilters() {

@@ -20,15 +20,15 @@ module.exports = View.extend({
   afterRender: function () {
 
     // Isotope init (http://isotope.metafizzy.co/)
-    //setTimeout(function() {
+    setTimeout(function() {
       // setTimeout : we need a dom repaint !
       $('.Isogrid').isotope({
         // options
-        itemSelector: '.Isogrid-item',
+        itemSelector: '.js-item-selector',
         layoutMode: 'fitRows',
         //containerStyle: null,
         getSortData: {
-          name: '.Isogrid__title'
+          name: '.js-sort-title'
         },
         sortBy: 'name',
         hiddenStyle: {
@@ -39,7 +39,7 @@ module.exports = View.extend({
         },
         percentPosition: true
       });
-    //}, 1);
+    }, 1);
 
 
   },
