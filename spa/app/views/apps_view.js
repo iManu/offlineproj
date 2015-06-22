@@ -21,10 +21,22 @@ module.exports = View.extend({
 
     // Isotope init (http://isotope.metafizzy.co/)
     setTimeout(function() {
+      // setTimeout : we need a dom repaint !
       $('.Isogrid').isotope({
         // options
         itemSelector: '.Isogrid-item',
-        //layoutMode: 'fitRows',
+        layoutMode: 'fitRows',
+        //containerStyle: null,
+        getSortData: {
+          name: '.Isogrid__title'
+        },
+        sortBy: 'name',
+        hiddenStyle: {
+          opacity: 0
+        },
+        visibleStyle: {
+          opacity: 1
+        },
         percentPosition: true
       });
     }, 1);

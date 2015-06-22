@@ -59,11 +59,13 @@ module.exports = View.extend({
     listElem[ ( listElem.hasClass('is-open') ? 'remove' : 'add' ) + 'Class' ]('is-open');
   },
   filterIsotope: function filterIsotope() {
+    // Ici les filtres choisis sont cancatenes et sont envoyes a isotope:filter
     var
-      that = this
-      filterValue = '',
-      this.$isogrid = $('.Isogrid')
+      that = this,
+      filterValue = ''
     ;
+    this.$isogrid = $('.Isogrid');
+
     if( this.$craftsList.length > 0 ) {
       filterValue += this.$craftsList.join();
     }
@@ -73,9 +75,16 @@ module.exports = View.extend({
     if( this.$lettersList.length > 0 ) {
       filterValue += this.$lettersList.join();
     }
-    console.log(filterValue)
+
+    console.log(filterValue);
+
     setTimeout(function() {
-      that.$isogrid.isotope({ filter: filterValue });
+      // setTimeout : we need a dom repaint !
+      that.$isogrid.isotope({ filter: filterValue }); console.log(that.$isogrid.data('isotope'))
+      if ( !that.$isogrid.data('isotope').filteredItems.length ) {
+        // Aucun résultats !
+        console.log('nothing');
+      }
     },1);
   },
   letterCheck: function letterCheck(e) {
