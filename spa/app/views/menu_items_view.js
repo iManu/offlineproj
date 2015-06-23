@@ -46,6 +46,7 @@ module.exports = View.extend({
   afterRender: function menuItemsAfterRender() {
     this.fetchFilters();
     this.$isogrid = $('.Isogrid');
+    this.$nothing = $('.nothing');
 
     var that = this;
     // Isotope init (http://isotope.metafizzy.co/)
@@ -84,6 +85,7 @@ module.exports = View.extend({
   $submitter: null,
   $idList: {'craft':[], 'category': [], 'action':[], 'letter':[]},
   $isogrid: {},
+  $nothing: {},
   toggleFilterList : function toggleFilterList(e) {
     var target = e.target,
       buttonElem = $(target),
@@ -114,7 +116,7 @@ module.exports = View.extend({
     this.$isogrid.isotope();
     if ( !this.$isogrid.data('isotope').filteredItems.length ) {
       // Aucun résultats !
-      alert('nothing');
+      this.nothingFound();
     }
 
     //console.log(filterValue);
@@ -165,7 +167,7 @@ module.exports = View.extend({
     this.$isogrid.isotope();
     if ( !this.$isogrid.data('isotope').filteredItems.length ) {
       // Aucun résultats !
-      alert('nothing');
+      this.nothingFound();
     }
 
     //console.log('research: ', research);
@@ -203,6 +205,11 @@ module.exports = View.extend({
     );
 
   },
+  nothingFound: function nothingFound() {
+
+    this.$nothing[ (this.$nothing.css('display') === 'none') ? 'fadeIn' : 'fadeOut' ]();
+
+  }
   //selectApp: function selectApp(e) {
     /*
     console.log(this);
