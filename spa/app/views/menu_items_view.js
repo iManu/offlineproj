@@ -73,7 +73,7 @@ module.exports = View.extend({
 
         filter: function() {
           var $this = $(this);
-          var searchResult = that.qsRegex ? $this.text().match( that.qsRegex ) : true;
+          var searchResult = that.qsRegex ? $this.find('.js-sort-title, time').text().match( that.qsRegex ) : true;
           var buttonResult = that.buttonFilter ? $this.is( that.buttonFilter ) : true;
           return searchResult && buttonResult;
         }
