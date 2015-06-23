@@ -123,7 +123,9 @@ module.exports = View.extend({
 
     this.$isogrid.isotope({
       filter: function() {
+
         return qsRegex ? $(this).find('.js-sort-title').text().match( qsRegex ) : true;
+
       }
     });
   }, 250),
