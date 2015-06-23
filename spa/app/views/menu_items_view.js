@@ -116,7 +116,7 @@ module.exports = View.extend({
     this.$isogrid.isotope();
     if ( !this.$isogrid.data('isotope').filteredItems.length ) {
       // Aucun résultats !
-      this.nothingFound();
+      this.nothingFound('show');
     }
 
     //console.log(filterValue);
@@ -132,6 +132,7 @@ module.exports = View.extend({
     //},1);*/
   },
   elemCheck: function listCheck(e, elemName) {
+  	this.nothingFound('hide');
   	var that = this,
       target = e.target,
       checkElem = $(target),
@@ -157,17 +158,19 @@ module.exports = View.extend({
     this.filterIsotope();
   },
   searchBox: _.debounce(function searchBox(e) {
+  	this.nothingFound('hide');
     var target = e.target,
       searchElem = $(target),
-      research = searchElem.val(),
-      qsRegex = new RegExp( research, 'gi' )
+      research = searchElem.val()/*,
+      qsRegex = new RegExp( research, 'gi' )*/
     ;
 
     this.qsRegex = new RegExp( research, 'gi' );
     this.$isogrid.isotope();
+    //console.log('searchbox: ', this.$isogrid.data('isotope'))
     if ( !this.$isogrid.data('isotope').filteredItems.length ) {
       // Aucun résultats !
-      this.nothingFound();
+      this.nothingFound('show');
     }
 
     //console.log('research: ', research);
@@ -205,9 +208,9 @@ module.exports = View.extend({
     );
 
   },
-  nothingFound: function nothingFound() {
+  nothingFound: function nothingFound(state) {
 
-    this.$nothing[ (this.$nothing.css('display') === 'none') ? 'fadeIn' : 'fadeOut' ]();
+    this.$nothing[ (state === 'show') ? 'fadeIn' : 'fadeOut' ]();
 
   }
   //selectApp: function selectApp(e) {
