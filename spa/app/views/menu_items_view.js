@@ -41,9 +41,45 @@ module.exports = View.extend({
       filterActions: filterActions
     };
   },
+  qsRegex:'',
+  buttonFilter:'',
   afterRender: function menuItemsAfterRender() {
     this.fetchFilters();
     this.$isogrid = $('.Isogrid');
+
+    var that = this;
+    // Isotope init (http://isotope.metafizzy.co/)
+    // http://codepen.io/desandro/pen/mCdbD
+    // http://codepen.io/gpetrioli/pen/yqcvd
+    setTimeout(function() {
+      // setTimeout : we need a dom repaint !
+      that.$isogrid.isotope({
+        // options
+        itemSelector: '.js-item-selector',
+        layoutMode: 'fitRows',
+        //containerStyle: null,
+        getSortData: {
+          name: '.js-sort-title'
+        },
+        sortBy: 'name',
+        hiddenStyle: {
+          opacity: 0
+        },
+        visibleStyle: {
+          opacity: 1
+        },
+        percentPosition: true,
+
+        filter: function() {
+          var $this = $(this);
+          var searchResult = that.qsRegex ? $this.text().match( that.qsRegex ) : true;
+          var buttonResult = that.buttonFilter ? $this.is( that.buttonFilter ) : true;
+          return searchResult && buttonResult;
+        }
+      });
+    }, 1);
+
+
   },
   $submitter: null,
   $idList: {'craft':[], 'category': [], 'action':[], 'letter':[]},
@@ -74,8 +110,15 @@ module.exports = View.extend({
       filterValue += this.$idList.letter.join();
     }
 
-    //console.log(filterValue);
+    this.buttonFilter = filterValue;
+    this.$isogrid.isotope();
+    if ( !this.$isogrid.data('isotope').filteredItems.length ) {
+      // Aucun résultats !
+      alert('nothing');
+    }
 
+    //console.log(filterValue);
+/*
     //setTimeout(function() {
       // setTimeout : we need a dom repaint !
       that.$isogrid.isotope({ filter: filterValue });
@@ -84,7 +127,7 @@ module.exports = View.extend({
         // Aucun résultats !
         alert('nothing');
       }
-    //},1);
+    //},1);*/
   },
   elemCheck: function listCheck(e, elemName) {
   	var that = this,
@@ -118,16 +161,23 @@ module.exports = View.extend({
       qsRegex = new RegExp( research, 'gi' )
     ;
 
+    this.qsRegex = new RegExp( research, 'gi' );
+    this.$isogrid.isotope();
+    if ( !this.$isogrid.data('isotope').filteredItems.length ) {
+      // Aucun résultats !
+      alert('nothing');
+    }
+
     //console.log('research: ', research);
     //console.log(qsRegex, this.$isogrid.find('.Isogrid__title').text().match(  ) );
-
+/*
     this.$isogrid.isotope({
       filter: function() {
 
         return qsRegex ? $(this).find('.js-sort-title').text().match( qsRegex ) : true;
 
       }
-    });
+    });*/
   }, 250),
   // Chargement initial des filtres
   fetchFilters: function fetchFilters() {

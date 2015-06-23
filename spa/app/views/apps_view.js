@@ -18,6 +18,7 @@ module.exports = View.extend({
   template: require('./templates/apps'),
 
   afterRender: function () {
+/*
 
     // Isotope init (http://isotope.metafizzy.co/)
     setTimeout(function() {
@@ -37,10 +38,16 @@ module.exports = View.extend({
         visibleStyle: {
           opacity: 1
         },
-        percentPosition: true
+        percentPosition: true,
+        filter: function() {
+          var $this = $(this);
+          var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
+          var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
+          return searchResult && buttonResult;
+        }
       });
     }, 1);
-
+*/
 
   },
   // Convention définie par notre classe mère View pour render : on
