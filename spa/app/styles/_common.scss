@@ -144,14 +144,22 @@ $alphawidth-desk: 66px;
     user-select: none;
     width: 100%;
     span {
+    	display: inline-block;
       vertical-align: middle;
     }
     &--check {
-      display: none;
-      padding-left: 10px;
+      //display: none;
+      opacity: 0;
+      transform: translate3d(0, 0, 0);
+      transition: all .3s ease-out;
       &.is-list-elem-check {
-        display: inline-block;
+				transform: translate3d(10px, 0, 0);
+        opacity: 1;
       }
+    }
+    transition: background .1s ease-out;
+    &:hover {
+    	background: darken(colors('menu', 'bg', 'sub'), 5.5%);
     }
     &:before {
       content: '';
@@ -229,6 +237,10 @@ $alphawidth-desk: 66px;
       &.is-elem-check {
         display: inline-block;
       }
+    }
+    transition: background .1s ease-out;
+    &:hover {
+    	background: lighten(colors('menu', 'bg', 'sub'), 1%);
     }
     @include grid-media-query(palm) {
       padding-left: 50px;
