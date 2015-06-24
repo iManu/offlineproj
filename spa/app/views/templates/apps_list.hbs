@@ -1,7 +1,7 @@
 {{#each .}}
 {{#if is-active}}
 <li class="Isogrid-item js-item-selector{{#each craft}} craft-{{this}}{{/each}}{{#each category}} category-{{this}}{{/each}} letter-{{first_letter title}}">
-  <div class="icon"><img class="img-responsive" src="{{folder}}/{{icon}}"></div>
+  <div class="icon"><img class="img-responsive" src="{{folder}}/{{icon}}" alt=""></div>
   <div class="details">
     <strong title="{{title}}" class="Isogrid__title js-sort-title">{{title}}</strong>
     <time>{{baseline}}</time>
@@ -9,7 +9,7 @@
 
     <figure>
       <p>big image !</p>
-      <img src="{{folder}}/{{visuals.[0]}}" alt="" style="max-height:200px">
+      <img src="{{folder}}/{{visuals.[0]}}" alt="{{title}}" style="max-height:200px">
     </figure>
 
     {{#if comment}}

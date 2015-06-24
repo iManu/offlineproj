@@ -137,7 +137,6 @@ $alphawidth-desk: 66px;
     color: colors('text', 'filterbtn');
     cursor: pointer;
     height: 60px;
-    outline: colors('menu', 'bg', 'sub');
     position: relative;
     text-align: left;
     text-transform: uppercase;
@@ -160,6 +159,9 @@ $alphawidth-desk: 66px;
     transition: background .1s ease-out;
     &:hover {
     	background: darken(colors('menu', 'bg', 'sub'), 5.5%);
+    }
+    &:active, &:focus {
+    	outline: 1px dotted colors('menu', 'bg', 'sub');
     }
     &:before {
       content: '';
@@ -306,9 +308,38 @@ $alphawidth-desk: 66px;
     transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
 
   }
-
+	&__search {
+		background: colors('menu', 'bg', 'global');
+    color: colors('text', 'filterbtn');
+    height: 60px;
+    text-transform: uppercase;
+    width: 100%;
+    &:active, &:focus {
+    	outline: 1px dotted colors('menu', 'bg', 'sub');
+    }
+    @include grid-media-query(palm) {
+      padding-left: 50px;
+    }
+    @include grid-media-query(lap) {
+      padding-left: 23px;
+    }
+    @include grid-media-query(desk) {
+      padding-left: 30px;
+    }
+	}
 }
-
+::-webkit-input-placeholder {
+   color: colors('text', 'filterbtn');;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: colors('text', 'filterbtn');;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: colors('text', 'filterbtn');;
+}
+:-ms-input-placeholder {
+   color: colors('text', 'filterbtn');;
+}
 
 /**
  * .Wrapper
