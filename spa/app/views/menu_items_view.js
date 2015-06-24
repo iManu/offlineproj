@@ -80,10 +80,12 @@ module.exports = View.extend({
   $nothing: {},
   toggleFilterList : function toggleFilterList(e) {
     var target = e.target,
-      buttonElem = $(target),
-      listElem = buttonElem.siblings('.Filters__list')
+      buttonElem = ( $(target).is('button') ) ? $(target) : $(target).parents('button'),
+      //buttonCheck = buttonElem.find('.js-btn-check'),
+      listElem = buttonElem.siblings('.js-filter-list')
     ;
     listElem[ ( listElem.hasClass('is-open') ? 'remove' : 'add' ) + 'Class' ]('is-open');
+    buttonElem[ ( buttonElem.hasClass('is-check') ? 'remove' : 'add' ) + 'Class' ]('is-check');
   },
   filterIsotope: function filterIsotope() {
     // Ici les filtres choisis sont concatenes et sont envoyes a isotope:filter
@@ -113,17 +115,25 @@ module.exports = View.extend({
   	var that = this,
       target = e.target,
       checkElem = $(target),
-      id = (elemName === 'letter') ? target.value : checkElem.data(elemName)
+      id = (elemName === 'letter') ? target.value : checkElem.data(elemName),
+      spanBtnCheck = $('.js-'+elemName+'-button').find('span'),
+      spanLabelCheck = checkElem.siblings('label').find('span.js-label-check')
     ;
+    //console.log(spanLabelCheck)
     // Les ID cochées/sécochées sont stockées dans un array
     // ça servira pour les filtres
     if( checkElem.is(':checked') ) {
       // on ajoute
       this.$idList[elemName].push( '.' + elemName + '-' + id );
+      spanLabelCheck.addClass('is-elem-check');
+
     } else {
       // on retire de la liste
       this.$idList[elemName] = _.without(this.$idList[elemName], '.' + elemName + '-' + id);
+      spanLabelCheck.removeClass('is-elem-check');
     }
+    // la coche bleue globale
+    spanBtnCheck[ ((this.$idList[elemName].length > 0) ? 'add' : 'remove') + 'Class' ]('is-list-elem-check');
     // a11y
     a11y.checkService(checkElem);
     //

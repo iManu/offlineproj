@@ -21,7 +21,7 @@ body {
   width: 100%;
 	-webkit-font-smoothing: antialiased;
 	//overflow-x: hidden;
-/*
+
   @include grid-media-query(palm) {
     background: colors('basic', 'white') url('../images/bg_body_palm.jpg') 0 0 repeat-y;
   }
@@ -31,7 +31,7 @@ body {
   @include grid-media-query(desk) {
     background: colors('basic', 'white') url('../images/bg_body_desk.jpg') 0 0 repeat-y;
   }
-*/
+
   @include grid-media-query(portable) {
     // black-translucent 20px mobile top extra
     // http://blog.teamtreehouse.com/optimizing-mobile-web-apps-ios
@@ -68,7 +68,7 @@ $alphawidth-desk: 66px;
  * Outside global wrapper
  */
 .Nav {
-	background: colors('menu', 'bg', 'global');
+	//background: colors('menu', 'bg', 'global');
 	width: 100%;
 	height: 100%;
   position: fixed;
@@ -131,6 +131,7 @@ $alphawidth-desk: 66px;
  * .Filters (in .Nav)
  */
 .Filters {
+  user-select: none;
   &__button {
     background: colors('menu', 'bg', 'global');
     color: colors('text', 'filterbtn');
@@ -140,7 +141,18 @@ $alphawidth-desk: 66px;
     position: relative;
     text-align: left;
     text-transform: uppercase;
+    user-select: none;
     width: 100%;
+    span {
+      vertical-align: middle;
+    }
+    &--check {
+      display: none;
+      padding-left: 10px;
+      &.is-list-elem-check {
+        display: inline-block;
+      }
+    }
     &:before {
       content: '';
       bottom: 0;
@@ -159,6 +171,63 @@ $alphawidth-desk: 66px;
       @include grid-media-query(desk) {
         left: 12px;
         width: 175px;
+      }
+    }
+    &:after {
+      content: '\25bc';
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      color: colors('menu', 'bg', 'sub');
+      font-size: 21px;
+      transform: scaleY(0.6) rotate(0deg);
+      transition: transform .2s linear, text-shadow .2s linear;
+      text-shadow: 1px 1px 2px rgba(0,0,0,.6);
+    }
+    &.is-check:after {
+      transform: scaleY(0.6) rotate(-180deg);
+      text-shadow: -1px -1px 2px rgba(0,0,0,.6);
+    }
+    @include grid-media-query(palm) {
+      padding-left: 50px;
+    }
+    @include grid-media-query(lap) {
+      padding-left: 23px;
+    }
+    @include grid-media-query(desk) {
+      padding-left: 30px;
+    }
+  }
+  &__list {
+
+  }
+  &__item {
+
+  }
+  &__input {
+    position: absolute;
+    left: -99999em;
+  }
+  &__label {
+
+    background: colors('menu', 'bg', 'sub');
+    color: colors('text', 'filterbtn');
+    display: block;
+    height: 50px;
+    padding-top: 15px;
+    position: relative;
+    user-select: none;
+    width: 100%;
+    span {
+      vertical-align: middle;
+
+    }
+    &--check {
+      display: none;
+      position: absolute;
+      right: 45px;
+      &.is-elem-check {
+        display: inline-block;
       }
     }
     @include grid-media-query(palm) {
