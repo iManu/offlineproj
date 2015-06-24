@@ -212,6 +212,10 @@ module.exports = View.extend({
 
     this.$nothing[ (state === 'show') ? 'fadeIn' : 'fadeOut' ]();
 
+    //Backbone.Mediator.pub('apps:noresults');
+
+    //$(window).trigger('apps:noresults');
+
   }
   //selectApp: function selectApp(e) {
     /*

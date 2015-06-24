@@ -205,18 +205,25 @@ $alphawidth-desk: 66px;
 		background-color: colors('basic', 'white');
 		//left: 0;
 		transform: translate3d(0,0,0);
-		bottom: 0;
+		//bottom: 0;
 		height: 100%;
 		width: 100%;
 		position: fixed;
 		z-index: -1;
   }
+
+}
+/**
+ * Content (in .Wrapper)
+ */
+.Content {
   @include grid-media-query(lap) {
-    padding: 2em calc(2em + #{$panelwidth-lap}) 2em 2em;
+    margin: 2em calc(2em + #{$panelwidth-lap}) 2em 2em;
   }
   @include grid-media-query(desk) {
-    padding: 4em calc(4em + #{$panelwidth-desk}) 4em 4em;
+    margin: 4em calc(4em + #{$panelwidth-desk}) 4em 4em;
   }
+
 }
 
 /**
@@ -285,8 +292,7 @@ label[for="nav-trigger"] {
 	}
 
 	.nav-trigger:checked ~ .Wrapper,
-	.nav-trigger ~ .Wrapper,
-	.nav-trigger ~ .Wrapper:after {
+	.nav-trigger ~ .Wrapper {
     @include grid-media-query(lap) {
       transform: translate3d($panelwidth-lap,0,0);
     }
