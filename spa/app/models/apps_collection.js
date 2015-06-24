@@ -18,9 +18,6 @@ module.exports = Backbone.Collection.extend({
   parse: function (response) {
     return response;
   }
-  /*url: '/apps',
-  comparator: function (c1, c2) {
-    return +c2.get('key') - +c1.get('key');
-  }*/
+
 });
 

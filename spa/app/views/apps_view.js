@@ -14,11 +14,6 @@ module.exports = View.extend({
   // Les événements app-wide (pub/sub) auxquels on réagit
   subscriptions: {
     'appslist:reset': 'render'
-
-  },
-  afterRender: function () {
-
-
   },
   // Convention définie par notre classe mère View pour render : on
   // peuple le template principal avec ces données.
