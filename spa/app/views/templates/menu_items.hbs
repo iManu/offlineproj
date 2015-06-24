@@ -1,7 +1,8 @@
 <div class="Nav__left">
+  <div class="Nav__logo"><img src="images/logo_samsungb2b.png" alt="Samsung Business"></div>
   <ul class="Nav__filters" role="list">
     <li class="Filters" role="list-item">
-      <button class="js-craft-button">Nos Métiers</button>
+      <button class="Filters__button js-craft-button">Nos Métiers</button>
       <ul class="Filters__list Filters__list--crafts" role="list">
         {{#each filterCrafts}}
           <li class="Filters__item" role="list-item">
@@ -14,7 +15,7 @@
       </ul>
     </li>
     <li class="Filters" role="list-item">
-      <button class="js-category-button">Catégories</button>
+      <button class="Filters__button js-category-button">Catégories</button>
       <ul class="Filters__list Filters__list--category" role="list">
         {{#each filterCategories}}
           <li class="Filters__item" role="list-item">

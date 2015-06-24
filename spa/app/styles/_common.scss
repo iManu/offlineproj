@@ -79,31 +79,6 @@ $alphawidth-desk: 66px;
 	bottom: 0;
 	left: 0;
 	z-index: z('root');
-  /*&:after {
-    content: '';
-    background: red;
-    background-position: 0 0;
-    background-repeat: repeat;
-    background-size: 100%;
-
-    bottom: 0;
-
-    min-height: 100%;
-    height: 100%;
-    z-index: -1;
-
-    transform: translate3d(0%, 0px, 0px);
-    position: absolute;
-    left: 100%;
-    @include grid-media-query(lap) {
-      left: $panelwidth-lap;
-      width: calc( 100% - #{$panelwidth-lap});
-    }
-    @include grid-media-query(desk) {
-      left: $panelwidth-desk;
-      width: calc( 100% - #{$panelwidth-desk});
-    }
-  }*/
   &__left,
   &__right {
     @extend %inlineblock;
@@ -125,6 +100,75 @@ $alphawidth-desk: 66px;
     }
     @include grid-media-query(desk) {
       width: $alphawidth-desk;
+    }
+  }
+  &__logo {
+    width: 100%;
+    @include grid-media-query(palm) {
+      padding-bottom: 100px;
+      padding-left: 50px;
+    }
+    @include grid-media-query(portable) {
+      padding-top: 60px;
+    }
+    @include grid-media-query(lapandup) {
+      padding-bottom: 180px;
+    }
+    @include grid-media-query(lap) {
+      padding-left: 23px;
+    }
+    @include grid-media-query(desk) {
+      padding-top: 45px;
+      padding-left: 30px;
+    }
+  }
+  &__filters {
+    list-style-type: none;
+    width: 100%;
+  }
+}
+/**
+ * .Filters (in .Nav)
+ */
+.Filters {
+  &__button {
+    background: colors('menu', 'bg', 'global');
+    color: colors('text', 'filterbtn');
+    cursor: pointer;
+    height: 60px;
+    outline: colors('menu', 'bg', 'sub');
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+    width: 100%;
+    &:before {
+      content: '';
+      bottom: 0;
+      background-color: colors('gfx', 'underbtn');
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      @include grid-media-query(palm) {
+        left: 25px;
+        width: 175px;
+      }
+      @include grid-media-query(lap) {
+        left: 23px;
+        width: 135px;
+      }
+      @include grid-media-query(desk) {
+        left: 12px;
+        width: 175px;
+      }
+    }
+    @include grid-media-query(palm) {
+      padding-left: 50px;
+    }
+    @include grid-media-query(lap) {
+      padding-left: 23px;
+    }
+    @include grid-media-query(desk) {
+      padding-left: 30px;
     }
   }
 }

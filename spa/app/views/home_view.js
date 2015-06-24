@@ -47,4 +47,5 @@ module.exports = View.extend({
       this._onlineMarker.html('offline').css('color', 'red');
     }
   }
+
 });
