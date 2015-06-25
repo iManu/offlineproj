@@ -462,7 +462,9 @@ $alphawidth-desk: 66px;
       top: 80px;
     }
   }
-
+  @include grid-media-query(palm) {
+    padding: 0 50px 0 12px;
+  }
 }
 /**
  * Content (in .Wrapper)
@@ -514,12 +516,15 @@ $alphawidth-desk: 66px;
     font-weight: 700;
     @include grid-media-query(palm) {
       @include font-size(20px, false);
+      margin: 23px 0 0 16px;
     }
     @include grid-media-query(lap) {
       @include font-size(16px, false);
+      margin: 24px 0 0 13px;
     }
     @include grid-media-query(desk) {
       @include font-size(20px, false);
+      margin: 22px 0 0 15px;
     }
   }
   &__icon {
@@ -547,16 +552,21 @@ $alphawidth-desk: 66px;
     font-weight: 400;
     @include grid-media-query(palm) {
       @include font-size(12px, false);
+      height: 100px;
+      margin-top: 18px;
     }
     @include grid-media-query(lap) {
       @include font-size(10px, false);
+      height: 75px;
+      margin-top: 15px;
     }
     @include grid-media-query(desk) {
       @include font-size(12px, false);
+      height: 100px;
+      margin-top: 18px;
     }
   }
   &__footer {
-
     &--left,
     &--right {
       display: inline-block;
@@ -568,6 +578,9 @@ $alphawidth-desk: 66px;
     }
     &--right {
       text-align: right;
+      .pictopts {
+        margin-left: 8px;
+      }
     }
   }
   &__btnplus {
