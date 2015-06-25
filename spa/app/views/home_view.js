@@ -39,12 +39,13 @@ module.exports = View.extend({
 
   // Réaction à la notif de passage online/offline : on ajuste le marqueur
   syncMarker: function() {
-    this._onlineMarker = this._onlineMarker || this.$('#onlineMarker').tooltip({ placement: 'bottom' });
-    //this._onlineMarker[cnxSvc.isOnline() ? 'show' : 'hide']('fast');
+    this._onlineMarker = this._onlineMarker || this.$('#onlineMarker');
     if(cnxSvc.isOnline()) {
-      this._onlineMarker.html('online').css('color', 'green');
+      this._onlineMarker.find('.js-on').addClass('is-lighten');
+      this._onlineMarker.find('.js-off').removeClass('is-lighten');
     } else {
-      this._onlineMarker.html('offline').css('color', 'red');
+      this._onlineMarker.find('.js-off').addClass('is-lighten');
+      this._onlineMarker.find('.js-on').removeClass('is-lighten');
     }
   }
 

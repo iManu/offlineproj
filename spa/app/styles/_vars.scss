@@ -78,7 +78,8 @@ $map-colors: (
     "white": #ffffff,
     "black": #000000,
     "red": #e34650,
-    "grey": #b5b5b5
+    "grey": #b5b5b5,
+    "lightbg": #e9e9e9
   ),
   "menu" : (
     "bg": ( "global": #242b31, "sub": #2e373e ),
@@ -86,7 +87,8 @@ $map-colors: (
   ),
   "text" : (
     "spec" : #575756,
-    "filterbtn" : #70767a
+    "filterbtn" : #70767a,
+    "onoff": #bcbdbe
   ),
   "gfx" : (
     "underbtn" : #28333b,
