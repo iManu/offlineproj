@@ -158,9 +158,13 @@ $alphawidth-desk: 66px;
         opacity: 1;
       }
     }
-    transition: background .1s ease-out;
+    transition: all .1s ease-out;
     &:hover {
     	background: darken(colors('menu', 'bg', 'sub'), 5.5%);
+      color: colors('menu', 'button', 'normal');
+      &:after {
+        color: colors('menu', 'button', 'normal');
+      }
     }
     &:active, &:focus {
     	outline: 1px dotted colors('menu', 'bg', 'sub');
@@ -586,8 +590,17 @@ $alphawidth-desk: 66px;
   &__btnplus {
     background-color: colors('basic', 'white');
     color: colors('basic', 'black');
+    cursor: pointer;
     font-weight: 700;
+    padding: 0 4px;
     text-transform: uppercase;
+    transition: color .1s linear;
+    &:active, &:focus {
+      outline: 1px dotted lighten(colors('menu', 'bg', 'sub'), 50%);
+    }
+    &:hover {
+      color: colors('menu', 'button', 'normal');
+    }
     span {
       color: colors('menu', 'button', 'normal');
       font-weight: 700;
