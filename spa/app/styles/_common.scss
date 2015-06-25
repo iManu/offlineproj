@@ -18,6 +18,7 @@ body {
 	font-family: Interface, Arial, Helvetica, "Sans-Serif";
 	font-weight: 400;
   height: 100%;
+  overflow-x: hidden;
   width: 100%;
 	-webkit-font-smoothing: antialiased;
 	//overflow-x: hidden;
@@ -74,6 +75,7 @@ $alphawidth-desk: 66px;
   position: fixed;
 	//position: absolute;
   overflow-y: scroll;
+  overflow-x: hidden;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -404,9 +406,10 @@ $alphawidth-desk: 66px;
   top: 0;
   bottom: 100%;
   //left: 0;
+  overflow-x: hidden;
   transform: translate3d(0,0,0);
   z-index: z('default');
-  &:after {
+  /*&:after {
 		content: '';
 		background-color: colors('basic', 'white');
 		//left: 0;
@@ -416,7 +419,7 @@ $alphawidth-desk: 66px;
 		width: 100%;
 		position: fixed;
 		z-index: -1;
-  }
+  }*/
 
 }
 /**
@@ -475,12 +478,12 @@ label[for="nav-trigger"] {
 
 // for project's use case
 // .Nav need to be always open in lapandup
-.nav-trigger:checked ~ .Wrapper:after {
+/*.nav-trigger:checked ~ .Wrapper:after {
 	@include grid-media-query(palm) {
 		//left: 100%;
 		transform: translate3d(100%,0,0);
 	}
-}
+}*/
 @include grid-media-query(lapandup) {
 	.nav-trigger,
 	label[for="nav-trigger"] {
