@@ -474,6 +474,120 @@ $alphawidth-desk: 66px;
   @include grid-media-query(desk) {
     margin: 47px calc(35px + #{$panelwidth-desk}) 100px 40px;
   }
+}
+/**
+ * .Isogrid
+ */
+.Isogrid {
+  list-style-type: none;
+  &__item {
+    background-color: colors('basic', 'white');
+    @include grid-media-query(palm) {
+      padding: 18px;
+      height: 207px;
+      width: 100%;
+      margin: 0 0 20px 0;
+    }
+    @include grid-media-query(lap) {
+      padding: 14px;
+      height: 167px;
+      width: 238px;
+      margin: 0 20px 20px 0;
+    }
+    @include grid-media-query(desk) {
+      padding: 18px;
+      height: 207px;
+      width: 296px;
+      margin: 0 25px 25px 0;
+    }
+  }
+  &__header {
+
+    &--left,
+    &--right {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+  &__title {
+    color: colors('basic', 'black');
+    font-weight: 700;
+    @include grid-media-query(palm) {
+      @include font-size(20px, false);
+    }
+    @include grid-media-query(lap) {
+      @include font-size(16px, false);
+    }
+    @include grid-media-query(desk) {
+      @include font-size(20px, false);
+    }
+  }
+  &__icon {
+
+    &--img {
+      @include grid-media-query(palm) {
+        height: 70px;
+        width: 70px;
+      }
+      @include grid-media-query(lap) {
+        height: 56px;
+        width: 56px;
+      }
+      @include grid-media-query(desk) {
+        height: 70px;
+        width: 70px;
+      }
+    }
+  }
+  &__resume {
+
+  }
+  &__baseline {
+    color: colors('basic', 'black');
+    font-weight: 400;
+    @include grid-media-query(palm) {
+      @include font-size(12px, false);
+    }
+    @include grid-media-query(lap) {
+      @include font-size(10px, false);
+    }
+    @include grid-media-query(desk) {
+      @include font-size(12px, false);
+    }
+  }
+  &__footer {
+
+    &--left,
+    &--right {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+    }
+    &--left {
+
+    }
+    &--right {
+      text-align: right;
+    }
+  }
+  &__btnplus {
+    background-color: colors('basic', 'white');
+    color: colors('basic', 'black');
+    font-weight: 700;
+    text-transform: uppercase;
+    span {
+      color: colors('menu', 'button', 'normal');
+    }
+    @include grid-media-query(palm) {
+      @include font-size(14px, false);
+    }
+    @include grid-media-query(lap) {
+      @include font-size(11px, false);
+    }
+    @include grid-media-query(desk) {
+      @include font-size(14px, false);
+    }
+  }
 
 }
 

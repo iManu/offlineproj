@@ -44,8 +44,8 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
 
     "pictos": {
-      "onpremise": true,
-      "smb": false
+      "gcn": true,
+      "smb": true
     },
     "craft": [2],
     "category": [1],
