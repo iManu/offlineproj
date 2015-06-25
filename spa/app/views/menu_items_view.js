@@ -20,7 +20,8 @@ module.exports = View.extend({
     'click .js-check-category': function(e) { this.elemCheck(e, 'category'); },
     'keyup .js-search': 'searchBox',
     'click .js-craft-button': 'toggleFilterList',
-    'click .js-category-button': 'toggleFilterList'
+    'click .js-category-button': 'toggleFilterList',
+    'click .js-clear-filters': 'clearFilters'
   },
   getRenderData: function menuItemsGetRenderData() {
     var filters =  store.getFilters(),
@@ -117,7 +118,8 @@ module.exports = View.extend({
       checkElem = $(target),
       id = (elemName === 'letter') ? target.value : checkElem.data(elemName),
       spanBtnCheck = $('.js-'+elemName+'-button').find('span'),
-      spanLabelCheck = checkElem.siblings('label').find('span.js-label-check')
+      labelCheck = checkElem.siblings('label'),
+      spanLabelCheck = labelCheck.find('span.js-label-check')
     ;
     //console.log(spanLabelCheck)
     // Les ID cochées/sécochées sont stockées dans un array
@@ -125,11 +127,13 @@ module.exports = View.extend({
     if( checkElem.is(':checked') ) {
       // on ajoute
       this.$idList[elemName].push( '.' + elemName + '-' + id );
+      labelCheck.addClass('is-label-check');
       spanLabelCheck.addClass('is-elem-check');
 
     } else {
       // on retire de la liste
       this.$idList[elemName] = _.without(this.$idList[elemName], '.' + elemName + '-' + id);
+      labelCheck.removeClass('is-label-check');
       spanLabelCheck.removeClass('is-elem-check');
     }
     // la coche bleue globale
@@ -153,6 +157,27 @@ module.exports = View.extend({
       this.nothingFound('show');
     }
   }, 250),
+  clearFilters: function clearFilters() {
+    this.qsRegex = '';
+    this.$idList = {'craft':[], 'category': [], 'action':[], 'letter':[]};
+
+    $('.js-craft-button, .js-category-button').find('span').removeClass('is-list-elem-check');
+    $('.js-search').val('');
+
+    $('.Nav__filters, .Nav__alphabet').find('input[type="checkbox"]').each(function() {
+      var elem = $(this),
+        labelCheck = elem.siblings('label'),
+        spanLabelCheck = labelCheck.find('span.js-label-check')
+      ;
+      labelCheck.removeClass('is-label-check');
+      spanLabelCheck.removeClass('is-elem-check');
+      elem.attr('checked', false);
+      a11y.checkService(elem);
+    });
+    this.filterIsotope();
+    this.$isogrid.isotope();
+
+  },
   nothingFound: function nothingFound(state) {
     this.$nothing[ (state === 'show') ? 'fadeIn' : 'fadeOut' ]();
   },

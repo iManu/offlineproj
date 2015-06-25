@@ -209,9 +209,14 @@ $alphawidth-desk: 66px;
     }
   }
   &__list {
-
+    &.is-open li {
+      height: 50px;
+    }
   }
   &__item {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
 
   }
   &__input {
@@ -228,6 +233,9 @@ $alphawidth-desk: 66px;
     position: relative;
     user-select: none;
     width: 100%;
+    &.is-label-check {
+      color: colors('menu', 'button', 'normal');
+    }
     span {
       vertical-align: middle;
 
@@ -235,9 +243,17 @@ $alphawidth-desk: 66px;
     &--check {
       display: none;
       position: absolute;
-      right: 45px;
       &.is-elem-check {
         display: inline-block;
+      }
+      @include grid-media-query(palm) {
+        right: 75px;
+      }
+      @include grid-media-query(lap) {
+        right: 35px;
+      }
+      @include grid-media-query(desk) {
+        right: 45px;
       }
     }
     transition: background .1s ease-out;
@@ -254,13 +270,92 @@ $alphawidth-desk: 66px;
       padding-left: 30px;
     }
   }
+  &__li-search {
+    background:transparent url('../images/gfx/magnify.png') 91% center no-repeat;
+  }
+  &__search {
+    background: colors('menu', 'bg', 'global');
+    color: colors('text', 'filterbtn');
+    height: 60px;
+    position: relative;
+    width: 80%;
+    &:active, &:focus {
+      outline: 0;
+    }
+    @include grid-media-query(palm) {
+      padding-left: 50px;
+    }
+    @include grid-media-query(lap) {
+      padding-left: 23px;
+    }
+    @include grid-media-query(desk) {
+      padding-left: 30px;
+    }
+  }
+  &__li-clear {
+    padding-top: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  &__clear {
+    background: colors('menu', 'bg', 'global');
+    border: 1px colors('gfx', 'underbtn') solid;
+    color: colors('text', 'filterbtn');
+    cursor: pointer;
+    height: 33px;
+    margin: 0 auto;
+    padding-right: 15px;
+    position: relative;
+    text-align: right;
+    user-select: none;
+    width: 152px;
+    &:before {
+      background: transparent url('../images/gfx/sprite_clear.png') left 0 no-repeat;
+      content: '';
+      height: 14px;
+      left: 8px;
+      position: absolute;
+      top: 8px;
+      width: 14px;
+    }
+    transition: all .2s linear;
+    &:hover {
+      color: colors('menu', 'button', 'normal');
+      border-color: colors('gfx', 'hoverbtn');
+      &:before {
+        background-position: left -14px;
+      }
+    }
+    &:active, &:focus {
+      outline: 1px dotted colors('menu', 'bg', 'sub');
+    }
+
+  }
 }
+::-webkit-input-placeholder {
+  color: colors('text', 'filterbtn');
+  text-transform: uppercase;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: colors('text', 'filterbtn');
+  text-transform: uppercase;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+  color: colors('text', 'filterbtn');
+  text-transform: uppercase;
+}
+:-ms-input-placeholder {
+  color: colors('text', 'filterbtn');
+  text-transform: uppercase;
+}
+
 /**
  * .Alphabet (in .Nav)
  */
 .Alphabet {
   background-color: colors('menu', 'bg', 'sub');
   padding: 35px 0;
+  user-select: none;
   &__item {
     background-color: colors('menu', 'bg', 'sub');
     transition: background-color .3s ease-out;
@@ -295,51 +390,6 @@ $alphawidth-desk: 66px;
   }
 }
 
-.Filters {
-
-  &__list {
-    &.is-open li {
-      height: 50px;
-    }
-  }
-  &__item {
-    height: 0;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
-
-  }
-	&__search {
-		background: colors('menu', 'bg', 'global');
-    color: colors('text', 'filterbtn');
-    height: 60px;
-    text-transform: uppercase;
-    width: 100%;
-    &:active, &:focus {
-    	outline: 1px dotted colors('menu', 'bg', 'sub');
-    }
-    @include grid-media-query(palm) {
-      padding-left: 50px;
-    }
-    @include grid-media-query(lap) {
-      padding-left: 23px;
-    }
-    @include grid-media-query(desk) {
-      padding-left: 30px;
-    }
-	}
-}
-::-webkit-input-placeholder {
-   color: colors('text', 'filterbtn');;
-}
-:-moz-placeholder { /* Firefox 18- */
-   color: colors('text', 'filterbtn');;
-}
-::-moz-placeholder {  /* Firefox 19+ */
-   color: colors('text', 'filterbtn');;
-}
-:-ms-input-placeholder {
-   color: colors('text', 'filterbtn');;
-}
 
 /**
  * .Wrapper

@@ -2,7 +2,7 @@
   <div class="Nav__logo"><img src="images/logo_samsungb2b.png" alt="Samsung Business"></div>
   <ul class="Nav__filters" role="list">
     <li class="Filters" role="list-item">
-      <button class="Filters__button js-craft-button">
+      <button class="Filters__button js-craft-button" role="button">
         <span>Nos Métiers</span><span class="Filters__button--check"><img src="images/gfx/check.png" alt="check"></span>
       </button>
       <ul class="Filters__list Filters__list--crafts js-filter-list" role="list">
@@ -17,7 +17,7 @@
       </ul>
     </li>
     <li class="Filters" role="list-item">
-      <button class="Filters__button js-category-button">
+      <button class="Filters__button js-category-button" role="button">
         <span>Catégories</span><span class="Filters__button--check"><img src="images/gfx/check.png" alt=""></span>
       </button>
       <ul class="Filters__list Filters__list--category js-filter-list" role="list">
@@ -31,8 +31,13 @@
         {{/each}}
       </ul>
     </li>
-    <li role="list-item">
-      <input type="search" placeholder="Rechercher" role="search" class="Filters__search js-search">
+    <li class="Filters__li-search" role="list-item">
+      <input type="search" placeholder="Rechercher" role="search" value="" class="Filters__search js-search">
+    </li>
+    <li class="Filters__li-clear" role="list-item">
+      <button class="Filters__clear js-clear-filters" role="button">
+        Effacer les filtres
+      </button>
     </li>
   </ul>
   <footer class="Footer" role="contentinfo">
