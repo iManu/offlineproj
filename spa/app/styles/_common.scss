@@ -218,7 +218,7 @@ $alphawidth-desk: 66px;
   &__item {
     height: 0;
     overflow: hidden;
-    transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+    transition: all 0.5s cubic-bezier(.42,-0.28,.53,1.23);
 
   }
   &__input {
@@ -459,7 +459,7 @@ $alphawidth-desk: 66px;
     }
     @include grid-media-query(desk) {
       right: $panelwidth-desk + 35px;
-      top: 80px;
+      top: 97px;
     }
   }
   @include grid-media-query(palm) {
@@ -590,6 +590,17 @@ $alphawidth-desk: 66px;
     text-transform: uppercase;
     span {
       color: colors('menu', 'button', 'normal');
+      font-weight: 700;
+      padding-left: 3px;
+      @include grid-media-query(palm) {
+        @include font-size(16px, false);
+      }
+      @include grid-media-query(lap) {
+        @include font-size(13px, false);
+      }
+      @include grid-media-query(desk) {
+        @include font-size(16px, false);
+      }
     }
     @include grid-media-query(palm) {
       @include font-size(14px, false);
