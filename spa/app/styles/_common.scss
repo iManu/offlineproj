@@ -544,10 +544,25 @@ $alphawidth-desk: 66px;
  */
 .Content {
   @include grid-media-query(lap) {
-    margin: 58px calc(20px + #{$panelwidth-lap}) 100px 20px;
+    //margin: 58px calc( #{$panelwidth-lap}) 100px 20px;
+    margin: 58px 190px 100px 20px;
   }
   @include grid-media-query(desk) {
-    margin: 47px calc(35px + #{$panelwidth-desk}) 100px 40px;
+    //margin: 47px calc(35px + #{$panelwidth-desk}) 100px 40px;
+    margin: 47px 235px 100px 40px;
+  }
+  &__nothing {
+    height: 100%;
+    min-height: 100%;
+
+    &--p {
+      color: colors('text', 'nothing');
+      font-weight: 400;
+      @include font-size(16px, false);
+      padding-top: 130px;
+      text-align: center;
+      text-transform: uppercase;
+    }
   }
 }
 /**
