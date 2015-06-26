@@ -471,7 +471,7 @@ $alphawidth-desk: 66px;
   overflow-x: hidden;
 
   @include grid-media-query(palm) {
-    transform: translate3d(100%,0,0);
+    transform: translate3d(0,0,0);
   }
   @include grid-media-query(lap) {
     transform: translate3d($panelwidth-lap,0,0);
