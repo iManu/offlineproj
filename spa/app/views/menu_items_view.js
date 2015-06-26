@@ -51,7 +51,7 @@ module.exports = View.extend({
     // Isotope init (http://isotope.metafizzy.co/)
     // http://codepen.io/desandro/pen/mCdbD
     // http://codepen.io/gpetrioli/pen/yqcvd
-    //setTimeout(function() {
+    setTimeout(function() {
       // setTimeout : we need a dom repaint !
       that.$isogrid.isotope({
         // options
@@ -94,7 +94,7 @@ module.exports = View.extend({
           event: 'lazylazy'
       });
 
-    //}, 1);
+    }, 1);
   },
   loadVisible: function loadVisible($els, trigger) {
       $els.filter(function () {

@@ -229,9 +229,14 @@ $alphawidth-desk: 66px;
     min-height: 0;
     max-height: 378px;
     overflow-y: scroll;
+    li {
+      transition:all .2s ease-in-out;
+      opacity: 0;
+    }
     &.is-open li {
       height: 36px;
       position: relative;
+      opacity: 1;
       &:after {
         content: '';
         bottom: 0;
@@ -811,15 +816,14 @@ label[for="nav-trigger"] {
 	}
 }
 
-
 /**
  * Footer
  */
 .Footer {
 	bottom: 0;
-	color: colors('basic', 'white');
 	left: 0;
 	position:fixed;
+  z-index: -1;
   &__list {
     padding-bottom: 10px;
   }
