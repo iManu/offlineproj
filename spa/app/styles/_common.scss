@@ -133,7 +133,29 @@ $alphawidth-desk: 66px;
  * .Filters (in .Nav)
  */
 .Filters {
+  position: relative;
   user-select: none;
+  &:before {
+    content: '';
+    bottom: 0;
+    background-color: colors('gfx', 'underbtn');
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    z-index: 1;
+    @include grid-media-query(palm) {
+      left: 25px;
+      width: 175px;
+    }
+    @include grid-media-query(lap) {
+      left: 23px;
+      width: 135px;
+    }
+    @include grid-media-query(desk) {
+      left: 12px;
+      width: 175px;
+    }
+  }
   &__button {
     background: colors('menu', 'bg', 'global');
     color: colors('text', 'filterbtn');
@@ -149,7 +171,6 @@ $alphawidth-desk: 66px;
       vertical-align: middle;
     }
     &--check {
-      //display: none;
       opacity: 0;
       transform: translate3d(0, 0, 0);
       transition: all .3s ease-out;
@@ -169,26 +190,7 @@ $alphawidth-desk: 66px;
     &:active, &:focus {
     	outline: 1px dotted colors('menu', 'bg', 'sub');
     }
-    &:before {
-      content: '';
-      bottom: 0;
-      background-color: colors('gfx', 'underbtn');
-      width: 100%;
-      height: 1px;
-      position: absolute;
-      @include grid-media-query(palm) {
-        left: 25px;
-        width: 175px;
-      }
-      @include grid-media-query(lap) {
-        left: 23px;
-        width: 135px;
-      }
-      @include grid-media-query(desk) {
-        left: 12px;
-        width: 175px;
-      }
-    }
+
     &:after {
       content: '\25bc';
       position: absolute;
@@ -215,8 +217,34 @@ $alphawidth-desk: 66px;
     }
   }
   &__list {
+
     &.is-open li {
-      height: 50px;
+      height: 36px;
+      position: relative;
+      &:after {
+        content: '';
+        bottom: 0;
+        background-color: colors('menu', 'subline');
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        z-index: 1;
+        @include grid-media-query(palm) {
+          left: 25px;
+          width: 175px;
+        }
+        @include grid-media-query(lap) {
+          left: 23px;
+          width: 135px;
+        }
+        @include grid-media-query(desk) {
+          left: 12px;
+          width: 175px;
+        }
+      }
+      &:last-child:after {
+        content: unset;
+      }
     }
   }
   &__item {
@@ -230,12 +258,12 @@ $alphawidth-desk: 66px;
     left: -99999em;
   }
   &__label {
-
     background: colors('menu', 'bg', 'sub');
     color: colors('text', 'filterbtn');
     display: block;
-    height: 50px;
-    padding-top: 15px;
+    @include font-size(13px, false);
+    height: 36px;
+    padding-top: 9px;
     position: relative;
     user-select: none;
     width: 100%;
@@ -288,6 +316,25 @@ $alphawidth-desk: 66px;
     &:active, &:focus {
       outline: 0;
     }
+
+    &:hover, &:focus {
+      &::-webkit-input-placeholder {
+        transition: color .1s linear;
+        color: darken(colors('text', 'filterbtn'), 20%);
+      }
+      &:-moz-placeholder {
+        transition: color .1s linear;
+        color: darken(colors('text', 'filterbtn'), 20%);
+      }
+      &::-moz-placeholder {
+        transition: color .1s linear;
+        color: darken(colors('text', 'filterbtn'), 20%);
+      }
+      &:-ms-input-placeholder {
+        transition: color .1s linear;
+        color: darken(colors('text', 'filterbtn'), 20%);
+      }
+    }
     @include grid-media-query(palm) {
       padding-left: 50px;
     }
@@ -338,6 +385,7 @@ $alphawidth-desk: 66px;
 
   }
 }
+
 ::-webkit-input-placeholder {
   color: colors('text', 'filterbtn');
   text-transform: uppercase;
@@ -366,7 +414,7 @@ $alphawidth-desk: 66px;
     background-color: colors('menu', 'bg', 'sub');
     transition: background-color .3s ease-out;
 	&:hover {
-    	background-color: darken(colors('menu', 'bg', 'sub'), 3%);
+    	background-color: darken(colors('menu', 'bg', 'sub'), 2%);
 	}
   }
   &__check {
@@ -376,7 +424,7 @@ $alphawidth-desk: 66px;
       opacity: .6;
     }*/
     &:checked &:hover {
-    	background-color: lighten(colors('menu', 'bg', 'sub'), 3%);
+    	background-color: lighten(colors('menu', 'bg', 'sub'), 2%);
     }
     &:checked ~ .Alphabet__label {
       //font-weight: bold;
