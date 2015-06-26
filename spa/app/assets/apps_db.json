@@ -5,7 +5,7 @@
     "folder": "app_001",
     "icon": "icon.png",
     "title": "Application namex",
-    "partner-name": "Nom partenaire #1",
+    "partner": {"id": 1, "name": "Nom partenaire #1"},
     "baseline": "Impressive app to make coffee",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
 
@@ -15,7 +15,6 @@
     },
     "craft": [1,3],
     "category": [1,2],
-    "partner": [2],
     "action": [3],
 
     "details": {
@@ -42,7 +41,7 @@
     "folder": "app_002",
     "icon": "icon.png",
     "title": "Other Application",
-    "partner-name": "Nom partenaire #2",
+    "partner": {"id": 2, "name": "Nom partenaire #2"},
     "baseline": "Null app serve nothing",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
 
@@ -52,7 +51,6 @@
     },
     "craft": [2],
     "category": [1],
-    "partner": [3],
     "action": [3],
 
     "details": {
@@ -79,7 +77,7 @@
     "folder": "app_003",
     "icon": "icon.png",
     "title": "Xanother Application",
-    "partner-name": "Nom partenaire #3",
+    "partner": {"id": 3, "name": "Nom partenaire #3"},
     "baseline": "Null app serve nothing",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
 
@@ -89,7 +87,6 @@
     },
     "craft": [2,3],
     "category": [1],
-    "partner": [2],
     "action": [3],
 
     "details": {
@@ -116,7 +113,7 @@
     "folder": "app_004",
     "icon": "unnamedCA487ZSV.png",
     "title": "Boxcryptor",
-    "partner-name": "Nom partenaire #4",
+    "partner": {"id": 4, "name": "Nom partenaire #4"},
     "baseline": "Null app serve nothing",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
 
@@ -126,7 +123,6 @@
     },
     "craft": [1,3],
     "category": [1,2],
-    "partner": [1],
     "action": [2,3],
 
     "details": {
@@ -153,7 +149,7 @@
     "folder": "app_005",
     "icon": "unnamedCA7WZ00K.png",
     "title": "Google Maps",
-    "partner-name": "Nom partenaire #5",
+    "partner": {"id": 5, "name": "Nom partenaire #5"},
     "baseline": "Null app serve nothing",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
 
@@ -163,7 +159,6 @@
     },
     "craft": [2,3],
     "category": [1,2,3],
-    "partner": [1],
     "action": [2,3],
 
     "details": {
@@ -190,7 +185,7 @@
     "folder": "app_006",
     "icon": "unnamedCA4IEKXM.png",
     "title": "Remember the Milk",
-    "partner-name": "Nom partenaire #6",
+    "partner": {"id": 6, "name": "Nom partenaire #6"},
     "baseline": "Null app serve nothing",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
 
@@ -200,7 +195,6 @@
     },
     "craft": [1,2],
     "category": [],
-    "partner": [2],
     "action": [1],
 
     "details": {
@@ -227,7 +221,7 @@
     "folder": "app_007",
     "icon": "unnamedCA15WBQ8.png",
     "title": "Synchroteam",
-    "partner-name": "Nom partenaire #7",
+    "partner": {"id": 7, "name": "Nom partenaire #7"},
     "baseline": "Null app serve nothing",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
 
@@ -237,7 +231,114 @@
     },
     "craft": [3],
     "category": [1,2,3],
-    "partner": [1],
+    "action": [3],
+
+    "details": {
+      "title": "Médias",
+      "list": [
+        "Detail 01 described in one line",
+        "Detail 02 described in another line",
+        "Detail 03 described in one more line"
+      ]
+    },
+    "visuals": [
+      "visual_001.jpg",
+      "visual_002.jpg",
+      "visual_003.jpg",
+      "visual_004.jpg"
+    ],
+
+    "url": "http://adress.com/to/app"
+
+  },
+  {
+    "id": "randomgenerateduniquelongkeyforthisapp8",
+    "is-active": true,
+    "folder": "app_008",
+    "icon": "unnamedCASGEP8H.png",
+    "title": "Xyzmo",
+    "partner": {"id": 8, "name": "Nom partenaire #8"},
+    "baseline": "Null app serve nothing",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
+
+    "pictos": {
+      "gcn": true,
+      "smb": false
+    },
+    "craft": [1],
+    "category": [1,3],
+    "action": [3],
+
+    "details": {
+      "title": "Médias",
+      "list": [
+        "Detail 01 described in one line",
+        "Detail 02 described in another line",
+        "Detail 03 described in one more line"
+      ]
+    },
+    "visuals": [
+      "visual_001.jpg",
+      "visual_002.jpg",
+      "visual_003.jpg",
+      "visual_004.jpg"
+    ],
+
+    "url": "http://adress.com/to/app"
+
+  },
+  {
+    "id": "randomgenerateduniquelongkeyforthisapp9",
+    "is-active": true,
+    "folder": "app_009",
+    "icon": "unnamedCAAEZ3O0.png",
+    "title": "Hid",
+    "partner": {"id": 9, "name": "Nom partenaire #9"},
+    "baseline": "Null app serve nothing",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
+
+    "pictos": {
+      "gcn": false,
+      "smb": true
+    },
+    "craft": [3],
+    "category": [3],
+    "action": [3],
+
+    "details": {
+      "title": "Médias",
+      "list": [
+        "Detail 01 described in one line",
+        "Detail 02 described in another line",
+        "Detail 03 described in one more line"
+      ]
+    },
+    "visuals": [
+      "visual_001.jpg",
+      "visual_002.jpg",
+      "visual_003.jpg",
+      "visual_004.jpg"
+    ],
+
+    "url": "http://adress.com/to/app"
+
+  },
+  {
+    "id": "randomgenerateduniquelongkeyforthisapp10",
+    "is-active": true,
+    "folder": "app_010",
+    "icon": "unnamedCAC5WQF9.png",
+    "title": "SAP",
+    "partner": {"id": 10, "name": "Nom partenaire #10"},
+    "baseline": "Null app serve nothing",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
+
+    "pictos": {
+      "gcn": true,
+      "smb": true
+    },
+    "craft": [3],
+    "category": [3],
     "action": [3],
 
     "details": {
