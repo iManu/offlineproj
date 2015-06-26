@@ -820,8 +820,33 @@ label[for="nav-trigger"] {
 	color: colors('basic', 'white');
 	left: 0;
 	position:fixed;
-
-
+  &__list {
+    padding-bottom: 10px;
+  }
+  &__item {
+    background: colors('menu', 'bg', 'global');
+    color: colors('text', 'filterbtn');
+    margin-bottom: 18px;
+    @include font-size(12px, false);
+    @include grid-media-query(palm) {
+      padding-left: 50px;
+    }
+    @include grid-media-query(lap) {
+      padding-left: 23px;
+    }
+    @include grid-media-query(desk) {
+      padding-left: 30px;
+    }
+  }
+  &__button {
+    background: colors('menu', 'bg', 'global');
+    color: colors('text', 'filterbtn');
+    cursor: pointer;
+    outline: 0;
+    &:hover {
+      color: lighten(colors('text', 'filterbtn'), 10%);
+    }
+  }
 
 }
 
