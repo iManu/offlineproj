@@ -10,6 +10,25 @@
       { "id": 2, "item": "Deuxième catégorie" },
       { "id": 3, "item": "etcetcetcetcetcetc" }
     ],
+    "partners" : [
+      { "id": 1, "item": "Premier partenaire" },
+      { "id": 2, "item": "Deuxième partenaire" },
+      { "id": 3, "item": "troisième partenaire" },
+      { "id": 4, "item": "xyz partenaire" },
+      { "id": 5, "item": "xyz partenaire" },
+      { "id": 6, "item": "xyz partenaire" },
+      { "id": 7, "item": "xyz partenaire" },
+      { "id": 8, "item": "xyz partenaire" },
+      { "id": 9, "item": "xyz partenaire" },
+      { "id": 10, "item": "xyz partenaire" },
+      { "id": 11, "item": "xyz partenaire" },
+      { "id": 12, "item": "xyz partenaire" },
+      { "id": 13, "item": "xyz partenaire" },
+      { "id": 14, "item": "xyz partenaire" },
+      { "id": 15, "item": "xyz partenaire" },
+      { "id": 16, "item": "xyz partenaire" },
+      { "id": 17, "item": "xyz partenaire" }
+    ],
     "actions" : [
       { "id": 1, "item": "Première catégorie" },
       { "id": 2, "item": "Deuxième catégorie" },

@@ -226,7 +226,8 @@ $alphawidth-desk: 66px;
     }
   }
   &__list {
-
+    max-height: 378px;
+    overflow-y: scroll;
     &.is-open li {
       height: 36px;
       position: relative;

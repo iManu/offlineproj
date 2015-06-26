@@ -18,6 +18,24 @@ module.exports = View.extend({
   // Convention définie par notre classe mère View pour render : on
   // peuple le template principal avec ces données.
   getRenderData: function() {
+    /*var filters =  store.getFilters(),
+        filterPartners = filters[0].partners,
+        applist = store.getAppsList()
+    ;
+    //console.log( filterPartners[idPartner] )
+
+    applist.forEach(function(json) {
+
+      var idPartnerApp = json.partner[0];
+
+      var partnerObj = _.findWhere(filterPartners, { 'id': idPartnerApp });
+
+      store.addPartner({
+        'id' : json.id,
+        'partner-name': partnerObj.item
+      });
+    });*/
+    /**/
     return {
       appsList: this.listTemplate(store.getAppsList())
     };

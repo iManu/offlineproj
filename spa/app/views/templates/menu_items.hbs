@@ -31,6 +31,21 @@
         {{/each}}
       </ul>
     </li>
+    <li class="Filters" role="list-item">
+      <button class="Filters__button js-partner-button" role="button">
+        <span>Partenaires</span><span class="Filters__button--check"><img src="images/gfx/check.png" alt=""></span>
+      </button>
+      <ul class="Filters__list Filters__list--partner js-filter-list" role="list">
+        {{#each filterPartners}}
+          <li class="Filters__item" role="list-item">
+            <input type="checkbox" id="partner-{{this.id}}" class="Filters__input js-check-partner" data-partner="{{this.id}}" aria-checked="false">
+            <label for="partner-{{this.id}}" class="Filters__label">
+              <span>{{this.item}}</span><span class="Filters__label--check js-label-check"><img src="images/gfx/check.png" alt="check"></span>
+            </label>
+          </li>
+        {{/each}}
+      </ul>
+    </li>
     <li class="Filters Filters__li-search" role="list-item">
       <input type="search" placeholder="Rechercher" role="search" value="" class="Filters__search js-search">
     </li>

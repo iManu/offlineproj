@@ -18,21 +18,25 @@ module.exports = View.extend({
     'click .js-check-letter': function(e) { this.elemCheck(e, 'letter'); },
     'click .js-check-craft': function(e) { this.elemCheck(e, 'craft'); },
     'click .js-check-category': function(e) { this.elemCheck(e, 'category'); },
+    'click .js-check-partner': function(e) { this.elemCheck(e, 'partner'); },
     'keyup .js-search': 'searchBox',
     'click .js-craft-button': 'toggleFilterList',
     'click .js-category-button': 'toggleFilterList',
+    'click .js-partner-button': 'toggleFilterList',
     'click .js-clear-filters': 'clearFilters'
   },
   getRenderData: function menuItemsGetRenderData() {
     var filters =  store.getFilters(),
       filterCrafts = filters[0].crafts,
       filterCategories = filters[0].categories,
+      filterPartners = filters[0].partners,
       filterActions = filters[0].actions
     ;
     return {
       alphabet: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
       filterCrafts: filterCrafts,
       filterCategories: filterCategories,
+      filterPartners: filterPartners,
       filterActions: filterActions
     };
   },
@@ -73,10 +77,33 @@ module.exports = View.extend({
           return searchResult && buttonResult;
         }
       });
+
+      // Lazy load des icones
+      that.$isogrid.isotope('on', 'layoutComplete', function () {
+          that.loadVisible($imgs, 'lazylazy');
+      });
+      var $win = $('.Wrapper'),
+        $imgs = $(".Isogrid__icon--img")
+      ;
+      $win.on('scroll', function () {
+          that.loadVisible($imgs, 'lazylazy');
+      });
+      $imgs.lazyload({
+          effect: "fadeIn",
+          failure_limit: Math.max($imgs.length - 1, 0),
+          event: 'lazylazy'
+      });
+
     }, 1);
   },
+  loadVisible: function loadVisible($els, trigger) {
+      $els.filter(function () {
+          var rect = this.getBoundingClientRect();
+          return rect.top >= 0 && rect.top <= window.innerHeight;
+      }).trigger(trigger);
+  },
   $submitter: null,
-  $idList: {'craft':[], 'category': [], 'action':[], 'letter':[]},
+  $idList: {'craft':[], 'category': [], 'partner': [], 'action':[], 'letter':[]},
   $isogrid: {},
   $nothing: {},
   toggleFilterList : function toggleFilterList(e) {
@@ -99,6 +126,9 @@ module.exports = View.extend({
     }
     if( this.$idList.category.length > 0 ) {
       filterValue += this.$idList.category.join();
+    }
+    if( this.$idList.partner.length > 0 ) {
+      filterValue += this.$idList.partner.join();
     }
     if( this.$idList.letter.length > 0 ) {
       filterValue += this.$idList.letter.join();
@@ -159,9 +189,9 @@ module.exports = View.extend({
   }, 250),
   clearFilters: function clearFilters() {
     this.qsRegex = '';
-    this.$idList = {'craft':[], 'category': [], 'action':[], 'letter':[]};
+    this.$idList = {'craft':[], 'category': [], 'partner': [], 'action':[], 'letter':[]};
 
-    $('.js-craft-button, .js-category-button').find('span').removeClass('is-list-elem-check');
+    $('.js-craft-button, .js-category-button, .js-partner-button').find('span').removeClass('is-list-elem-check');
     $('.js-search').val('');
 
     $('.Nav__filters, .Nav__alphabet').find('input[type="checkbox"]').each(function() {

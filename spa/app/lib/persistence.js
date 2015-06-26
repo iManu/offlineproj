@@ -40,7 +40,11 @@ function getAppsList() {
 function getFilters() {
   return filters_collection.toJSON();
 }
-
+/*
+function addPartner(partner) {
+  localStore_apps.save(partner);
+}
+*/
 // Cette fonction interne est appelée au chargement pour initialiser
 // les collections Backbone.
 function initialLoad() {
@@ -77,6 +81,7 @@ initialLoad();
 
 // Deux fonctions seulement publiées
 module.exports = {
+  //addPartner: addPartner,
   getAppsList: getAppsList,
   getFilters: getFilters
 };
