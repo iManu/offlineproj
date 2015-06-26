@@ -22,7 +22,7 @@ body {
   width: 100%;
 	-webkit-font-smoothing: antialiased;
 	//overflow-x: hidden;
-
+/*
   @include grid-media-query(palm) {
     background: colors('basic', 'white') url('../images/bg_body_palm.jpg') 0 0 repeat-y;
   }
@@ -32,7 +32,7 @@ body {
   @include grid-media-query(desk) {
     background: colors('basic', 'white') url('../images/bg_body_desk.jpg') 0 0 repeat-y;
   }
-
+*/
   @include grid-media-query(portable) {
     // black-translucent 20px mobile top extra
     // http://blog.teamtreehouse.com/optimizing-mobile-web-apps-ios
@@ -69,11 +69,20 @@ $alphawidth-desk: 66px;
  * Outside global wrapper
  */
 .Nav {
-	//background: colors('menu', 'bg', 'global');
-	width: 100%;
+	background: colors('menu', 'bg', 'global');
+	//width: 100%;
+  @include grid-media-query(palm) {
+    width: $panelwidth;
+  }
+  @include grid-media-query(lap) {
+    width: $panelwidth-lap + 15px;
+  }
+  @include grid-media-query(desk) {
+    width: $panelwidth-desk + 15px;
+  }
 	height: 100%;
-  position: fixed;
-	//position: absolute;
+  //position: fixed;
+	position: absolute;
   overflow-y: scroll;
   overflow-x: hidden;
 	top: 0;
@@ -320,19 +329,19 @@ $alphawidth-desk: 66px;
     &:hover, &:focus {
       &::-webkit-input-placeholder {
         transition: color .1s linear;
-        color: darken(colors('text', 'filterbtn'), 20%);
+        color: darken(colors('text', 'filterbtn'), 13%);
       }
       &:-moz-placeholder {
         transition: color .1s linear;
-        color: darken(colors('text', 'filterbtn'), 20%);
+        color: darken(colors('text', 'filterbtn'), 13%);
       }
       &::-moz-placeholder {
         transition: color .1s linear;
-        color: darken(colors('text', 'filterbtn'), 20%);
+        color: darken(colors('text', 'filterbtn'), 13%);
       }
       &:-ms-input-placeholder {
         transition: color .1s linear;
-        color: darken(colors('text', 'filterbtn'), 20%);
+        color: darken(colors('text', 'filterbtn'), 13%);
       }
     }
     @include grid-media-query(palm) {
@@ -444,7 +453,6 @@ $alphawidth-desk: 66px;
   }
 }
 
-
 /**
  * .Wrapper
  * Global wrapper, all inclusive
@@ -453,7 +461,9 @@ $alphawidth-desk: 66px;
 	height: 100%;
   min-height: 100%;
   background-color: colors('basic', 'lightbg'); /* Needs a background or else the nav will show through */
-  position: relative;
+  //position: relative;
+  position: absolute;
+  width: calc(100% - 62px);
   top: 0;
   bottom: 100%;
   overflow-x: hidden;
@@ -567,12 +577,13 @@ $alphawidth-desk: 66px;
     color: colors('basic', 'black');
     font-weight: 700;
     @include grid-media-query(palm) {
-      @include font-size(20px, false);
+      //@include font-size(20px, false);
+      font-size: 5vw;
       margin: 23px 0 0 16px;
     }
     @include grid-media-query(lap) {
       @include font-size(16px, false);
-      margin: 24px 0 0 13px;
+      margin: 18px 0 0 13px;
     }
     @include grid-media-query(desk) {
       @include font-size(20px, false);
@@ -762,6 +773,8 @@ label[for="nav-trigger"] {
 	color: colors('basic', 'white');
 	left: 0;
 	position:fixed;
+
+
 
 }
 
