@@ -851,6 +851,7 @@ label[for="nav-trigger"] {
     color: colors('text', 'filterbtn');
     cursor: pointer;
     outline: 0;
+    transition: color .1s linear;
     &:hover {
       color: lighten(colors('text', 'filterbtn'), 10%);
     }

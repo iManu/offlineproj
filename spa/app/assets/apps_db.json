@@ -42,7 +42,7 @@
     "icon": "icon.png",
     "title": "Other Application",
     "partner": {"id": 2, "name": "Nom partenaire #2"},
-    "baseline": "Null app serve nothing",
+    "baseline": "Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
 
     "pictos": {
@@ -78,7 +78,7 @@
     "icon": "icon.png",
     "title": "Xanother Application",
     "partner": {"id": 3, "name": "Nom partenaire #3"},
-    "baseline": "Null app serve nothing",
+    "baseline": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
 
     "pictos": {
@@ -114,7 +114,7 @@
     "icon": "unnamedCA487ZSV.png",
     "title": "Boxcryptor",
     "partner": {"id": 4, "name": "Nom partenaire #4"},
-    "baseline": "Null app serve nothing",
+    "baseline": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
 
     "pictos": {
@@ -150,7 +150,7 @@
     "icon": "unnamedCA7WZ00K.png",
     "title": "Google Maps",
     "partner": {"id": 5, "name": "Nom partenaire #5"},
-    "baseline": "Null app serve nothing",
+    "baseline": "Quis quam soluta, illum quo vero. Facilis, ipsum eos quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat.",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat. Quis quam soluta, illum quo vero. Facilis, ipsum eos!",
 
     "pictos": {
