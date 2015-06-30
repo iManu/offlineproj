@@ -113,6 +113,7 @@ module.exports = View.extend({
       listElem = buttonElem.siblings('.js-filter-list')
     ;
     listElem[ ( listElem.hasClass('is-open') ? 'remove' : 'add' ) + 'Class' ]('is-open');
+    a11y.expandService(listElem);
     buttonElem[ ( buttonElem.hasClass('is-check') ? 'remove' : 'add' ) + 'Class' ]('is-check');
   },
   filterIsotope: function filterIsotope() {

@@ -2,10 +2,10 @@
   <div class="Nav__logo"><img src="images/logo_samsungb2b.png" alt="Samsung Business"></div>
   <ul class="Nav__filters" role="list">
     <li class="Filters" role="list-item">
-      <button class="Filters__button js-craft-button" role="button">
+      <button class="Filters__button js-craft-button" aria-controls="aria-filter-crafts" role="button">
         <span>Nos Métiers</span><span class="Filters__button--check"><img src="images/gfx/check.png" alt="check"></span>
       </button>
-      <ul class="Filters__list Filters__list--crafts js-filter-list" role="list">
+      <ul id="aria-filter-crafts" aria-expanded="false" class="Filters__list Filters__list--crafts js-filter-list" role="list">
         {{#each filterCrafts}}
           <li class="Filters__item" role="list-item">
             <input type="checkbox" id="craft-{{this.id}}" class="Filters__input js-check-craft" data-craft="{{this.id}}" aria-checked="false">
@@ -17,10 +17,10 @@
       </ul>
     </li>
     <li class="Filters" role="list-item">
-      <button class="Filters__button js-category-button" role="button">
+      <button class="Filters__button js-category-button" aria-controls="aria-filter-categories" role="button">
         <span>Catégories</span><span class="Filters__button--check"><img src="images/gfx/check.png" alt=""></span>
       </button>
-      <ul class="Filters__list Filters__list--category js-filter-list" role="list">
+      <ul id="aria-filter-categories" aria-expanded="false" class="Filters__list Filters__list--category js-filter-list" role="list">
         {{#each filterCategories}}
           <li class="Filters__item" role="list-item">
             <input type="checkbox" id="category-{{this.id}}" class="Filters__input js-check-category" data-category="{{this.id}}" aria-checked="false">
@@ -32,10 +32,10 @@
       </ul>
     </li>
     <li class="Filters" role="list-item">
-      <button class="Filters__button js-partner-button" role="button">
+      <button class="Filters__button js-partner-button" aria-controls="aria-filter-partners" role="button">
         <span>Partenaires</span><span class="Filters__button--check"><img src="images/gfx/check.png" alt=""></span>
       </button>
-      <ul class="Filters__list Filters__list--partner js-filter-list" role="list">
+      <ul id="aria-filter-partners" aria-expanded="false" class="Filters__list Filters__list--partner js-filter-list" role="list">
         {{#each filterPartners}}
           <li class="Filters__item" role="list-item">
             <input type="checkbox" id="partner-{{this.id}}" class="Filters__input js-check-partner" data-partner="{{this.id}}" aria-checked="false">
