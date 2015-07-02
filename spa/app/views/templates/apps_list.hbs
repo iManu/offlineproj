@@ -12,10 +12,10 @@
   </div>
   <div class="Isogrid__resume">
     <p class="Isogrid__baseline">{{baseline}}</p>
-    <div class="js-actions" style="display:none">{{#each action}} {{this.item}}{{/each}}</div>
+    <div class="Isogrid__actions js-actions">{{#each action}} {{this.item}}{{/each}}</div>
     <div class="Isogrid__footer">
       <div class="Isogrid__footer--left">
-        <button class="Isogrid__btnplus">
+        <button class="Isogrid__btnplus js-btn-plus">
           En savoir <span>+</span>
         </button>
       </div><!--
@@ -30,12 +30,17 @@
     </div>
   </div>
 
-  <div class="Isogrid__detail js-app-detail" style="display:none">
-    <figure>
-      <p>big image !</p>
-      <img src="{{folder}}/{{id}}_{{visuals.[0]}}" alt="{{title}}" style="max-height:200px">
-    </figure>
-
+  <div class="Isogrid__detail js-app-detail">
+    <div class="scroll-wrap">
+      <article class="content__item">
+        <h2>{{title}}</h2>
+          <p>{{description}}</p>
+        <figure>
+          <img src="{{folder}}/{{id}}_{{visuals.[0]}}" alt="{{title}}" style="max-height:200px">
+        </figure>
+      </article>
+    </div>
+    <button class="close-button"><i class="fa fa-close"></i><span>Close</span></button>
   </div>
 </li>
 {{/each}}

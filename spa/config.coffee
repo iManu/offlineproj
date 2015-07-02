@@ -12,6 +12,7 @@ exports.config =
           'vendor/scripts/underscore-1.5.2.js',
           'vendor/scripts/backbone-1.0.0.js',
           'vendor/scripts/backbone-mediator.js',
+          'vendor/scripts/modernizr.custom.min.js',
         ]
 
     stylesheets:
