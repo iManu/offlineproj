@@ -169,8 +169,14 @@ module.exports = View.extend({
     // set the width/heigth and position
     //
 
-    $dummy.css('WebkitTransform', 'translate3d(' + (item.offset().left - 265) + 'px, ' + (item.offset().top - 5) + 'px, 0px) scale3d(' + item.outerWidth()/that.gridItemsContainer.outerWidth() + ',' + item.outerHeight()/that.getViewport('y') + ',1)');
-    $dummy.css('transform', 'translate3d(' + (item.offset().left - 265) + 'px, ' + (item.offset().top - 5) + 'px, 0px) scale3d(' + item.outerWidth()/that.gridItemsContainer.outerWidth() + ',' + item.outerHeight()/that.getViewport('y') + ',1)');
+    $dummy.css('WebkitTransform', 'translate3d(' + (item.offset().left - 265) + 'px, ' + (item.offset().top + 371) + 'px, 0px) scale3d(' + item.outerWidth()/that.gridItemsContainer.outerWidth() + ',' + item.outerHeight()/that.getViewport('y') + ',1)');
+    $dummy.css('transform', 'translate3d(' + (item.offset().left - 265) + 'px, ' + (item.offset().top + 371) + 'px, 0px) scale3d(' + item.outerWidth()/that.gridItemsContainer.outerWidth() + ',' + item.outerHeight()/that.getViewport('y') + ',1)');
+
+/*
+
+    $dummy.css('WebkitTransform', 'translate3d(' + item.css('left') + ', ' + item.css('top') + ', 0px) scale3d(' + item.outerWidth()/that.gridItemsContainer.outerWidth() + ',' + item.outerHeight()/that.getViewport('y') + ',1)');
+    $dummy.css('transform', 'translate3d(' + item.css('left') + ', ' + item.css('top') + ', 0px) scale3d(' + item.outerWidth()/that.gridItemsContainer.outerWidth() + ',' + item.outerHeight()/that.getViewport('y') + ',1)');
+ */
 
     // add transition class
     $dummy.addClass('placeholder--trans-in');
