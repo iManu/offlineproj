@@ -165,6 +165,7 @@ module.exports = View.extend({
     that.gridItemsContainer.parent('.Content').append(dummy);
 
     // body overlay
+
     that.bodyEl.addClass('view-single');
 
     setTimeout(function() {
@@ -176,6 +177,9 @@ module.exports = View.extend({
     }, 25);
 
     that.onEndTransition($dummy, function() {
+      that.bodyEl.animate({
+        scrollTop: 0
+      }, 0);
       // add transition class
       $dummy.removeClass('placeholder--trans-in');
       $dummy.addClass('placeholder--trans-out');
@@ -220,6 +224,7 @@ module.exports = View.extend({
       //that.onEndTransition(dummy, function(e) { console.log('close dummy');
         // reset content scroll..
         //contentItem.parentNode.scrollTop = 0;
+
         that.gridItemsContainer.parent('.Content').find('.placeholder').remove();
         //$('.placeholder')
         gridItem.removeClass('grid__item--loading');
