@@ -5,6 +5,7 @@
 
 var View = require('./view');
 var store = require('lib/persistence');
+var cnxSvc = require('lib/connectivity');
 
 module.exports = View.extend({
   // Le template principal
@@ -14,7 +15,9 @@ module.exports = View.extend({
   detailTemplate: require('./templates/apps_details'),
   // Les événements app-wide (pub/sub) auxquels on réagit
   subscriptions: {
-    'appslist:reset': 'render'
+    'appslist:reset': 'render',
+    'connectivity:online': 'syncMarker',
+    'connectivity:offline': 'syncMarker'
   },
   // Convention définie par notre classe mère View pour render : on
   // peuple le template principal avec ces données.
@@ -64,6 +67,17 @@ module.exports = View.extend({
     this.isAnimating = false;
 
     this.initEvents();
+    this.syncMarker();
+  },
+  syncMarker: function() {
+    this._onlineMarker = this._onlineMarker || this.$('#onlineMarker2');
+    if(cnxSvc.isOnline()) {
+      this._onlineMarker.find('.js-on').addClass('is-lighten');
+      this._onlineMarker.find('.js-off').removeClass('is-lighten');
+    } else {
+      this._onlineMarker.find('.js-off').addClass('is-lighten');
+      this._onlineMarker.find('.js-on').removeClass('is-lighten');
+    }
   },
   onEndTransition: function onEndTransition( el, callback ) {
     var that = this;
@@ -120,8 +134,8 @@ module.exports = View.extend({
         setTimeout(function() {
           $item.addClass('grid__item--animate');
           // reveal/load content after the last element animates out (todo: wait for the last transition to finish)
-          setTimeout(function() { that.loadContent($item); }, 100);
-        }, 300);
+          setTimeout(function() { that.loadContent($item); }, 20);
+        }, 100);
       });
     });
 
@@ -173,13 +187,13 @@ module.exports = View.extend({
       $dummy.css('WebkitTransform', 'translate3d(-5px, ' + (that.scrollY() - 5) + 'px, 0px)');
       $dummy.css('transform', 'translate3d(-5px, ' + (that.scrollY() - 5) + 'px, 0px)');
       // disallow scroll
-      $(window).on('scroll', that.noscroll);
-    }, 25);
+      //$(window).on('scroll', that.noscroll);
+    }, 5);
 
     that.onEndTransition($dummy, function() {
-      that.bodyEl.animate({
+      /*that.bodyEl.animate({
         scrollTop: 0
-      }, 0);
+      }, 0);*/
       // add transition class
       $dummy.removeClass('placeholder--trans-in');
       $dummy.addClass('placeholder--trans-out');
@@ -235,7 +249,7 @@ module.exports = View.extend({
 
       // reset current
       that.currentItem = -1;
-    }, 25);
+    }, 5);
   },
 
   noscroll: function noscroll() {
