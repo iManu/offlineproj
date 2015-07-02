@@ -228,7 +228,7 @@ $alphawidth-desk: 66px;
   &__list {
     min-height: 0;
     max-height: 378px;
-    overflow-y: scroll;
+    overflow-y: auto;
     li {
       transition:all .2s ease-in-out;
       opacity: 0;
@@ -276,10 +276,10 @@ $alphawidth-desk: 66px;
   &__label {
     background: colors('menu', 'bg', 'sub');
     color: colors('text', 'filterbtn');
-    display: block;
+    display: table;
     @include font-size(13px, false);
     height: 36px;
-    padding-top: 9px;
+    //padding-top: 9px;
     position: relative;
     user-select: none;
     width: 100%;
@@ -287,24 +287,36 @@ $alphawidth-desk: 66px;
       color: colors('menu', 'button', 'normal');
     }
     span {
+      //display: inline-block;
       vertical-align: middle;
 
     }
+    &--content {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    &--text {
+      display: inline-block;
+      width: 70%;
+      word-break: break-word;
+    }
     &--check {
       display: none;
-      position: absolute;
+      padding-left: 5%;
+      position: relative;
+      width: 25%;
       &.is-elem-check {
         display: inline-block;
       }
-      @include grid-media-query(palm) {
-        right: 75px;
+      /*@include grid-media-query(palm) {
+        right: 5%;
       }
       @include grid-media-query(lap) {
-        right: 35px;
+        right: 5px;
       }
       @include grid-media-query(desk) {
-        right: 45px;
-      }
+        right: 15px;
+      }*/
     }
     transition: background .1s ease-out;
     &:hover {

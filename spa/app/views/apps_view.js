@@ -36,8 +36,10 @@ module.exports = View.extend({
       });
     });*/
     /**/
+    var appList = this.listTemplate(store.getAppsList());
+
     return {
-      appsList: this.listTemplate(store.getAppsList())
+      appsList: appList
     };
   }
 

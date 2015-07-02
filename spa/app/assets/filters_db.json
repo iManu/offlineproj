@@ -1,14 +1,24 @@
 [
   {
     "crafts" : [
-      { "id": 1, "item": "Premier métier" },
-      { "id": 2, "item": "Deuxième métier" },
-      { "id": 3, "item": "etcetcetcetcetcetc" }
+      { "id": 1, "item": "Commerce" },
+      { "id": 2, "item": "DSI" },
+      { "id": 3, "item": "Executive" },
+      { "id": 4, "item": "Juridique" },
+      { "id": 5, "item": "Marketing" },
+      { "id": 6, "item": "R&D Ingénieurs" },
+      { "id": 7, "item": "RH" },
+      { "id": 8, "item": "Supply Chain" },
+      { "id": 9, "item": "Technique/maintenance" },
+      { "id": 10, "item": "Transporteurs" }
     ],
     "categories" : [
-      { "id": 1, "item": "Première catégorie" },
-      { "id": 2, "item": "Deuxième catégorie" },
-      { "id": 3, "item": "etcetcetcetcetcetc" }
+      { "id": 1, "item": "Archivage" },
+      { "id": 2, "item": "Communication/teamworking" },
+      { "id": 3, "item": "Consultation " },
+      { "id": 4, "item": "Outils transversaux " },
+      { "id": 5, "item": "Productivité/traitement d’infos/présentation " },
+      { "id": 6, "item": "Sécurité " }
     ],
     "partners" : [
       { "id": 1, "item": "Premier partenaire" },
@@ -30,9 +40,9 @@
       { "id": 17, "item": "17 xyz partenaire" }
     ],
     "actions" : [
-      { "id": 1, "item": "Première catégorie" },
-      { "id": 2, "item": "Deuxième catégorie" },
-      { "id": 3, "item": "etcetcetcetcetcetc" }
+      { "id": 1, "item": "Accès aux ressources produits (Sales Resource Management)" },
+      { "id": 2, "item": "Agenda partagé" },
+      { "id": 3, "item": "Archivage d’actions, historique de travail" }
     ]
   }
 ]

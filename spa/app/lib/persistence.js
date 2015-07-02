@@ -35,7 +35,17 @@ apps_collection.fetch({ reset: true });
 // Les 2 fonctions exposées par l'API : renvoie la collection de apps
 // et la collection des filtres
 function getAppsList() {
-  return apps_collection.toJSON();
+  var filters = filters_collection.toJSON(),
+      filterActions = filters[0].actions,
+      apps = apps_collection.toJSON()
+  ;
+  _.each(apps, function(element, index, list) {
+      element.action = _.map(element.action, function(idAction, indexAction) {
+        return _.findWhere(filterActions, {id: idAction});
+      });
+  });
+
+  return apps;
 }
 function getFilters() {
   return filters_collection.toJSON();

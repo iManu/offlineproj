@@ -1,4 +1,5 @@
-ExpiresActive On
-ExpiresDefault "access"
-
 AddType text/cache-manifest .manifest
+<ifmodule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/cache-manifest "access"
+</ifmodule>

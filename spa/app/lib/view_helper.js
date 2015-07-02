@@ -12,3 +12,4 @@
 Handlebars.registerHelper('first_letter', function(title) {
   return title.charAt(0).toLowerCase();
 });
+

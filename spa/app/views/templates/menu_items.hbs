@@ -10,7 +10,9 @@
           <li class="Filters__item" role="list-item">
             <input type="checkbox" id="craft-{{this.id}}" class="Filters__input js-check-craft" data-craft="{{this.id}}" aria-checked="false">
             <label for="craft-{{this.id}}" class="Filters__label">
-              <span>{{this.item}}</span><span class="Filters__label--check js-label-check"><img src="images/gfx/check.png" alt="check"></span>
+              <div class="Filters__label--content">
+                <span class="Filters__label--text">{{this.item}}</span><span class="Filters__label--check js-label-check"><img src="images/gfx/check.png" alt="check"></span>
+              </div>
             </label>
           </li>
         {{/each}}
@@ -25,7 +27,9 @@
           <li class="Filters__item" role="list-item">
             <input type="checkbox" id="category-{{this.id}}" class="Filters__input js-check-category" data-category="{{this.id}}" aria-checked="false">
             <label for="category-{{this.id}}" class="Filters__label">
-              <span>{{this.item}}</span><span class="Filters__label--check js-label-check"><img src="images/gfx/check.png" alt="check"></span>
+              <div class="Filters__label--content">
+                <span class="Filters__label--text">{{this.item}}</span><span class="Filters__label--check js-label-check"><img src="images/gfx/check.png" alt="check"></span>
+              </div>
             </label>
           </li>
         {{/each}}
@@ -40,7 +44,9 @@
           <li class="Filters__item" role="list-item">
             <input type="checkbox" id="partner-{{this.id}}" class="Filters__input js-check-partner" data-partner="{{this.id}}" aria-checked="false">
             <label for="partner-{{this.id}}" class="Filters__label">
-              <span>{{this.item}}</span><span class="Filters__label--check js-label-check"><img src="images/gfx/check.png" alt="check"></span>
+              <div class="Filters__label--content">
+                <span class="Filters__label--text">{{this.item}}</span><span class="Filters__label--check js-label-check"><img src="images/gfx/check.png" alt="check"></span>
+              </div>
             </label>
           </li>
         {{/each}}

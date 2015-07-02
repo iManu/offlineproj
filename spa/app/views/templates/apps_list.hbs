@@ -1,18 +1,18 @@
 {{#each .}}
-{{#if is-active}}
 <li class="Isogrid__item js-item-selector{{#each craft}} craft-{{this}}{{/each}}{{#each category}} category-{{this}}{{/each}} {{#if partner.id}} partner-{{partner.id}}{{/if}} letter-{{first_letter title}}">
   <div class="Isogrid__header">
     <div class="Isogrid__header--left">
-      <img class="Isogrid__icon--img" src="images/grey.gif" data-original="{{folder}}/{{icon}}" alt="">
+      <img class="Isogrid__icon--img" src="images/grey.gif" data-original="{{folder}}/{{id}}_{{icon}}" alt="">
     </div><!--
     --><div class="Isogrid__header--right">
+
       <h2 title="{{title}}" class="Isogrid__title js-sort-title">{{title}}</h2>
       <h3 class="Isogrid__subtitle">{{partner.name}}</h3>
     </div>
   </div>
   <div class="Isogrid__resume">
     <p class="Isogrid__baseline">{{baseline}}</p>
-
+    <div class="js-actions" style="display:none">{{#each action}} {{this.item}}{{/each}}</div>
     <div class="Isogrid__footer">
       <div class="Isogrid__footer--left">
         <button class="Isogrid__btnplus">
@@ -33,10 +33,9 @@
   <div class="Isogrid__detail js-app-detail" style="display:none">
     <figure>
       <p>big image !</p>
-      <img src="{{folder}}/{{visuals.[0]}}" alt="{{title}}" style="max-height:200px">
+      <img src="{{folder}}/{{id}}_{{visuals.[0]}}" alt="{{title}}" style="max-height:200px">
     </figure>
 
   </div>
 </li>
-{{/if}}
 {{/each}}

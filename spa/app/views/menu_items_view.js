@@ -29,15 +29,15 @@ module.exports = View.extend({
     var filters =  store.getFilters(),
       filterCrafts = filters[0].crafts,
       filterCategories = filters[0].categories,
-      filterPartners = filters[0].partners,
-      filterActions = filters[0].actions
+      filterPartners = filters[0].partners/*,
+      filterActions = filters[0].actions*/
     ;
     return {
       alphabet: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
       filterCrafts: filterCrafts,
       filterCategories: filterCategories,
-      filterPartners: filterPartners,
-      filterActions: filterActions
+      filterPartners: filterPartners/*,
+      filterActions: filterActions*/
     };
   },
   qsRegex:'',
@@ -72,7 +72,7 @@ module.exports = View.extend({
 
         filter: function() {
           var $this = $(this);
-          var searchResult = that.qsRegex ? $this.find('.js-sort-title, time').text().match( that.qsRegex ) : true;
+          var searchResult = that.qsRegex ? $this.find('.js-sort-title, .js-actions').text().match( that.qsRegex ) : true;
           var buttonResult = that.buttonFilter ? $this.is( that.buttonFilter ) : true;
           return searchResult && buttonResult;
         }
