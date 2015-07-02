@@ -11,6 +11,7 @@ module.exports = View.extend({
   template: require('./templates/apps'),
   // Le template interne pour la liste et ses éléments
   listTemplate: require('./templates/apps_list'),
+  detailTemplate: require('./templates/apps_details'),
   // Les événements app-wide (pub/sub) auxquels on réagit
   subscriptions: {
     'appslist:reset': 'render'
@@ -37,9 +38,11 @@ module.exports = View.extend({
     });*/
     /**/
     var appList = this.listTemplate(store.getAppsList());
+    var appDetails = this.detailTemplate(store.getAppsList());
 
     return {
-      appsList: appList
+      appsList: appList,
+      appsDetails: appDetails
     };
   },
   afterRender: function appsAfterRender() {
@@ -85,7 +88,6 @@ module.exports = View.extend({
       inner = window['innerWidth'];
     }
     else if( axis === 'y' ) {
-      console.log(this.docElem)
       client = this.docElem.outerHeight();
       inner = window['innerHeight'];
     }
@@ -106,9 +108,9 @@ module.exports = View.extend({
         if(that.isAnimating || that.currentItem === pos) {
           return false;
         }
-        that.contentItemsContainer = $item.find('.js-app-detail');
+        /*that.contentItemsContainer = $item.find('.js-app-detail');
         that.contentItems = that.contentItemsContainer.find('.content__item');
-        that.closeCtrl = that.contentItemsContainer.find('.close-button');
+        that.closeCtrl = that.contentItemsContainer.find('.close-button');*/
 
         that.isAnimating = true;
         // index of current item
@@ -143,7 +145,7 @@ module.exports = View.extend({
 
   },
 
-  loadContent: function loadContent(item) { //console.log(item)
+  loadContent: function loadContent(item) {
     var that = this;
     // add expanding element/placeholder
     var dummy = document.createElement('div');
@@ -184,7 +186,10 @@ module.exports = View.extend({
       that.contentItemsContainer.addClass('content--show');
       // show content item:
       //that.contentItems[that.currentItem].addClass('content__item--show');
-      that.contentItems.addClass('content__item--show');
+      //
+      //console.log(that.contentItems[that.currentItem])
+      //
+      $(that.contentItems[that.currentItem]).addClass('content__item--show');
       // show close control
       that.closeCtrl.addClass('close-button--show');
       // sets overflow hidden to the body and allows the switch to the content scroll
@@ -196,10 +201,10 @@ module.exports = View.extend({
 
   hideContent: function hideContent() {
     var that = this;
-    var gridItem = that.gridItems,
-        contentItem = that.contentItems;
+    var gridItem = $(that.gridItems[that.currentItem]),
+        contentItem = $(that.contentItems[that.currentItem]);
 
-    contentItem.removeClass('content__item--show');
+    $(contentItem).removeClass('content__item--show');
     that.contentItemsContainer.removeClass('content--show');
     that.closeCtrl.removeClass('close-button--show');
     that.bodyEl.removeClass('view-single');

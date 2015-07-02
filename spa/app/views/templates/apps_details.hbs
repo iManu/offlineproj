@@ -1,0 +1,16 @@
+
+<div class="Isogrid__detail js-app-detail">
+  <div class="scroll-wrap">
+    {{#each .}}
+    <article class="content__item">
+      <h2>{{title}}</h2>
+        <p>{{description}}</p>
+      <figure>
+        <img src="{{folder}}/{{id}}_{{visuals.[0]}}" alt="{{title}}" style="max-height:200px">
+      </figure>
+    </article>
+    {{/each}}
+  </div>
+  <button class="close-button"><i class="fa fa-close"></i><span>Close</span></button>
+</div>
+
