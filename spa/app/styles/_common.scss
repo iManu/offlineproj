@@ -1083,7 +1083,6 @@ label[for="nav-trigger"] {
   background-color: colors('basic', 'white');
   box-shadow: 0 0 6px rgba(0,0,0,.2);
   position: absolute;
-  width: calc(100% - 40px);
   overflow: hidden;
   height: 0;
   opacity: 0;
@@ -1092,12 +1091,15 @@ label[for="nav-trigger"] {
   font-size: 0.85em;
   @include grid-media-query(palm) {
     top: 270px;
+    width: 100%;
   }
   @include grid-media-query(lap) {
     top: 150px;
+    width: calc(100% - 40px);
   }
   @include grid-media-query(desk) {
     top: 130px;
+    width: calc(100% - 40px);
   }
 }
 
@@ -1209,6 +1211,9 @@ label[for="nav-trigger"] {
       padding: 30px 35px;
     }
     .carousel-img {
+      @include grid-media-query(palm) {
+        height: 300px;
+      }
       @include grid-media-query(lapandup) {
         height: 400px;
       }

@@ -24,10 +24,13 @@
           --><div class="article-right">
             <h2 class="article-title">{{title}}</h2>
             <p class="article-desc">{{description}}</p>
+            {{#is_online}}
             <a href="{{url}}" class="article-link">Télécharger l'application</a>
+            {{/is_online}}
           </div>
         </div>
         <div class="article-carousel">
+          {{#is_online}}
           <div class="app-carousel">
             {{#each visuals}}
             <div>
@@ -35,6 +38,7 @@
             </div>
             {{/each}}
           </div>
+          {{/is_online}}
         </div>
       </article>
     {{/each}}

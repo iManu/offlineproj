@@ -3,6 +3,8 @@
 
 'use strict';
 
+var cnxSvc = require('lib/connectivity');
+
 /* global Handlebars */
 
 // Ce module est un emplacement dédié pour tous nos helpers Handlebars.
@@ -13,3 +15,9 @@ Handlebars.registerHelper('first_letter', function(title) {
   return title.charAt(0).toLowerCase();
 });
 
+// Helper qui permet de ne pas render des blocks si pas de connexion
+Handlebars.registerHelper('is_online', function(options) {
+  if( cnxSvc.isOnline() ) {
+    return options.fn(this);
+  }
+});
