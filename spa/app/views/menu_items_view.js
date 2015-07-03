@@ -94,7 +94,9 @@ module.exports = View.extend({
           event: 'lazylazy'
       });
 
+
     }, 1);
+
   },
   loadVisible: function loadVisible($els, trigger) {
       $els.filter(function () {

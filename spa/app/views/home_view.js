@@ -16,7 +16,9 @@ module.exports = View.extend({
     'connectivity:offline': 'syncMarker'
   },
   events: {
-  	'click .js-burger-btn': 'ariaBurger'
+  	'click .js-burger-btn': 'ariaBurger',
+    'click .js-legacy': 'popinLegal',
+    'click .js-legacy-close': 'popinLegalClose'
   },
   // Le template principal
   template: require('./templates/home'),
@@ -37,6 +39,9 @@ module.exports = View.extend({
     // On initialise et on render à la volée les deux vues imbriquées
     new MenuView({ el: this.$('#menuUI') }).render();
     new AppsView({ el: this.$('#appsUI') }).render();
+
+    // popin
+    this.popinElem = $('.js-popin-legal');
   },
 
   // Convention définie par notre classe mère View pour render : on
@@ -51,6 +56,17 @@ module.exports = View.extend({
   burgerElem: {},
   ariaBurger: function ariaBurger() {
   	a11y.expandService(this.burgerElem);
+    // on referme la popin si elle est ouverte
+    if( this.popinElem.hasClass('is-popin') ) {
+      this.popinLegalClose();
+    }
+  },
+  popinElem: {},
+  popinLegal: function popinLegal() {
+    this.popinElem[ ( !this.popinElem.hasClass('is-popin') ? 'add' : 'remove' ) + 'Class' ]('is-popin');
+  },
+  popinLegalClose: function popinLegalClose() {
+    this.popinElem.removeClass('is-popin');
   },
   // Réaction à la notif de passage online/offline : on ajuste le marqueur
   syncMarker: function() {
