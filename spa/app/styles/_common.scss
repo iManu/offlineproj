@@ -783,15 +783,16 @@ $alphawidth-desk: 66px;
 label[for="nav-trigger"] {
   /* critical positioning styles */
   position: fixed;
-  left: 15px; top: 15px;
+  left: 0; top: 0;
   z-index: 2;
 
   /* non-critical apperance styles */
-  height: 30px;
-  width: 30px;
+  height: 63px;
+  width: 64px;
   cursor: pointer;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
-  background-size: contain;
+  /*background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+  background-size: contain;*/
+  background: transparent url(../images/gfx/sprite_burger.png) left top no-repeat;
 }
 
 /* Make the Magic Happen */
@@ -800,6 +801,7 @@ label[for="nav-trigger"] {
 }
 
 .nav-trigger:checked + label {
+  background: transparent url(../images/gfx/sprite_burger.png) left -63px no-repeat;
 	//left: 0;
 	transform: translate3d(0,0,0);
   //left: calc(100% - 60px);
