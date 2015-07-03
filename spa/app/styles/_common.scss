@@ -1190,8 +1190,19 @@ label[for="nav-trigger"] {
     text-decoration: none;
     transition: background-color .2s;
     width: 230px;
+    position: relative;
     &:hover {
       background-color: darken(colors('btn', 'linkbg'), 5%);
+    }
+    &:after {
+      content: '';
+      background: transparent url(../images/gfx/arrow_download.png) 0 0 no-repeat;
+      position: absolute;
+      top: 18px;
+      right: 23px;
+      height: 11px;
+      width: 10px;
+
     }
     @include grid-media-query(lap) {
       position: relative;
