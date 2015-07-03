@@ -725,6 +725,10 @@ $alphawidth-desk: 66px;
   }
   &__actions {
     display: none;
+    position: absolute;
+    bottom: 53px;
+    transform: rotate(-5deg);
+    color: grey;
   }
   &__footer {
     &--left,

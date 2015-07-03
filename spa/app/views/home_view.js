@@ -18,7 +18,20 @@ module.exports = View.extend({
   events: {
   	'click .js-burger-btn': 'ariaBurger',
     'click .js-legacy': 'popinLegal',
-    'click .js-legacy-close': 'popinLegalClose'
+    'click .js-legacy-close': 'popinLegalClose',
+    'click .Nav__logo': 'easterActions'
+  },
+  easterActions: function easterActions(e) {
+  	this.eastClicks += 1;
+  	var that = this,
+  			$actions = $('.js-actions');
+  	//console.log(this.eastClicks);
+  	_.delay(function(){
+  		if(that.eastClicks === 5) {
+  			$actions[ ($actions.css('display') === 'none') ? 'fadeIn' : 'fadeOut' ]();
+  		}
+  		that.eastClicks = 0;
+  	}, 1000);
   },
   // Le template principal
   template: require('./templates/home'),
@@ -41,6 +54,8 @@ module.exports = View.extend({
 
     // popin
     this.popinElem = $('.js-popin-legal');
+
+    this.eastClicks = 0;
   },
 
   // Convention définie par notre classe mère View pour render : on

@@ -293,6 +293,11 @@ module.exports = View.extend({
 
       // reset current
       that.currentItem = -1;
+
+      that.contentItemsContainer.find('.scroll-wrap').animate({
+      	scrollTop: 0
+      });
+
     }, 5);
   },
 
