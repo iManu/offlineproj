@@ -2,7 +2,7 @@
   {
     "id": "app001",
     "folder": "apps",
-    "icon": "icon.png",
+    "icon": "app001_icon.png",
     "title": "Application namex",
     "partner": {"id": 1, "name": "Nom partenaire #1"},
     "baseline": "Impressive app to make coffee",
@@ -17,10 +17,10 @@
     "action": [3],
 
     "visuals": [
-      "visual_001.jpg",
-      "visual_002.jpg",
-      "visual_003.jpg",
-      "visual_004.jpg"
+      "app001_visual_001.jpg",
+      "app001_visual_002.jpg",
+      "app001_visual_003.jpg",
+      "app001_visual_004.jpg"
     ],
 
     "url": "http://adress.com/to/app"
@@ -29,7 +29,7 @@
   {
     "id": "app002",
     "folder": "apps",
-    "icon": "icon.png",
+    "icon": "app002_icon.png",
     "title": "Other Application",
     "partner": {"id": 2, "name": "Nom partenaire #2"},
     "baseline": "Porro quia dolore aut veniam illo error rem consequuntur eum at dignissimos",
@@ -44,10 +44,10 @@
     "action": [3],
 
     "visuals": [
-      "visual_001.jpg",
-      "visual_002.jpg",
-      "visual_003.jpg",
-      "visual_004.jpg"
+      "app002_visual_001.jpg",
+      "app002_visual_002.jpg",
+      "app002_visual_003.jpg",
+      "app002_visual_004.jpg"
     ],
 
     "url": "http://adress.com/to/app"
@@ -56,7 +56,7 @@
   {
     "id": "app003",
     "folder": "apps",
-    "icon": "icon.png",
+    "icon": "app003_icon.png",
     "title": "Xanother Application",
     "partner": {"id": 3, "name": "Nom partenaire #3"},
     "baseline": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
@@ -71,10 +71,10 @@
     "action": [3],
 
     "visuals": [
-      "visual_001.jpg",
-      "visual_002.jpg",
-      "visual_003.jpg",
-      "visual_004.jpg"
+      "app003_visual_001.jpg",
+      "app003_visual_002.jpg",
+      "app003_visual_003.jpg",
+      "app003_visual_004.jpg"
     ],
 
     "url": "http://adress.com/to/app"
@@ -83,7 +83,7 @@
   {
     "id": "app004",
     "folder": "apps",
-    "icon": "unnamedCA487ZSV.png",
+    "icon": "app004_unnamedCA487ZSV.png",
     "title": "Boxcryptor",
     "partner": {"id": 4, "name": "Nom partenaire #4"},
     "baseline": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
@@ -98,10 +98,10 @@
     "action": [2,3],
 
     "visuals": [
-      "visual_001.jpg",
-      "visual_002.jpg",
-      "visual_003.jpg",
-      "visual_004.jpg"
+      "app004_visual_001.jpg",
+      "app004_visual_002.jpg",
+      "app004_visual_003.jpg",
+      "app004_visual_004.jpg"
     ],
 
     "url": "http://adress.com/to/app"
@@ -110,7 +110,7 @@
   {
     "id": "app005",
     "folder": "apps",
-    "icon": "unnamedCA7WZ00K.png",
+    "icon": "app005_unnamedCA7WZ00K.png",
     "title": "Google Maps",
     "partner": {"id": 5, "name": "Nom partenaire #5"},
     "baseline": "Quis quam soluta, illum quo vero. Facilis, ipsum eos quia dolore aut veniam illo error rem consequuntur eum at dignissimos, repellat.",
@@ -125,10 +125,10 @@
     "action": [2,3],
 
     "visuals": [
-      "visual_001.jpg",
-      "visual_002.jpg",
-      "visual_003.jpg",
-      "visual_004.jpg"
+      "app005_visual_001.jpg",
+      "app005_visual_002.jpg",
+      "app005_visual_003.jpg",
+      "app005_visual_004.jpg"
     ],
 
     "url": "http://adress.com/to/app"
@@ -137,7 +137,7 @@
   {
     "id": "app006",
     "folder": "apps",
-    "icon": "unnamedCA4IEKXM.png",
+    "icon": "app_006_unnamedCA4IEKXM.png",
     "title": "Remember the Milk",
     "partner": {"id": 6, "name": "Nom partenaire #6"},
     "baseline": "Null app serve nothing",
@@ -152,10 +152,10 @@
     "action": [1],
 
     "visuals": [
-      "visual_001.jpg",
-      "visual_002.jpg",
-      "visual_003.jpg",
-      "visual_004.jpg"
+      "app_006_visual_001.jpg",
+      "app_006_visual_002.jpg",
+      "app_006_visual_003.jpg",
+      "app_006_visual_004.jpg"
     ],
 
     "url": "http://adress.com/to/app"
@@ -164,7 +164,7 @@
   {
     "id": "app007",
     "folder": "apps",
-    "icon": "unnamedCA15WBQ8.png",
+    "icon": "app007_unnamedCA15WBQ8.png",
     "title": "Synchroteam",
     "partner": {"id": 7, "name": "Nom partenaire #7"},
     "baseline": "Null app serve nothing",
@@ -179,10 +179,10 @@
     "action": [3],
 
     "visuals": [
-      "visual_001.jpg",
-      "visual_002.jpg",
-      "visual_003.jpg",
-      "visual_004.jpg"
+      "app007_visual_001.jpg",
+      "app007_visual_002.jpg",
+      "app007_visual_003.jpg",
+      "app007_visual_004.jpg"
     ],
 
     "url": "http://adress.com/to/app"
@@ -191,7 +191,7 @@
   {
     "id": "app008",
     "folder": "apps",
-    "icon": "unnamedCASGEP8H.png",
+    "icon": "app008_unnamedCASGEP8H.png",
     "title": "Xyzmo",
     "partner": {"id": 8, "name": "Nom partenaire #8"},
     "baseline": "Null app serve nothing",
@@ -206,10 +206,10 @@
     "action": [3],
 
     "visuals": [
-      "visual_001.jpg",
-      "visual_002.jpg",
-      "visual_003.jpg",
-      "visual_004.jpg"
+      "app008_visual_001.jpg",
+      "app008_visual_002.jpg",
+      "app008_visual_003.jpg",
+      "app008_visual_004.jpg"
     ],
 
     "url": "http://adress.com/to/app"
@@ -218,7 +218,7 @@
   {
     "id": "app009",
     "folder": "apps",
-    "icon": "unnamedCAAEZ3O0.png",
+    "icon": "app009_unnamedCAAEZ3O0.png",
     "title": "Hid",
     "partner": {"id": 9, "name": "Nom partenaire #9"},
     "baseline": "Null app serve nothing",
@@ -233,10 +233,10 @@
     "action": [3],
 
     "visuals": [
-      "visual_001.jpg",
-      "visual_002.jpg",
-      "visual_003.jpg",
-      "visual_004.jpg"
+      "app009_visual_001.jpg",
+      "app009_visual_002.jpg",
+      "app009_visual_003.jpg",
+      "app009_visual_004.jpg"
     ],
 
     "url": "http://adress.com/to/app"
@@ -245,7 +245,7 @@
   {
     "id": "app010",
     "folder": "apps",
-    "icon": "unnamedCAC5WQF9.png",
+    "icon": "app010_unnamedCAC5WQF9.png",
     "title": "SAP",
     "partner": {"id": 10, "name": "Nom partenaire #10"},
     "baseline": "Null app serve nothing",
@@ -260,10 +260,10 @@
     "action": [3],
 
     "visuals": [
-      "visual_001.jpg",
-      "visual_002.jpg",
-      "visual_003.jpg",
-      "visual_004.jpg"
+      "app010_visual_001.jpg",
+      "app010_visual_002.jpg",
+      "app010_visual_003.jpg",
+      "app010_visual_004.jpg"
     ],
 
     "url": "http://adress.com/to/app"

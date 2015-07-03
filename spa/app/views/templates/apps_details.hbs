@@ -19,7 +19,7 @@
             {{/if}}
           </div>
           <div class="article-left">
-            <img src="{{folder}}/{{id}}_{{icon}}" class="article-icon" alt="">
+            <img src="{{folder}}/{{icon}}" class="article-icon" alt="">
           </div><!--
           --><div class="article-right">
             <h2 class="article-title">{{title}}</h2>
@@ -28,9 +28,13 @@
           </div>
         </div>
         <div class="article-carousel">
-          <figure>
-            <img src="{{folder}}/{{id}}_{{visuals.[0]}}" alt="{{title}}" style="max-height:200px">
-          </figure>
+          <div class="app-carousel">
+            {{#each visuals}}
+            <div>
+              <img src="{{../folder}}/{{this}}" class="carousel-img" alt="">
+            </div>
+            {{/each}}
+          </div>
         </div>
       </article>
     {{/each}}

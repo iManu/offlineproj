@@ -27,7 +27,6 @@ module.exports = View.extend({
   // de comportements et injections des vues imbriquées
   afterRender: function() {
 
-
  		this.burgerElem = this.$el.find('.js-burger-menu');
   	this.burgerElem.siblings('.js-burger-btn').is(':checked')
   		? this.burgerElem.attr('aria-expanded', false) : this.burgerElem.attr('aria-expanded', true);

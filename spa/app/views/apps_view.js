@@ -94,6 +94,7 @@ module.exports = View.extend({
     else {
       onEndCallbackFn();
     }
+
   },
   getViewport: function getViewport( axis ) {
     var client, inner;
@@ -219,7 +220,43 @@ module.exports = View.extend({
       that.bodyEl.addClass('noscroll');
 
       that.isAnimating = false;
+
+      // init carousel
+      that.contentItems.find('.app-carousel').slick({
+        dots: false,
+        arrows: true,
+        infinite: true,
+        adaptiveHeight: false,
+        centerMode: true,
+        variableWidth: true,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 2,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 2,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
+      });
+
     });
+
   },
 
   hideContent: function hideContent() {
