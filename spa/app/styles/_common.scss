@@ -545,14 +545,23 @@ $alphawidth-desk: 66px;
     @include grid-media-query(palm) {
       right: 15px;
       top: 30px;
+      &--two {
+        right: 20px;
+      }
     }
     @include grid-media-query(lap) {
       right: $panelwidth-lap + 20px;
       top: 27px;
+      &--two {
+        right: 0;
+      }
     }
     @include grid-media-query(desk) {
       right: $panelwidth-desk + 35px;
       top: 97px;
+      &--two {
+        right: 0;
+      }
     }
   }
   @include grid-media-query(palm) {
@@ -878,7 +887,7 @@ label[for="nav-trigger"] {
 }
 
 /**
- *
+ * ========================================
  */
 
 /* Placeholder element (dummy that gets animated when we click on an item) */
@@ -949,19 +958,24 @@ label[for="nav-trigger"] {
   left: 0;
   top: 0;
   z-index: 1;
-  //overflow-y: scroll;
-  //-webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .Wrapper__article {
-  padding: 0 40px;
+  padding: 0;
+  @include grid-media-query(lap) {
+    padding: 0 25px;
+  }
+  @include grid-media-query(desk) {
+    padding: 0 40px;
+  }
 }
 /* single content item */
 .content__item {
   background-color: colors('basic', 'white');
   box-shadow: 0 0 6px rgba(0,0,0,.2);
   position: absolute;
-  top: 130px;
   //width: 100%;
   overflow: hidden;
   height: 0;
@@ -969,6 +983,15 @@ label[for="nav-trigger"] {
   padding: 0;
   pointer-events: none;
   font-size: 0.85em;
+  @include grid-media-query(palm) {
+    top: 270px;
+  }
+  @include grid-media-query(lap) {
+    top: 150px;
+  }
+  @include grid-media-query(desk) {
+    top: 130px;
+  }
 }
 
 .content__item.content__item--show {
@@ -985,35 +1008,67 @@ label[for="nav-trigger"] {
 .article {
   &-top {
     padding: 20px 40px 45px 40px;
+    @include grid-media-query(palm) {
+      padding: 25px 25px 45px 25px;
+    }
   }
   &-pictos {
     text-align: right;
     width: 100%;
+    @include grid-media-query(palm) {
+      text-align: left;
+      position: absolute;
+      top: 260px;
+    }
   }
   &-left, &-right {
     display: inline-block;
     vertical-align: top;
+    @include grid-media-query(palm) {
+      display: block;
+    }
   }
   &-left {
     width: 25%;
+    max-width: 224px;
+    @include grid-media-query(palm) {
+      width: 100%;
+      max-width: 100%;
+    }
   }
   &-right {
     padding: 0 4%;
     width: 67%;
+    @include grid-media-query(palm) {
+      padding: 0;
+      max-width: 90%;
+      width: 90%;
+    }
   }
   &-icon {
     height: 100%;
-    width: 204%;
+    width: 100%;
     max-width: 204px;
+    @include grid-media-query(lap) {
+      width: 100%;
+      max-width: 160px;
+    }
   }
   &-title {
     font-weight: 700;
     @include font-size(25px, false);
     padding: 10px 0 30px 0;
+    @include grid-media-query(palm) {
+      padding: 60px 0 30px 0;
+    }
   }
   &-desc {
     height: 85px;
     max-height: 85px;
+    @include grid-media-query(portable) {
+      height: 120px;
+      max-height: 120px;
+    }
   }
   &-link {
     background-color: colors('btn', 'linkbg');
@@ -1025,15 +1080,22 @@ label[for="nav-trigger"] {
     text-transform: uppercase;
     text-decoration: none;
     transition: background-color .2s;
-    width: 250px;
+    width: 230px;
     &:hover {
       background-color: darken(colors('btn', 'linkbg'), 5%);
+    }
+    @include grid-media-query(lap) {
+      position: relative;
+      left: -42%;
     }
   }
   &-carousel {
     background-color: colors('carousel', 'bg');
     min-height: 100%;
     height: 100%;
+    @include grid-media-query(palm) {
+      box-shadow: inset -3px 0 6px rgba(0,0,0,.3);
+    }
   }
 }
 
