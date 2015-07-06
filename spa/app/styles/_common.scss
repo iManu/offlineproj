@@ -1007,6 +1007,77 @@ label[for="nav-trigger"] {
   }
 }
 
+/**
+ * modal
+ */
+$modalH: 140;
+$modalW: 400;
+.modal {
+  background: colors('basic', 'white');
+  box-shadow: 0 0 6px rgba(0,0,0,.2);
+  opacity: 0;
+  padding: 20px;
+  position: absolute;
+  transition: opacity .3s;
+  top: calc(50% - #{$modalH/2+'px'});
+  left: calc(50% - #{($modalW/1.13)+'px'});
+  height: #{$modalH} + 'px';
+  width: #{$modalW} + 'px';
+  z-index: -1;
+  &.show {
+    opacity: 1;
+    z-index: 10000;
+  }
+  .close-btn {
+    text-align: right;
+    width: 100%;
+  }
+  .close {
+    background: transparent;
+    cursor: pointer;
+    height: 10px;
+    min-height: 10px;
+    width: 10px;
+    &:active, &:focus {
+      outline: 1px dotted lighten(colors('menu', 'bg', 'sub'), 50%);
+    }
+    img {
+      vertical-align: top;
+    }
+  }
+  .modal-title,
+  .modal-body {
+    text-align: center;
+  }
+  .modal-title {
+    color: colors('menu', 'button', 'normal');
+    @include font-size(12px, false);
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 3px 0 20px 0;
+  }
+  .modal-body {
+    color: colors('basic', 'black');
+    @include font-size(14px, false);
+    padding-bottom: 20px;
+  }
+  .modal-footer {
+
+    text-align: center;
+  }
+  .btn {
+    background-color: colors('menu', 'button', 'normal');
+    border-radius: 0;
+    color: colors('basic', 'white');
+    cursor: pointer;
+    margin: 0 10px;
+    padding: 5px 10px;
+    &:hover {
+      background-color: darken(colors('menu', 'button', 'normal'), 10%);
+    }
+  }
+}
+
 
 
 /**
@@ -1651,4 +1722,7 @@ label[for="nav-trigger"] {
     opacity: .75;
     color: black;
 }
+
+
+
 

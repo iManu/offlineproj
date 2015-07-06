@@ -6,7 +6,7 @@
 if('applicationCache' in window) {
   window.applicationCache.addEventListener('updateready', function () {
     //alert('Rafraichir S.V.P.');
-    $('#reloadPrompt').modal({show:true});
+    $('#reloadPrompt').addClass('show');
 
   });
   // si la page n'est jamais rechargé, ce qui peut arriver en SPA

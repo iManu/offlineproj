@@ -16,20 +16,22 @@
     </p>
   </div>
 
-	<div class="modal fade" id="reloadPrompt" style="display:none" role="alertdialog">
+	<div class="modal" id="reloadPrompt" role="alertdialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					<h4 class="modal-title">Nouvelle version disponible !</h4>
+					<div class="close-btn">
+            <button class="close js-modal-close"><img src="images/gfx/close.png" alt="Fermer"></button>
+          </div>
+					<h4 class="modal-title">Nouvelle version disponible</h4>
 				</div>
 				<div class="modal-body">
 					<p>Une nouvelle version de cette application est disponible.</p>
 					<p>Souhaitez-vous la charger dès maintenant ?</p>
 				</div>
 				<div class="modal-footer">
-					<a href="" class="btn btn-primary">Mais carrément !</a>
-					<button type="button" class="btn btn-default" data-dismiss="modal">pas la peine</button>
+					<a href="" class="btn btn-primary">Maintenant</a>
+					<button type="button" class="btn btn-default js-modal-close">Plus tard</button>
 				</div>
 			</div>
 		</div>

@@ -19,7 +19,8 @@ module.exports = View.extend({
   	'click .js-burger-btn': 'ariaBurger',
     'click .js-legacy': 'popinLegal',
     'click .js-legacy-close': 'popinLegalClose',
-    'click .Nav__logo': 'easterActions'
+    'click .Nav__logo': 'easterActions',
+    'click .js-modal-close': 'closeModal'
   },
   // Le template principal
   template: require('./templates/home'),
@@ -70,6 +71,9 @@ module.exports = View.extend({
       mydata: 'fake',
       otherdata: 'fake'
     };
+  },
+  closeModal: function closeModal() {
+    $('.modal').removeClass('show');
   },
   // juste pour le state aria
   burgerElem: {},

@@ -27,7 +27,7 @@ exports.config =
     appcache:
       externalCacheEntries: []
       network: ['*', 'http://*', 'https://*']
-      ignore: /[/][.]|(visual_)[0-9]{3}(\.jpg)+/
+      ignore: /[/][.]|(\.manifest)|(.*)(_media_)[1-9]{1}(.*)(\.jpg|\.png)|(.*)(\.map)+/
       manifestFile: "appcache.manifest"
     postcss:
       processors: [
