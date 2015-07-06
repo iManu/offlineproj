@@ -1263,6 +1263,14 @@ label[for="nav-trigger"] {
   img {
     margin-right: 8px;
   }
+  @include grid-media-query(palm) {
+    top: -10px;
+    left: 20px;
+  }
+  @include grid-media-query(lap) {
+    top: 0;
+    left: -20px;
+  }
 }
 
 .close-button:hover {
