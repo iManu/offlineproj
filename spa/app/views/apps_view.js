@@ -71,12 +71,17 @@ module.exports = View.extend({
   },
   syncMarker: function() {
     this._onlineMarker = this._onlineMarker || this.$('#onlineMarker2');
+    this.contentItem = this.contentItem || this.$('.content__item');
     if(cnxSvc.isOnline()) {
       this._onlineMarker.find('.js-on').addClass('is-lighten');
       this._onlineMarker.find('.js-off').removeClass('is-lighten');
+      this.contentItem.find('.article-link').removeAttr('style');
+      this.contentItem.find('.app-carousel').removeAttr('style');
     } else {
       this._onlineMarker.find('.js-off').addClass('is-lighten');
       this._onlineMarker.find('.js-on').removeClass('is-lighten');
+      this.contentItem.find('.article-link').css('display', 'none');
+      this.contentItem.find('.app-carousel').css('display', 'none');
     }
   },
   onEndTransition: function onEndTransition( el, callback ) {

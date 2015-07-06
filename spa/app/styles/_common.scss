@@ -619,7 +619,7 @@ $alphawidth-desk: 66px;
     @include grid-media-query(lap) {
       padding: 14px;
       height: 167px;
-      width: 238px;
+      width: 40%;
       margin: 0 20px 20px 0;
     }
     @include grid-media-query(desk) {
@@ -650,6 +650,7 @@ $alphawidth-desk: 66px;
   }
   &__title {
     color: colors('basic', 'black');
+    cursor: pointer;
     font-weight: 700;
     @include grid-media-query(palm) {
       //@include font-size(20px, false);
@@ -687,6 +688,7 @@ $alphawidth-desk: 66px;
   &__icon {
 
     &--img {
+      cursor: pointer;
       @include grid-media-query(palm) {
         height: 70px;
         width: 70px;

@@ -21,18 +21,6 @@ module.exports = View.extend({
     'click .js-legacy-close': 'popinLegalClose',
     'click .Nav__logo': 'easterActions'
   },
-  easterActions: function easterActions(e) {
-  	this.eastClicks += 1;
-  	var that = this,
-  			$actions = $('.js-actions');
-  	console.log(this.eastClicks);
-  	_.delay(function(){
-  		if(that.eastClicks === 5) {
-  			$actions[ ($actions.css('display') === 'none') ? 'fadeIn' : 'fadeOut' ]();
-  		}
-  		that.eastClicks = 0;
-  	}, 1000);
-  },
   // Le template principal
   template: require('./templates/home'),
 
@@ -40,10 +28,10 @@ module.exports = View.extend({
   // de comportements et injections des vues imbriquées
   afterRender: function() {
 
- 		this.burgerElem = this.$el.find('.js-burger-menu');
-  	this.burgerElem.siblings('.js-burger-btn').is(':checked')
-  		? this.burgerElem.attr('aria-expanded', false) : this.burgerElem.attr('aria-expanded', true);
-  	a11y.expandService(this.burgerElem);
+    this.burgerElem = this.$el.find('.js-burger-menu');
+    this.burgerElem.siblings('.js-burger-btn').is(':checked')
+      ? this.burgerElem.attr('aria-expanded', false) : this.burgerElem.attr('aria-expanded', true);
+    a11y.expandService(this.burgerElem);
 
     // On met en cache le marqueur online/offline
     this.syncMarker();
@@ -54,8 +42,25 @@ module.exports = View.extend({
 
     // popin
     this.popinElem = $('.js-popin-legal');
-
+    // easter egg to see actions
     this.eastClicks = 0;
+    /**
+     * taggerEngine
+     */
+    setTimeout(function() { $('body').find('[data-tag]').taggerEngine(); }, 1);
+
+    // orientation
+    /*
+    function reorient(e) {
+      var portrait = (window.orientation % 180 === 0);
+      $("body").css("-webkit-transform", !portrait ? "rotate(-90deg)" : "");
+    }
+    window.onorientationchange = reorient;
+    window.setTimeout(reorient, 0);
+    */
+
+
+
   },
 
   // Convention définie par notre classe mère View pour render : on
@@ -69,11 +74,23 @@ module.exports = View.extend({
   // juste pour le state aria
   burgerElem: {},
   ariaBurger: function ariaBurger() {
-  	a11y.expandService(this.burgerElem);
+    a11y.expandService(this.burgerElem);
     // on referme la popin si elle est ouverte
     if( this.popinElem.hasClass('is-popin') ) {
       this.popinLegalClose();
     }
+  },
+  easterActions: function easterActions(e) {
+  	this.eastClicks += 1;
+  	var that = this,
+  			$actions = $('.js-actions');
+  	console.log(this.eastClicks);
+  	_.delay(function(){
+  		if(that.eastClicks === 5) {
+  			$actions[ ($actions.css('display') === 'none') ? 'fadeIn' : 'fadeOut' ]();
+  		}
+  		that.eastClicks = 0;
+  	}, 1000);
   },
   popinElem: {},
   popinLegal: function popinLegal() {

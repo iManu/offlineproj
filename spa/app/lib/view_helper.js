@@ -21,3 +21,10 @@ Handlebars.registerHelper('is_online', function(options) {
     return options.fn(this);
   }
 });
+
+// Helper pour passer en bas de casse
+Handlebars.registerHelper('lowercase', function(str) {
+  if(str && typeof str === "string") {
+    return str.toLowerCase();
+  }
+});

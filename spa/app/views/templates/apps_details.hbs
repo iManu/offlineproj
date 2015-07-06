@@ -25,7 +25,7 @@
             <h2 class="article-title">{{title}}</h2>
             <p class="article-desc">{{description}}</p>
             {{#is_online}}
-            <a href="{{url}}" class="article-link">Télécharger l'application</a>
+            <a href="{{url}}" class="article-link" data-tag="{{lowercase title}}-telecharger">Télécharger l'application</a>
             {{/is_online}}
           </div>
         </div>
@@ -44,5 +44,5 @@
     {{/each}}
     </div>
   </div>
-  <button class="close-button"><img src="images/gfx/arrow_back.png" alt="<"><span>Retour</span></button>
+  <button class="close-button"><img src="images/gfx/arrow_back.png" alt="<" data-tag="retour"><span>Retour</span></button>
 </div>

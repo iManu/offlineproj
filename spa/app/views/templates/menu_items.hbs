@@ -2,14 +2,14 @@
   <div class="Nav__logo"><img src="images/logo_samsungb2b.png" alt="Samsung Business"></div>
   <ul class="Nav__filters" role="list">
     <li class="Filters" role="list-item">
-      <button class="Filters__button js-craft-button" aria-controls="aria-filter-crafts" role="button">
+      <button class="Filters__button js-craft-button" aria-controls="aria-filter-crafts" role="button" data-tag="menu-metiers">
         <span>Nos Métiers</span><span class="Filters__button--check"><img src="images/gfx/check.png" alt="check"></span>
       </button>
       <ul id="aria-filter-crafts" aria-expanded="false" class="Filters__list Filters__list--crafts js-filter-list" role="list">
         {{#each filterCrafts}}
           <li class="Filters__item" role="list-item">
             <input type="checkbox" id="craft-{{this.id}}" class="Filters__input js-check-craft" data-craft="{{this.id}}" aria-checked="false">
-            <label for="craft-{{this.id}}" class="Filters__label">
+            <label for="craft-{{this.id}}" class="Filters__label" data-tag="menu-metier-{{lowercase this.item}}">
               <div class="Filters__label--content">
                 <span class="Filters__label--text">{{this.item}}</span><span class="Filters__label--check js-label-check"><img src="images/gfx/check.png" alt="check"></span>
               </div>
@@ -19,14 +19,14 @@
       </ul>
     </li>
     <li class="Filters" role="list-item">
-      <button class="Filters__button js-category-button" aria-controls="aria-filter-categories" role="button">
+      <button class="Filters__button js-category-button" aria-controls="aria-filter-categories" role="button" data-tag="menu-categories">
         <span>Catégories</span><span class="Filters__button--check"><img src="images/gfx/check.png" alt=""></span>
       </button>
       <ul id="aria-filter-categories" aria-expanded="false" class="Filters__list Filters__list--category js-filter-list" role="list">
         {{#each filterCategories}}
           <li class="Filters__item" role="list-item">
             <input type="checkbox" id="category-{{this.id}}" class="Filters__input js-check-category" data-category="{{this.id}}" aria-checked="false">
-            <label for="category-{{this.id}}" class="Filters__label">
+            <label for="category-{{this.id}}" class="Filters__label" data-tag="menu-categories-{{lowercase this.item}}">
               <div class="Filters__label--content">
                 <span class="Filters__label--text">{{this.item}}</span><span class="Filters__label--check js-label-check"><img src="images/gfx/check.png" alt="check"></span>
               </div>
@@ -36,14 +36,14 @@
       </ul>
     </li>
     <li class="Filters" role="list-item">
-      <button class="Filters__button js-partner-button" aria-controls="aria-filter-partners" role="button">
+      <button class="Filters__button js-partner-button" aria-controls="aria-filter-partners" role="button" data-tag="menu-partenaires">
         <span>Partenaires</span><span class="Filters__button--check"><img src="images/gfx/check.png" alt=""></span>
       </button>
       <ul id="aria-filter-partners" aria-expanded="false" class="Filters__list Filters__list--partner js-filter-list" role="list">
         {{#each filterPartners}}
           <li class="Filters__item" role="list-item">
             <input type="checkbox" id="partner-{{this.id}}" class="Filters__input js-check-partner" data-partner="{{this.id}}" aria-checked="false">
-            <label for="partner-{{this.id}}" class="Filters__label">
+            <label for="partner-{{this.id}}" class="Filters__label" data-tag="menu-partenaires-{{lowercase this.item}}">
               <div class="Filters__label--content">
                 <span class="Filters__label--text">{{this.item}}</span><span class="Filters__label--check js-label-check"><img src="images/gfx/check.png" alt="check"></span>
               </div>
@@ -53,7 +53,7 @@
       </ul>
     </li>
     <li class="Filters Filters__li-search" role="list-item">
-      <input type="search" placeholder="Rechercher" role="search" value="" class="Filters__search js-search">
+      <input type="search" placeholder="Rechercher" role="search" value="" class="Filters__search js-search" data-tag="menu-rechercher">
     </li>
     <li class="Filters__li-clear" role="list-item">
       <button class="Filters__clear js-clear-filters" role="button">
@@ -64,7 +64,7 @@
   <footer class="Footer" role="contentinfo">
 	 <ul class="Footer__list">
     <li class="Footer__item">
-      <button class="Footer__button js-legacy">Infos légales</button>
+      <button class="Footer__button js-legacy" data-tag="infos_legales">Infos légales</button>
     </li>
     <li class="Footer__item">
       Tous droits réservés
@@ -77,7 +77,7 @@
     {{#each alphabet}}
     <li class="Alphabet__item" role="list-item">
       <input type="checkbox" id="alpha-{{this}}" value="{{this}}" class="Alphabet__check js-check-letter" role="checkbox" aria-checked="false">
-      <label for="alpha-{{this}}" class="Alphabet__label">{{this}}</label>
+      <label for="alpha-{{this}}" class="Alphabet__label" data-tag="menu-letter-{{lowercase this}}">{{this}}</label>
     </li>
     {{/each}}
   </ul>

@@ -2,11 +2,11 @@
 <li class="Isogrid__item js-item-selector{{#each craft}} craft-{{this}}{{/each}}{{#each category}} category-{{this}}{{/each}} {{#if partner.id}} partner-{{partner.id}}{{/if}} letter-{{first_letter title}}">
   <div class="Isogrid__header">
     <div class="Isogrid__header--left">
-      <img class="Isogrid__icon--img" src="images/grey.gif" data-original="{{folder}}/{{icon}}" alt="">
+      <img class="Isogrid__icon--img js-btn-plus" src="images/grey.gif" data-original="{{folder}}/{{icon}}" alt="" data-tag="{{lowercase title}}">
     </div><!--
     --><div class="Isogrid__header--right">
 
-      <h2 title="{{title}}" class="Isogrid__title js-sort-title">{{title}}</h2>
+      <h2 title="{{title}}" class="Isogrid__title js-sort-title js-btn-plus" data-tag="{{lowercase title}}">{{title}}</h2>
       <h3 class="Isogrid__subtitle">{{partner.name}}</h3>
     </div>
   </div>
@@ -15,7 +15,7 @@
     <div class="Isogrid__actions js-actions">{{#each action}} {{this.item}}{{/each}}</div>
     <div class="Isogrid__footer">
       <div class="Isogrid__footer--left">
-        <button class="Isogrid__btnplus js-btn-plus">
+        <button class="Isogrid__btnplus js-btn-plus" data-tag="{{lowercase title}}">
           En savoir <span>+</span>
         </button>
       </div><!--
