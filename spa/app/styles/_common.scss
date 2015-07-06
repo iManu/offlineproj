@@ -932,25 +932,35 @@ label[for="nav-trigger"] {
       z-index: 10;
     }
     &:before {
-      color: colors('basic', 'white');
       position: absolute;
       @include grid-media-query(palm) {
-        content: "\25bc";
-        left: 25px;
-        bottom: 2px;
-        height: 10px;
-        width: 30px;
-        @include font-size(80px, false);
-        transform: scaleY(0.3);
+        top: 100%;
+        left: 60px;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(255, 255, 255, 0);
+        border-top-color: colors('basic', 'white');;
+        border-width: 15px;
+        margin-left: -15px;
       }
       @include grid-media-query(lapandup) {
-        content: "\25C0";
-        left: -20px;
-        bottom: 50px;
-        height: 30px;
-        width: 10px;
-        @include font-size(50px, false);
-        transform: scaleX(0.4);
+        right: 100%;
+        top: 120px;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(255, 255, 255, 0);
+        border-right-color: colors('basic', 'white');;
+        border-width: 20px;
+        margin-top: -20px;
+
       }
     }
   }

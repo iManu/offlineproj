@@ -25,7 +25,7 @@ module.exports = View.extend({
   	this.eastClicks += 1;
   	var that = this,
   			$actions = $('.js-actions');
-  	//console.log(this.eastClicks);
+  	console.log(this.eastClicks);
   	_.delay(function(){
   		if(that.eastClicks === 5) {
   			$actions[ ($actions.css('display') === 'none') ? 'fadeIn' : 'fadeOut' ]();
