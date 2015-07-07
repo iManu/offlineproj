@@ -1,1 +1,1269 @@
-[{"id":1,"folder":"medias","icon":"app_1_media_0_9cec39518d72888221da150b208c8b41.png","title":"ACCELLION","partner":{"id":1,"name":"ACCELLION"},"baseline":"Application de stockage de donn\u00e9es s\u00e9curis\u00e9es dans le cloud.","description":"Accellion propose une solution de s\u00e9curisation de donn\u00e9es dans le Cloud compl\u00e8te (Private Cloud File Sharing, Mobile Content Management\u2026)","pictos":{"gcn":"true","smb":"true"},"url":"","visuals":[],"craft":[12,9,11,7,6,5,4,10,2,1],"category":[7],"action":[]},{"id":2,"folder":"medias","icon":"app_2_media_0_f68563dd9b7357842c4cb14e7f89772c.png","title":"ALL SHARE CAST","partner":{"id":26,"name":"SAMSUNG"},"baseline":"Solution de screen mirroring.","description":"All Share Cast permet d'afficher sur un \u00e9cran le contenu de votre smartphone, tablette ou PC.","pictos":{"gcn":"true","smb":"true"},"url":"","visuals":[],"craft":[12,9,11,7,6,5,10,1],"category":[5],"action":[]},{"id":3,"folder":"medias","icon":"app_3_media_0_e3e4a932f74523d0be29332a2040e2c2.png","title":"ANY DO","partner":{"id":4,"name":"ANY DO"},"baseline":"Gestionnaire de t\u00e2ches.","description":"Any Do est une application \u00e0 utilisation personnelle ou collaborative qui vous permet d'ordonner vos t\u00e2ches par projet, de les dater, les partager et les valider.","pictos":{"gcn":"false","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.anydo&hl=fr","visuals":[],"craft":[12,9,11,7,6,5,4,10,1],"category":[3],"action":[]},{"id":4,"folder":"medias","icon":"app_4_media_0_4e33f143f43346a85711a1545b0b6bf0.png","title":"CELLTRUST","partner":{"id":6,"name":"CELLTRUST"},"baseline":"Application d'encryption d'appels\/SMS\/MMS\/etc.","description":"CellTrust propose d'archiver et de crypter les \u00e9changes de vos collaborateurs, qu'il s'agisse d'sms, d'appels, etc...","pictos":{"gcn":"false","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.celltrust.securesms","visuals":[],"craft":[12,9,11,7,6,5,4,10,1],"category":[],"action":[]},{"id":5,"folder":"medias","icon":"app_5_media_0_5bee399fec212c4ce79fd689487709e2.png","title":"CISCO WEBEX","partner":{"id":7,"name":"CISCO"},"baseline":"Solution de visioconf\u00e9rence.","description":"Cisco Webex permet de collaborez avec des coll\u00e8gues au sein de votre organisation, ou n'importe o\u00f9 sur la plan\u00e8te. On peut se recontrer en ligne et partagez des fichiers, des informations et l'exp\u00e9rience. Les solutions WebEx augmentent la productivit\u00e9 et  permettent de rester connect\u00e9s.","pictos":{"gcn":"true","smb":"false"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.cisco.webex.meetings","visuals":[],"craft":[12,9,11,7,6,5,4,10,1],"category":[3],"action":[]},{"id":6,"folder":"medias","icon":"app_6_media_0_0779b813306426de3fa42ececc07ebea.png","title":"CLICKSHARE","partner":{"id":5,"name":"BARCO"},"baseline":"Connecter, cliquer, et partager ses pr\u00e9sentations sur un \u00e9cran sans fil.","description":"Syst\u00e8me de pr\u00e9sentation sans fil complet pour salle de r\u00e9union pour conf\u00e9rence haute gamme. Un seul clic suffit pour se connecter \u00e0 une source vid\u00e9o d'une salle de r\u00e9union et pour projeter sans fil le contenu de son appareil mobile.","pictos":{"gcn":"true","smb":"false"},"url":"","visuals":[],"craft":[12,9,11,7,6,5,10,1],"category":[5],"action":[]},{"id":7,"folder":"medias","icon":"app_7_media_0_710bf3bc7ccab571c43439a8775f6957.png","title":"DOCU SIGN","partner":{"id":9,"name":"DOCU SIGN"},"baseline":"Solution de signature Electronique.","description":"Docu Sign est une solution permettant la signature de documents PDF sur tablette ou smartphone.","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.docusign.ink&hl=fr","visuals":[],"craft":[4],"category":[5],"action":[]},{"id":8,"folder":"medias","icon":"app_8_media_0_435285e6994be83f4bf281029f1d3528.png","title":"DRIVVE","partner":{"id":10,"name":"DRIVVE"},"baseline":"Num\u00e9risation et gestion de documents personnalisable.","description":"Drivve vous permet de num\u00e9riser des documents et de les g\u00e9rer de fa\u00e7on personnalis\u00e9e.","pictos":{"gcn":"true","smb":"false"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.priapps.android.drivveprint&hl=fr","visuals":[],"craft":[12,9,11,7,6,5,4,2,1],"category":[6],"action":[]},{"id":9,"folder":"medias","icon":"app_9_media_0_1b551def05820ed3e282441aa560d50e.png","title":"ERCOM","partner":{"id":11,"name":"ERCOM"},"baseline":"Cryptage des appels\/SMS\/MMS\/etc.","description":"Ercom vous permet de s\u00e9curiser les \u00e9changes pass\u00e9s entre les mobiles d'une flotte et de crypter les informations qui en sortent (SMS, MMS, etc.).","pictos":{"gcn":"true","smb":"false"},"url":"","visuals":[],"craft":[12,9,11,7,6,5,4,10,1],"category":[3],"action":[]},{"id":10,"folder":"medias","icon":"app_10_media_0_18e463c8b7b375d558cc70936cea9109.png","title":"ESAFEME-PRO","partner":{"id":22,"name":"NEOSAFE"},"baseline":"Solution de Protection du Travailleur Isol\u00e9 (PTI).","description":"L'application eSafeMe-Pro prot\u00e8ge les travailleurs isol\u00e9s et dispose de plusieurs fonctionnalit\u00e9s:\r\n- elle int\u00e8gre un MDM permettant l'administration du t\u00e9l\u00e9phone.\r\n- elle d\u00e9tecte les chutes\/pertes de verticalit\u00e9s et immobilit\u00e9s.\r\n- elle int\u00e8gre la v\u00e9rification de mise en danger du travailleur (SOS, option m\u00e9daillon, etc.).","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.neosafe.esafemepro","visuals":[],"craft":[12,9,2],"category":[7],"action":[]},{"id":11,"folder":"medias","icon":"app_11_media_0_5748036100820e4f1bce9dd85fbec4f1.png","title":"EVERNOTE","partner":{"id":12,"name":"EVERNOTE"},"baseline":"Outil collaboratif de prise de note.","description":"Evernote est un outil collaboratif de prise de notes permettant d'y associer des documents et autorise \u00e9galement d'\u00e9changer et de g\u00e9rer un projet (discussion instantan\u00e9e, cr\u00e9ation d'ordre du jour, liste d'actions, etc.).","pictos":{"gcn":"false","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.evernote","visuals":[],"craft":[12,9,11,7,6,5,4,10,2],"category":[6],"action":[]},{"id":12,"folder":"medias","icon":"app_12_media_0_b216b3fd7bdd64f2f5b9e98c03e3ae6c.png","title":"FLEET XPS","partner":{"id":32,"name":"TRIMBLE"},"baseline":"La solution mobile pour les fournisseurs de services logistiques et les commissionnaires de transport.","description":"Avec Fleet Express pour Android, Trimble offre une solution flexible pour smartphone aux transporteurs: track&trace, messagerie et t\u00e9l\u00e9phonie  main-libre, identification du conducteur, feuille de temps, preuve de livraison, visualisation du temps de conduite.","pictos":{"gcn":"true","smb":"true"},"url":"","visuals":[],"craft":[12,11],"category":[3],"action":[]},{"id":13,"folder":"medias","icon":"app_13_media_0_072c1c667372764a50e60da9305b3ed9.png","title":"FLIPBOARD","partner":{"id":13,"name":"FLIPBOARD"},"baseline":"Solution d'agr\u00e9gation d'informations de sources multiples (r\u00e9seaux sociaux, sites d'informations\u2026).","description":"Flipboard permet d'agr\u00e9ger des contenus en fonction de vos pr\u00e9f\u00e9rences, provenant autant de r\u00e9seaux sociaux que de sites d'informations, blog ou autres.","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=flipboard.app","visuals":[],"craft":[12,9,11,7,6,5,10,2,1],"category":[4],"action":[]},{"id":14,"folder":"medias","icon":"app_14_media_0_54ed9b6eb5ece4798f83d4c22744040e.png","title":"FORECOMM BLUE FILES","partner":{"id":14,"name":"FORECOMM"},"baseline":"Conversion de fichiers en format s\u00e9curis\u00e9.","description":"La technologie BlueFiles permet de convertir tout type de fichiers (Powerpoint, Word, PDF, Ai\u2026) en fichier s\u00e9curis\u00e9 et tra\u00e7able: param\u00e9trer une dur\u00e9e de visionnage du fichier, un mot de passe d'acc\u00e8s, etc...","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.forecomm.forecommreader","visuals":[],"craft":[12,9,11,7,6,5,4,10,2,1],"category":[7],"action":[]},{"id":15,"folder":"medias","icon":"app_15_media_0_12ca7a9816e61c819616d35521319db6.png","title":"F-SECURE MOBILE","partner":{"id":15,"name":"F-SECURE"},"baseline":"Solution de s\u00e9curisation du Smartphone.","description":"F-secure est une application de s\u00e9curisation des devices. Elle propose entre autre: utilisation de hot-spot\/wifi s\u00e9curis\u00e9e, nettoyage de l'appareil, protection contre les app dangereuses\u2026","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.fsecure.ms.dc","visuals":[],"craft":[12,9,11,7,6,5,4,10,2,1],"category":[7],"action":[]},{"id":16,"folder":"medias","icon":"app_16_media_0_79e8d3a0718b4db60476915b09cbe167.png","title":"GFI COMMUNITY HUB","partner":{"id":16,"name":"GFI"},"baseline":"Outil de communication interne\/externe.","description":"Gfi Community Hub est un outil de communication dont le but est de permettre l'\u00e9change et l'interaction entre une entreprise et ses clients en temps r\u00e9el et de mani\u00e8re s\u00e9curis\u00e9e.","pictos":{"gcn":"true","smb":"true"},"url":"","visuals":[],"craft":[7],"category":[3],"action":[]},{"id":17,"folder":"medias","icon":"app_17_media_0_68f56792b8e8c7896b4701dadf96a5ba.png","title":"GMAO-MOBILE","partner":{"id":3,"name":"ALTAIR ENTREPRISE"},"baseline":"Gestion des stocks et des inventaires sur mobile.","description":"Toujour accessible m\u00eame sans connectivit\u00e9 r\u00e9seau, les applications mobiles d'Altair Entreprise s'adapte \u00e0 tous vos besoins (recherche d'articles, inventaire, demandes d'achats, etc.).","pictos":{"gcn":"true","smb":"true"},"url":"","visuals":[],"craft":[11],"category":[6],"action":[]},{"id":18,"folder":"medias","icon":"app_18_media_0_3cedb131f7259dd630fec2656b202981.png","title":"GOOGLE MAPS","partner":{"id":17,"name":"GOOGLE"},"baseline":"Outil de g\u00e9olocalisation.","description":"Google Maps vous permet de cr\u00e9er des itin\u00e9raires optimis\u00e9s et de personnaliser vos maps en fonction des lieux fr\u00e9quemment visit\u00e9s.","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.google.android.apps.maps","visuals":[],"craft":[12,9,11,7,6,5,4,10,2,1],"category":[6],"action":[]},{"id":19,"folder":"medias","icon":"app_19_media_0_b5bff13de41922cc185d3b98f0db7162.png","title":"HANCOM OFFICE","partner":{"id":18,"name":"HANCOM"},"baseline":"Suite Bureautique.","description":"Hancom Office propose une suite bureautique gratuite comprenant traitement de texte, tableur et outil de cr\u00e9artion de pr\u00e9sentations.","pictos":{"gcn":"false","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.hancom.office.editor","visuals":[],"craft":[12,9,11,7,6,5,4,10,2,1],"category":[6],"action":[]},{"id":20,"folder":"medias","icon":"app_20_media_0_ac23607c84b94804d97576ac58181644.png","title":"HID MOBILE ACCESS","partner":{"id":19,"name":"HID"},"baseline":"Solution de contr\u00f4le d'acc\u00e8s.","description":"HID autorise la v\u00e9rification par identifiant\/mdp et badge\/smartphone NFC lors d'une demande d'acc\u00e8s physique ou virtuelle.","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.hidglobal.mobilekeys.android.v3","visuals":[],"craft":[12,9,11,7,6,5,4,10,2,1],"category":[7],"action":[]},{"id":21,"folder":"medias","icon":"app_21_media_0_b78247be84ef10f4d6f8ed5b3b7cb69b.png","title":"MCJ","partner":{"id":21,"name":"MON CODE JURIDIQUE"},"baseline":"Application regroupant l'ensemble du corpus juridique fran\u00e7ais mis \u00e0 jour en temps r\u00e9el.","description":"MCJ (Mon Code Juridique) regroupe gratuitement l'ensemble du corpus juridique fran\u00e7ais mis \u00e0 jour en temps r\u00e9el. \r\nUn flux d'actualit\u00e9 offrant les derni\u00e8res informations en terme de jurisprudence et autres actualit\u00e9s juridiques est aussi mis \u00e0 disposition. \r\nL'application est disponible en mode hors-ligne.","pictos":{"gcn":"true","smb":"true"},"url":"","visuals":[],"craft":[7,4],"category":[4],"action":[]},{"id":22,"folder":"medias","icon":"app_22_media_0_4fb568b6b425f3714ea98658e5fe36ab.png","title":"NETEXPLORER","partner":{"id":23,"name":"NETEXPLORER"},"baseline":"Application de travail collaboratif avanc\u00e9e.","description":"Netexplorer est une application d'espace collaboratif en ligne permettant d'\u00e9diter des fichiers en ligne, de les annoter, et d'avoir une tra\u00e7abilit\u00e9 des actions sur le fichier cr\u00e9\u00e9. \r\nFonctionnant en mode Cloud, Nextexplorer existe en format applicatif (Android) donnant acc\u00e8s aux fichiers en hors-ligne, ou en mode web accessible depuis n'importe quel navigateur sur ordinateur ou mobile.","pictos":{"gcn":"false","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=fr.bsnet.netexplorer","visuals":[],"craft":[12,9,11,7,6,5,4,10,2,1],"category":[3],"action":[]},{"id":23,"folder":"medias","icon":"app_23_media_0_665d617415bba5ec4a27d0697f82c13d.png","title":"OFFICE 365 - OneNote","partner":{"id":20,"name":"MICROSOFT"},"baseline":"Programme de Prise de Note synchronis\u00e9.","description":"One Note est un bloc-note num\u00e9rique permettant de capturer, sotcker et partager diff\u00e9rents type d'informations.\r\nL'int\u00e9gration compl\u00e8te avec le Cloud permet de s'affranchir des fichiers et d'un disqure dur de fa\u00e7on \u00e0 pouvoir enregistrer et consulter ses notes et informations ou que l'on soit.","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.microsoft.office.onenote","visuals":[],"craft":[12,9,11,7,6,5,4,10,2,1],"category":[6],"action":[]},{"id":24,"folder":"medias","icon":"app_24_media_0_73a1c9c7fab1e20ebb06eccfea1824b5.png","title":"OFFICE 365 - Outlook","partner":{"id":20,"name":"MICROSOFT"},"baseline":"Application d'agenda partag\u00e9.","description":"Outlook sur tablette ou smartphone vous propose les m\u00eames fonctionnalit\u00e9s que vous connaissez sur votre ordinateur, avec une ergonomie repens\u00e9e pour la mobilit\u00e9.","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.microsoft.office.outlook","visuals":[],"craft":[12,9,11,7,6,5,4,10,2,1],"category":[3],"action":[]},{"id":25,"folder":"medias","icon":"app_25_media_0_dad7b3f6716503b1d7475f271d4ce63c.png","title":"OFFICE 365 - Sharepoint","partner":{"id":20,"name":"MICROSOFT"},"baseline":"","description":"","pictos":{"gcn":"true","smb":"false"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.sharepointams.android","visuals":[],"craft":[9,11,7,6,5,4,10,2,1],"category":[3],"action":[]},{"id":26,"folder":"medias","icon":"app_26_media_0_4a44d8f8f8155b5700847771153c846a.png","title":"OFFICE 365 - Word\/Excel\/PowerPoint","partner":{"id":20,"name":"MICROSOFT"},"baseline":"","description":"","pictos":{"gcn":"true","smb":"false"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.microsoft.office.officehub&hl=fr","visuals":[],"craft":[7,6,5,4,10,2,1],"category":[6],"action":[]},{"id":27,"folder":"medias","icon":"app_27_media_0_5f03ba51841d22d4ae5dc9acc455a750.png","title":"PICTBASE TECHNICIENS & INTERVENTIONS","partner":{"id":8,"name":"DAXIUM"},"baseline":"Application de cr\u00e9ation de formulaires personnalis\u00e9s.","description":"R\u00e9ponds aux probl\u00e9matiques li\u00e9es \u00e0 l'organisation de vos techniciens: \u00e9change d'informations collect\u00e9es, pilotage \u00e0 distance, planning. PictBase Techniciens & Interventions accompagne vos techniciens dans tous leurs d\u00e9placements.","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.daxium.pictbase","visuals":[],"craft":[12,9,11,2],"category":[6],"action":[]},{"id":28,"folder":"medias","icon":"app_28_media_0_86609f7d76a26fb12839fd69f562447b.png","title":"POWERVOTE","partner":{"id":24,"name":"POWERVOTE"},"baseline":"Application d'animation de conf\u00e9rence et d\u2019\u00e9v\u00e9nements.","description":"Powervote est une application qui centralise les informations sur votre \u00e9v\u00e9nement et propose de l'animer via la synchronisation de vos supports de pr\u00e9sentation. Les fonctionnalit\u00e9s suivantes sont disponibles:\r\n- sondages, votes et \u00e9valuations\r\n- tableaux de bord de l'implication \r\n- promotions, sponsors et exposants\r\n- documents ressources, etc.","pictos":{"gcn":"true","smb":"true"},"url":"","visuals":[],"craft":[7,5,10,1],"category":[6],"action":[]},{"id":29,"folder":"medias","icon":"app_29_media_0_97e4b10aaf1cade09a85aadb1aff3b06.png","title":"SAGE ONE PAIE","partner":{"id":25,"name":"SAGE"},"baseline":"Application de gestion de paie.","description":"Sage One Paie permet de r\u00e9aliser simplement des bulletins de paie gr\u00e2ce \u00e0 une application online accessible 24h\/24 et 7j\/7 depuis n\u2019importe quel endroit, sans logiciel ni mise \u00e0 jour \u00e0 installer.\r\nDes assistants  guident pour vous faciliter les op\u00e9rations courantes. Les absences sont facilement g\u00e9rer gr\u00e2ce au calendrier d\u00e9di\u00e9 (CP, RTT, maladies\u2026). Les bulletins sont disponibles au format pdf.","pictos":{"gcn":"false","smb":"true"},"url":"","visuals":[],"craft":[7],"category":[6],"action":[]},{"id":30,"folder":"medias","icon":"app_30_media_0_ac7fc0d9e274e854cec5f281f8096db4.png","title":"SAMSUNG MOBILE PRINT","partner":{"id":26,"name":"SAMSUNG"},"baseline":"Solution d'impression \u00e0 distance.","description":"MobilePrint de Samsung est une solution Samsung permettant de num\u00e9riser et d\u2019imprimer \u00e0 l\u2019aide de tablettes ou de smartphones. \r\nElle offre la flexibilit\u00e9 et le confort en prenant en charge le stockage cloud et le partage de fichier avec l\u2019ordinateur de bureau, ainsi que l\u2019impression du contenu web.","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.sec.print.mobileprint","visuals":[],"craft":[7,6,5,4,10,2,1],"category":[6],"action":[]},{"id":31,"folder":"medias","icon":"app_31_media_0_d631bf33254cc9b902873a01c051add0.png","title":"SKYPE ENTREPRISE","partner":{"id":27,"name":"SKYPE"},"baseline":"Solution de visioconf\u00e9rence.","description":"Skype entreprise poss\u00e8de les m\u00eames caract\u00e9ristiques que Skype cependant, on peut ajouter jusqu'\u00e0 250 participants aux r\u00e9unions en ligne, profiter d'une s\u00e9curit\u00e9 de niveau d'entreprise et g\u00e9rer les comptes des employ\u00e9s.","pictos":{"gcn":"false","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.skype.raider","visuals":[],"craft":[7,6,5,10],"category":[6],"action":[]},{"id":32,"folder":"medias","icon":"app_32_media_0_1297816a61e8af696f3d8e131449a3b0.png","title":"SMARSH","partner":{"id":28,"name":"SMARSH"},"baseline":"Solution d'archivage s\u00e9curis\u00e9e.","description":"Smarsh est une solution d'archivage regroupant les messages et documents \u00e9chang\u00e9s sur plusieurs comptes et s\u00e9curise l'ensemble de ces informations.","pictos":{"gcn":"true","smb":"true"},"url":"","visuals":[],"craft":[7,6,5,4,10,1],"category":[1],"action":[]},{"id":33,"folder":"medias","icon":"app_33_media_0_6a320447ce7e1fa8478a4ea855910228.png","title":"SYNCHROTEAM","partner":{"id":29,"name":"SYNCHROTEAM"},"baseline":"Application collaborative terrain.","description":"Synchroteam g\u00e8re la planification et la reparition des t\u00e2ches. Cette application permet de visualiser de mani\u00e8re instantan\u00e9e qui est occup\u00e9 \u00e0 quel endroit et autre.  \r\nDe plus Synchroteam  indique en temps r\u00e9el l'emplacement des collaborateurs, clients, agences et les affiche sur une carte. Et enfin elle permet de cr\u00e9er un rapport de chaque intervention effecut\u00e9es des employ\u00e9s.","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.synchroteam.synchroteam2","visuals":[],"craft":[12,9],"category":[3],"action":[]},{"id":34,"folder":"medias","icon":"app_34_media_0_8244e0bedc60348448f9b49d34bff93e.png","title":"TALENT SOFT","partner":{"id":30,"name":"TALENT SOFT"},"baseline":"Application de Gestion des Ressources Humaines.","description":"Talent Soft propose plusieurs fonctionnalit\u00e9s en fonction des besoins de l'entrerpise:\r\n- construction de plan de formation\r\n- personnalisation des fiches d'\u00e9valuation\r\n- pr\u00e9paration des plans de r\u00e9mun\u00e9ration\r\n- des solutions de mobilit\u00e9s internes,\u2026","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=fr.talentsoft.ts&hl=fr","visuals":[],"craft":[7],"category":[6],"action":[]},{"id":35,"folder":"medias","icon":"app_35_media_0_65c15eee3398336420839254ec1c064f.png","title":"TEAM VIEWER","partner":{"id":31,"name":"TEAM VIEWER"},"baseline":"Solution de gestion \u00e0 distance des devices.","description":"Teamviewer permet d'assister \u00e0 distance des appareils mobiles de mani\u00e8re tr\u00e8s simple, partout dans le monde, et d'enregistrer toutes les donn\u00e9es clients et connexions dans une base de donn\u00e9es.","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.teamviewer.teamviewer.market.mobile","visuals":[],"craft":[2],"category":[5],"action":[]},{"id":36,"folder":"medias","icon":"app_36_media_0_73140bdbc841e51a4b1d2ee97d862571.png","title":"UBI TRANSPORT","partner":{"id":33,"name":"UBI TRANSPORT"},"baseline":"Solution de de g\u00e9olocalisation, de suivi et de s\u00e9curisation de v\u00e9hicules de transport.","description":"Ubi Transports est un \u00e9diteur de logiciels, int\u00e9grateur de solutions de mobilit\u00e9. La soci\u00e9t\u00e9 est sp\u00e9cialiste de l\u2019int\u00e9gration de technologies innovantes au service de la cha\u00eene de mobilit\u00e9.  \r\nBas\u00e9es sur les technologies de l\u2019information, de la communication et de l\u2019identification, les solutions de l'entreprise permettent de valoriser des syst\u00e8mes de transports plus intelligents.","pictos":{"gcn":"true","smb":"true"},"url":"","visuals":[],"craft":[12,11],"category":[3],"action":[]},{"id":37,"folder":"medias","icon":"app_37_media_0_9747f22bbe874ced143d5a54c9d855c9.png","title":"USALES","partner":{"id":34,"name":"URBANS"},"baseline":"Gestion d'activit\u00e9 commerciale (consultation et cr\u00e9ation de contacts, bons de commande, note de frais, dashboard).","description":"Urbans d\u00e9veloppe des solutions \u00e0 destination de flottes de commerciaux itin\u00e9rants: l'application Usales leur permet de pr\u00e9parer et de g\u00e9rer des rendez-vous clients de A \u00e0 Z : \r\ncr\u00e9ez des fiches de contacts, visualisez les sur une map pour optimiser vos rendez-vous, g\u00e9rez vos notes de frais, cr\u00e9ez des bons de commandes, faites les signer et envoyez les directement depuis votre tablette.\r\nVisualisez votre activit\u00e9 sous forme de dashboard.","pictos":{"gcn":"true","smb":"true"},"url":"","visuals":[],"craft":[1],"category":[6],"action":[]},{"id":38,"folder":"medias","icon":"app_38_media_0_d47a085d2445c7c80dea6d15f5d6f87c.png","title":"VM WARE HORIZON CLIENT","partner":{"id":35,"name":"VM WARE"},"baseline":"La Workspace Suite de VMWare vous permet de virtualiser votre poste de travail Windows sur appareil Android .","description":"La Workspace Suite de VMWare vous permet de virtualiser votre poste de travail Windows sur appareil Android \u00e0 partir d'un Cloud s\u00e9curis\u00e9. Toutes les donn\u00e9es sont synchronis\u00e9es automatiquement et vous permet d'acc\u00e9der \u00e0 l'ensemble de vos documents d'entreprise.","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.vmware.myvmware","visuals":[],"craft":[7,5,4,10,1],"category":[5],"action":[]},{"id":39,"folder":"medias","icon":"app_39_media_0_87cb9b02bd463f81a7ab54daf66335fb.png","title":"VOXER","partner":{"id":36,"name":"VOXER"},"baseline":"Application Talkie Walkie.","description":"Voxer est la prochaine g\u00e9n\u00e9ration de l'application Push-to-talk qui se distingue des autres en fournissant la voix en direct qui est simultan\u00e9ment enregistr\u00e9, d\u00e9livr\u00e9e sur un quelconque r\u00e9seau de donn\u00e9es, et stock\u00e9 dans le nuage.\r\nAvec Voxer, on peut instantan\u00e9ment envoyer des fichiers audio ou du texte, des photos, et partager notre localisation, \u00e9couter directement le message d'une personne ou ult\u00e9rieurement et bien \u00e9vidamment int\u00e9ragir avec celle-ci. ","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.rebelvox.voxer","visuals":[],"craft":[12,9],"category":[3],"action":[]},{"id":40,"folder":"medias","icon":"app_40_media_0_1261e6d1b2066e8c2665823be8897965.png","title":"WRIKE","partner":{"id":37,"name":"WRIKE"},"baseline":"Wrike est un outil collaboratif de gestion de projet avanc\u00e9, autorisant planification, discussion et partage de documents.","description":"Wrike permet \u00e0 ses utilisateurs d'ajuster la planification du projet, de hi\u00e9rarchiser les t\u00e2ches, de suivre la programmation et de collaborer avec des co\u00e9quipiers en ligne. Ses fonctions principales sont : Flux d'activit\u00e9 en temps r\u00e9el , Diagrammes de Gantt dynamiques (chronologiques), Partage de fichier et \u00e9dition en ligne, Gestion de la charge de travail et suivi des temps, Applications Android, Extension Outlook et Int\u00e9gration \u00e0 Dropbox et Google Docs, Rapports personnalis\u00e9s, Discussions,  Hi\u00e9rarchisation des t\u00e2ches.","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.wrike","visuals":[],"craft":[12,9,11,7,6,5,4,10,2,1],"category":[3],"action":[]},{"id":41,"folder":"medias","icon":"app_41_media_0_4644835884a72f4708c431062a89b6ec.png","title":"SIGNificant","partner":{"id":38,"name":"XYZMO"},"baseline":"Signature Electronique.","description":"Entreprise sp\u00e9cialis\u00e9e dans les solutions digitales pour les signatures electroniques. On peut recevoir des documents sign\u00e9s n'importe o\u00f9 et n'importe quand. Les documents peuvent \u00eatre sign\u00e9s directement sur tablette et mobile hors connexion.","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.xyzmo.signature","visuals":[],"craft":[12,9,7,4,10,2,1],"category":[5],"action":[]},{"id":42,"folder":"medias","icon":"app_42_media_0_330ac8f9ff7e5d02e591aadd84f39ac0.png","title":"YAMMER","partner":{"id":20,"name":"MICROSOFT"},"baseline":"Application de r\u00e9seau social d'entreprise priv\u00e9.","description":"Application de travail collaboratif organis\u00e9e autour d'un r\u00e9seau social priv\u00e9 : \u00e9changer des documents, discuter en instantan\u00e9, publier des informations sur des groupes, envoyer\/recevoir des notifications sont tant de fonctions assur\u00e9es par YAMMER.","pictos":{"gcn":"true","smb":"true"},"url":"https:\/\/play.google.com\/store\/apps\/details?id=com.yammer.v1","visuals":[],"craft":[12,9,11,6,5,4,10,2,1],"category":[3],"action":[]}]
+[
+  {
+    "id": 1,
+    "folder": "medias",
+    "icon": "app_1_media_0_9cec39518d72888221da150b208c8b41.png",
+    "title": "ACCELLION",
+    "partner": {
+      "id": 1,
+      "name": "ACCELLION"
+    },
+    "baseline": "Application de stockage de données sécurisées dans le cloud.",
+    "description": "Accellion propose une solution de sécurisation de données dans le Cloud complète (Private Cloud File Sharing, Mobile Content Management…)",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "",
+    "visuals": ["app_1_media_1_c628d57e6406407c264292bd314d0df5.jpg", "app_1_media_2_827115f993332b29f6e528c385ad768a.jpg", "app_1_media_3_b8592ff4979066dc605a879f1314a5c7.jpg", "app_1_media_4_7f1d1e600f50db0220423c77be20cf50.jpg"],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      10,
+      2,
+      1
+    ],
+    "category": [
+      7
+    ],
+    "action": []
+  },
+  {
+    "id": 2,
+    "folder": "medias",
+    "icon": "app_2_media_0_f68563dd9b7357842c4cb14e7f89772c.png",
+    "title": "ALL SHARE CAST",
+    "partner": {
+      "id": 26,
+      "name": "SAMSUNG"
+    },
+    "baseline": "Solution de screen mirroring.",
+    "description": "All Share Cast permet d'afficher sur un écran le contenu de votre smartphone, tablette ou PC.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      10,
+      1
+    ],
+    "category": [
+      5
+    ],
+    "action": []
+  },
+  {
+    "id": 3,
+    "folder": "medias",
+    "icon": "app_3_media_0_e3e4a932f74523d0be29332a2040e2c2.png",
+    "title": "ANY DO",
+    "partner": {
+      "id": 4,
+      "name": "ANY DO"
+    },
+    "baseline": "Gestionnaire de tâches.",
+    "description": "Any Do est une application à utilisation personnelle ou collaborative qui vous permet d'ordonner vos tâches par projet, de les dater, les partager et les valider.",
+    "pictos": {
+      "gcn": "false",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.anydo&hl=fr",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      10,
+      1
+    ],
+    "category": [
+      3
+    ],
+    "action": []
+  },
+  {
+    "id": 4,
+    "folder": "medias",
+    "icon": "app_4_media_0_4e33f143f43346a85711a1545b0b6bf0.png",
+    "title": "CELLTRUST",
+    "partner": {
+      "id": 6,
+      "name": "CELLTRUST"
+    },
+    "baseline": "Application d'encryption d'appels/SMS/MMS/etc.",
+    "description": "CellTrust propose d'archiver et de crypter les échanges de vos collaborateurs, qu'il s'agisse d'sms, d'appels, etc...",
+    "pictos": {
+      "gcn": "false",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.celltrust.securesms",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      10,
+      1
+    ],
+    "category": [],
+    "action": []
+  },
+  {
+    "id": 5,
+    "folder": "medias",
+    "icon": "app_5_media_0_5bee399fec212c4ce79fd689487709e2.png",
+    "title": "CISCO WEBEX",
+    "partner": {
+      "id": 7,
+      "name": "CISCO"
+    },
+    "baseline": "Solution de visioconférence.",
+    "description": "Cisco Webex permet de collaborez avec des collègues au sein de votre organisation, ou n'importe où sur la planète. On peut se recontrer en ligne et partagez des fichiers, des informations et l'expérience. Les solutions WebEx augmentent la productivité et  permettent de rester connectés.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "false"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.cisco.webex.meetings",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      10,
+      1
+    ],
+    "category": [
+      3
+    ],
+    "action": []
+  },
+  {
+    "id": 6,
+    "folder": "medias",
+    "icon": "app_6_media_0_0779b813306426de3fa42ececc07ebea.png",
+    "title": "CLICKSHARE",
+    "partner": {
+      "id": 5,
+      "name": "BARCO"
+    },
+    "baseline": "Connecter, cliquer, et partager ses présentations sur un écran sans fil.",
+    "description": "Système de présentation sans fil complet pour salle de réunion pour conférence haute gamme. Un seul clic suffit pour se connecter à une source vidéo d'une salle de réunion et pour projeter sans fil le contenu de son appareil mobile.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "false"
+    },
+    "url": "",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      10,
+      1
+    ],
+    "category": [
+      5
+    ],
+    "action": []
+  },
+  {
+    "id": 7,
+    "folder": "medias",
+    "icon": "app_7_media_0_710bf3bc7ccab571c43439a8775f6957.png",
+    "title": "DOCU SIGN",
+    "partner": {
+      "id": 9,
+      "name": "DOCU SIGN"
+    },
+    "baseline": "Solution de signature Electronique.",
+    "description": "Docu Sign est une solution permettant la signature de documents PDF sur tablette ou smartphone.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.docusign.ink&hl=fr",
+    "visuals": [],
+    "craft": [
+      4
+    ],
+    "category": [
+      5
+    ],
+    "action": []
+  },
+  {
+    "id": 8,
+    "folder": "medias",
+    "icon": "app_8_media_0_435285e6994be83f4bf281029f1d3528.png",
+    "title": "DRIVVE",
+    "partner": {
+      "id": 10,
+      "name": "DRIVVE"
+    },
+    "baseline": "Numérisation et gestion de documents personnalisable.",
+    "description": "Drivve vous permet de numériser des documents et de les gérer de façon personnalisée.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "false"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.priapps.android.drivveprint&hl=fr",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      2,
+      1
+    ],
+    "category": [
+      6
+    ],
+    "action": []
+  },
+  {
+    "id": 9,
+    "folder": "medias",
+    "icon": "app_9_media_0_1b551def05820ed3e282441aa560d50e.png",
+    "title": "ERCOM",
+    "partner": {
+      "id": 11,
+      "name": "ERCOM"
+    },
+    "baseline": "Cryptage des appels/SMS/MMS/etc.",
+    "description": "Ercom vous permet de sécuriser les échanges passés entre les mobiles d'une flotte et de crypter les informations qui en sortent (SMS, MMS, etc.).",
+    "pictos": {
+      "gcn": "true",
+      "smb": "false"
+    },
+    "url": "",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      10,
+      1
+    ],
+    "category": [
+      3
+    ],
+    "action": []
+  },
+  {
+    "id": 10,
+    "folder": "medias",
+    "icon": "app_10_media_0_18e463c8b7b375d558cc70936cea9109.png",
+    "title": "ESAFEME-PRO",
+    "partner": {
+      "id": 22,
+      "name": "NEOSAFE"
+    },
+    "baseline": "Solution de Protection du Travailleur Isolé (PTI).",
+    "description": "L'application eSafeMe-Pro protège les travailleurs isolés et dispose de plusieurs fonctionnalités:\r\n- elle intègre un MDM permettant l'administration du téléphone.\r\n- elle détecte les chutes/pertes de verticalités et immobilités.\r\n- elle intègre la vérification de mise en danger du travailleur (SOS, option médaillon, etc.).",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.neosafe.esafemepro",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      2
+    ],
+    "category": [
+      7
+    ],
+    "action": []
+  },
+  {
+    "id": 11,
+    "folder": "medias",
+    "icon": "app_11_media_0_5748036100820e4f1bce9dd85fbec4f1.png",
+    "title": "EVERNOTE",
+    "partner": {
+      "id": 12,
+      "name": "EVERNOTE"
+    },
+    "baseline": "Outil collaboratif de prise de note.",
+    "description": "Evernote est un outil collaboratif de prise de notes permettant d'y associer des documents et autorise également d'échanger et de gérer un projet (discussion instantanée, création d'ordre du jour, liste d'actions, etc.).",
+    "pictos": {
+      "gcn": "false",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.evernote",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      10,
+      2
+    ],
+    "category": [
+      6
+    ],
+    "action": []
+  },
+  {
+    "id": 12,
+    "folder": "medias",
+    "icon": "app_12_media_0_b216b3fd7bdd64f2f5b9e98c03e3ae6c.png",
+    "title": "FLEET XPS",
+    "partner": {
+      "id": 32,
+      "name": "TRIMBLE"
+    },
+    "baseline": "La solution mobile pour les fournisseurs de services logistiques et les commissionnaires de transport.",
+    "description": "Avec Fleet Express pour Android, Trimble offre une solution flexible pour smartphone aux transporteurs: track&trace, messagerie et téléphonie  main-libre, identification du conducteur, feuille de temps, preuve de livraison, visualisation du temps de conduite.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "",
+    "visuals": [],
+    "craft": [
+      12,
+      11
+    ],
+    "category": [
+      3
+    ],
+    "action": []
+  },
+  {
+    "id": 13,
+    "folder": "medias",
+    "icon": "app_13_media_0_072c1c667372764a50e60da9305b3ed9.png",
+    "title": "FLIPBOARD",
+    "partner": {
+      "id": 13,
+      "name": "FLIPBOARD"
+    },
+    "baseline": "Solution d'agrégation d'informations de sources multiples (réseaux sociaux, sites d'informations…).",
+    "description": "Flipboard permet d'agréger des contenus en fonction de vos préférences, provenant autant de réseaux sociaux que de sites d'informations, blog ou autres.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=flipboard.app",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      10,
+      2,
+      1
+    ],
+    "category": [
+      4
+    ],
+    "action": []
+  },
+  {
+    "id": 14,
+    "folder": "medias",
+    "icon": "app_14_media_0_54ed9b6eb5ece4798f83d4c22744040e.png",
+    "title": "FORECOMM BLUE FILES",
+    "partner": {
+      "id": 14,
+      "name": "FORECOMM"
+    },
+    "baseline": "Conversion de fichiers en format sécurisé.",
+    "description": "La technologie BlueFiles permet de convertir tout type de fichiers (Powerpoint, Word, PDF, Ai…) en fichier sécurisé et traçable: paramétrer une durée de visionnage du fichier, un mot de passe d'accès, etc...",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.forecomm.forecommreader",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      10,
+      2,
+      1
+    ],
+    "category": [
+      7
+    ],
+    "action": []
+  },
+  {
+    "id": 15,
+    "folder": "medias",
+    "icon": "app_15_media_0_12ca7a9816e61c819616d35521319db6.png",
+    "title": "F-SECURE MOBILE",
+    "partner": {
+      "id": 15,
+      "name": "F-SECURE"
+    },
+    "baseline": "Solution de sécurisation du Smartphone.",
+    "description": "F-secure est une application de sécurisation des devices. Elle propose entre autre: utilisation de hot-spot/wifi sécurisée, nettoyage de l'appareil, protection contre les app dangereuses…",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.fsecure.ms.dc",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      10,
+      2,
+      1
+    ],
+    "category": [
+      7
+    ],
+    "action": []
+  },
+  {
+    "id": 16,
+    "folder": "medias",
+    "icon": "app_16_media_0_79e8d3a0718b4db60476915b09cbe167.png",
+    "title": "GFI COMMUNITY HUB",
+    "partner": {
+      "id": 16,
+      "name": "GFI"
+    },
+    "baseline": "Outil de communication interne/externe.",
+    "description": "Gfi Community Hub est un outil de communication dont le but est de permettre l'échange et l'interaction entre une entreprise et ses clients en temps réel et de manière sécurisée.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "",
+    "visuals": [],
+    "craft": [
+      7
+    ],
+    "category": [
+      3
+    ],
+    "action": []
+  },
+  {
+    "id": 17,
+    "folder": "medias",
+    "icon": "app_17_media_0_68f56792b8e8c7896b4701dadf96a5ba.png",
+    "title": "GMAO-MOBILE",
+    "partner": {
+      "id": 3,
+      "name": "ALTAIR ENTREPRISE"
+    },
+    "baseline": "Gestion des stocks et des inventaires sur mobile.",
+    "description": "Toujour accessible même sans connectivité réseau, les applications mobiles d'Altair Entreprise s'adapte à tous vos besoins (recherche d'articles, inventaire, demandes d'achats, etc.).",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "",
+    "visuals": [],
+    "craft": [
+      11
+    ],
+    "category": [
+      6
+    ],
+    "action": []
+  },
+  {
+    "id": 18,
+    "folder": "medias",
+    "icon": "app_18_media_0_3cedb131f7259dd630fec2656b202981.png",
+    "title": "GOOGLE MAPS",
+    "partner": {
+      "id": 17,
+      "name": "GOOGLE"
+    },
+    "baseline": "Outil de géolocalisation.",
+    "description": "Google Maps vous permet de créer des itinéraires optimisés et de personnaliser vos maps en fonction des lieux fréquemment visités.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.maps",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      10,
+      2,
+      1
+    ],
+    "category": [
+      6
+    ],
+    "action": []
+  },
+  {
+    "id": 19,
+    "folder": "medias",
+    "icon": "app_19_media_0_b5bff13de41922cc185d3b98f0db7162.png",
+    "title": "HANCOM OFFICE",
+    "partner": {
+      "id": 18,
+      "name": "HANCOM"
+    },
+    "baseline": "Suite Bureautique.",
+    "description": "Hancom Office propose une suite bureautique gratuite comprenant traitement de texte, tableur et outil de créartion de présentations.",
+    "pictos": {
+      "gcn": "false",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.hancom.office.editor",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      10,
+      2,
+      1
+    ],
+    "category": [
+      6
+    ],
+    "action": []
+  },
+  {
+    "id": 20,
+    "folder": "medias",
+    "icon": "app_20_media_0_ac23607c84b94804d97576ac58181644.png",
+    "title": "HID MOBILE ACCESS",
+    "partner": {
+      "id": 19,
+      "name": "HID"
+    },
+    "baseline": "Solution de contrôle d'accès.",
+    "description": "HID autorise la vérification par identifiant/mdp et badge/smartphone NFC lors d'une demande d'accès physique ou virtuelle.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.hidglobal.mobilekeys.android.v3",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      10,
+      2,
+      1
+    ],
+    "category": [
+      7
+    ],
+    "action": []
+  },
+  {
+    "id": 21,
+    "folder": "medias",
+    "icon": "app_21_media_0_b78247be84ef10f4d6f8ed5b3b7cb69b.png",
+    "title": "MCJ",
+    "partner": {
+      "id": 21,
+      "name": "MON CODE JURIDIQUE"
+    },
+    "baseline": "Application regroupant l'ensemble du corpus juridique français mis à jour en temps réel.",
+    "description": "MCJ (Mon Code Juridique) regroupe gratuitement l'ensemble du corpus juridique français mis à jour en temps réel. \r\nUn flux d'actualité offrant les dernières informations en terme de jurisprudence et autres actualités juridiques est aussi mis à disposition. \r\nL'application est disponible en mode hors-ligne.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "",
+    "visuals": [],
+    "craft": [
+      7,
+      4
+    ],
+    "category": [
+      4
+    ],
+    "action": []
+  },
+  {
+    "id": 22,
+    "folder": "medias",
+    "icon": "app_22_media_0_4fb568b6b425f3714ea98658e5fe36ab.png",
+    "title": "NETEXPLORER",
+    "partner": {
+      "id": 23,
+      "name": "NETEXPLORER"
+    },
+    "baseline": "Application de travail collaboratif avancée.",
+    "description": "Netexplorer est une application d'espace collaboratif en ligne permettant d'éditer des fichiers en ligne, de les annoter, et d'avoir une traçabilité des actions sur le fichier créé. \r\nFonctionnant en mode Cloud, Nextexplorer existe en format applicatif (Android) donnant accès aux fichiers en hors-ligne, ou en mode web accessible depuis n'importe quel navigateur sur ordinateur ou mobile.",
+    "pictos": {
+      "gcn": "false",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=fr.bsnet.netexplorer",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      10,
+      2,
+      1
+    ],
+    "category": [
+      3
+    ],
+    "action": []
+  },
+  {
+    "id": 23,
+    "folder": "medias",
+    "icon": "app_23_media_0_665d617415bba5ec4a27d0697f82c13d.png",
+    "title": "OFFICE 365 - OneNote",
+    "partner": {
+      "id": 20,
+      "name": "MICROSOFT"
+    },
+    "baseline": "Programme de Prise de Note synchronisé.",
+    "description": "One Note est un bloc-note numérique permettant de capturer, sotcker et partager différents type d'informations.\r\nL'intégration complète avec le Cloud permet de s'affranchir des fichiers et d'un disqure dur de façon à pouvoir enregistrer et consulter ses notes et informations ou que l'on soit.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.microsoft.office.onenote",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      10,
+      2,
+      1
+    ],
+    "category": [
+      6
+    ],
+    "action": []
+  },
+  {
+    "id": 24,
+    "folder": "medias",
+    "icon": "app_24_media_0_73a1c9c7fab1e20ebb06eccfea1824b5.png",
+    "title": "OFFICE 365 - Outlook",
+    "partner": {
+      "id": 20,
+      "name": "MICROSOFT"
+    },
+    "baseline": "Application d'agenda partagé.",
+    "description": "Outlook sur tablette ou smartphone vous propose les mêmes fonctionnalités que vous connaissez sur votre ordinateur, avec une ergonomie repensée pour la mobilité.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.microsoft.office.outlook",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      10,
+      2,
+      1
+    ],
+    "category": [
+      3
+    ],
+    "action": []
+  },
+  {
+    "id": 25,
+    "folder": "medias",
+    "icon": "app_25_media_0_dad7b3f6716503b1d7475f271d4ce63c.png",
+    "title": "OFFICE 365 - Sharepoint",
+    "partner": {
+      "id": 20,
+      "name": "MICROSOFT"
+    },
+    "baseline": "",
+    "description": "",
+    "pictos": {
+      "gcn": "true",
+      "smb": "false"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.sharepointams.android",
+    "visuals": [],
+    "craft": [
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      10,
+      2,
+      1
+    ],
+    "category": [
+      3
+    ],
+    "action": []
+  },
+  {
+    "id": 26,
+    "folder": "medias",
+    "icon": "app_26_media_0_4a44d8f8f8155b5700847771153c846a.png",
+    "title": "OFFICE 365 - Word/Excel/PowerPoint",
+    "partner": {
+      "id": 20,
+      "name": "MICROSOFT"
+    },
+    "baseline": "",
+    "description": "",
+    "pictos": {
+      "gcn": "true",
+      "smb": "false"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.microsoft.office.officehub&hl=fr",
+    "visuals": [],
+    "craft": [
+      7,
+      6,
+      5,
+      4,
+      10,
+      2,
+      1
+    ],
+    "category": [
+      6
+    ],
+    "action": []
+  },
+  {
+    "id": 27,
+    "folder": "medias",
+    "icon": "app_27_media_0_5f03ba51841d22d4ae5dc9acc455a750.png",
+    "title": "PICTBASE TECHNICIENS & INTERVENTIONS",
+    "partner": {
+      "id": 8,
+      "name": "DAXIUM"
+    },
+    "baseline": "Application de création de formulaires personnalisés.",
+    "description": "Réponds aux problématiques liées à l'organisation de vos techniciens: échange d'informations collectées, pilotage à distance, planning. PictBase Techniciens & Interventions accompagne vos techniciens dans tous leurs déplacements.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.daxium.pictbase",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      2
+    ],
+    "category": [
+      6
+    ],
+    "action": []
+  },
+  {
+    "id": 28,
+    "folder": "medias",
+    "icon": "app_28_media_0_86609f7d76a26fb12839fd69f562447b.png",
+    "title": "POWERVOTE",
+    "partner": {
+      "id": 24,
+      "name": "POWERVOTE"
+    },
+    "baseline": "Application d'animation de conférence et d’événements.",
+    "description": "Powervote est une application qui centralise les informations sur votre événement et propose de l'animer via la synchronisation de vos supports de présentation. Les fonctionnalités suivantes sont disponibles:\r\n- sondages, votes et évaluations\r\n- tableaux de bord de l'implication \r\n- promotions, sponsors et exposants\r\n- documents ressources, etc.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "",
+    "visuals": [],
+    "craft": [
+      7,
+      5,
+      10,
+      1
+    ],
+    "category": [
+      6
+    ],
+    "action": []
+  },
+  {
+    "id": 29,
+    "folder": "medias",
+    "icon": "app_29_media_0_97e4b10aaf1cade09a85aadb1aff3b06.png",
+    "title": "SAGE ONE PAIE",
+    "partner": {
+      "id": 25,
+      "name": "SAGE"
+    },
+    "baseline": "Application de gestion de paie.",
+    "description": "Sage One Paie permet de réaliser simplement des bulletins de paie grâce à une application online accessible 24h/24 et 7j/7 depuis n’importe quel endroit, sans logiciel ni mise à jour à installer.\r\nDes assistants  guident pour vous faciliter les opérations courantes. Les absences sont facilement gérer grâce au calendrier dédié (CP, RTT, maladies…). Les bulletins sont disponibles au format pdf.",
+    "pictos": {
+      "gcn": "false",
+      "smb": "true"
+    },
+    "url": "",
+    "visuals": [],
+    "craft": [
+      7
+    ],
+    "category": [
+      6
+    ],
+    "action": []
+  },
+  {
+    "id": 30,
+    "folder": "medias",
+    "icon": "app_30_media_0_ac7fc0d9e274e854cec5f281f8096db4.png",
+    "title": "SAMSUNG MOBILE PRINT",
+    "partner": {
+      "id": 26,
+      "name": "SAMSUNG"
+    },
+    "baseline": "Solution d'impression à distance.",
+    "description": "MobilePrint de Samsung est une solution Samsung permettant de numériser et d’imprimer à l’aide de tablettes ou de smartphones. \r\nElle offre la flexibilité et le confort en prenant en charge le stockage cloud et le partage de fichier avec l’ordinateur de bureau, ainsi que l’impression du contenu web.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.sec.print.mobileprint",
+    "visuals": [],
+    "craft": [
+      7,
+      6,
+      5,
+      4,
+      10,
+      2,
+      1
+    ],
+    "category": [
+      6
+    ],
+    "action": []
+  },
+  {
+    "id": 31,
+    "folder": "medias",
+    "icon": "app_31_media_0_d631bf33254cc9b902873a01c051add0.png",
+    "title": "SKYPE ENTREPRISE",
+    "partner": {
+      "id": 27,
+      "name": "SKYPE"
+    },
+    "baseline": "Solution de visioconférence.",
+    "description": "Skype entreprise possède les mêmes caractéristiques que Skype cependant, on peut ajouter jusqu'à 250 participants aux réunions en ligne, profiter d'une sécurité de niveau d'entreprise et gérer les comptes des employés.",
+    "pictos": {
+      "gcn": "false",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.skype.raider",
+    "visuals": [],
+    "craft": [
+      7,
+      6,
+      5,
+      10
+    ],
+    "category": [
+      6
+    ],
+    "action": []
+  },
+  {
+    "id": 32,
+    "folder": "medias",
+    "icon": "app_32_media_0_1297816a61e8af696f3d8e131449a3b0.png",
+    "title": "SMARSH",
+    "partner": {
+      "id": 28,
+      "name": "SMARSH"
+    },
+    "baseline": "Solution d'archivage sécurisée.",
+    "description": "Smarsh est une solution d'archivage regroupant les messages et documents échangés sur plusieurs comptes et sécurise l'ensemble de ces informations.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "",
+    "visuals": [],
+    "craft": [
+      7,
+      6,
+      5,
+      4,
+      10,
+      1
+    ],
+    "category": [
+      1
+    ],
+    "action": []
+  },
+  {
+    "id": 33,
+    "folder": "medias",
+    "icon": "app_33_media_0_6a320447ce7e1fa8478a4ea855910228.png",
+    "title": "SYNCHROTEAM",
+    "partner": {
+      "id": 29,
+      "name": "SYNCHROTEAM"
+    },
+    "baseline": "Application collaborative terrain.",
+    "description": "Synchroteam gère la planification et la reparition des tâches. Cette application permet de visualiser de manière instantanée qui est occupé à quel endroit et autre.  \r\nDe plus Synchroteam  indique en temps réel l'emplacement des collaborateurs, clients, agences et les affiche sur une carte. Et enfin elle permet de créer un rapport de chaque intervention effecutées des employés.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.synchroteam.synchroteam2",
+    "visuals": [],
+    "craft": [
+      12,
+      9
+    ],
+    "category": [
+      3
+    ],
+    "action": []
+  },
+  {
+    "id": 34,
+    "folder": "medias",
+    "icon": "app_34_media_0_8244e0bedc60348448f9b49d34bff93e.png",
+    "title": "TALENT SOFT",
+    "partner": {
+      "id": 30,
+      "name": "TALENT SOFT"
+    },
+    "baseline": "Application de Gestion des Ressources Humaines.",
+    "description": "Talent Soft propose plusieurs fonctionnalités en fonction des besoins de l'entrerpise:\r\n- construction de plan de formation\r\n- personnalisation des fiches d'évaluation\r\n- préparation des plans de rémunération\r\n- des solutions de mobilités internes,…",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=fr.talentsoft.ts&hl=fr",
+    "visuals": [],
+    "craft": [
+      7
+    ],
+    "category": [
+      6
+    ],
+    "action": []
+  },
+  {
+    "id": 35,
+    "folder": "medias",
+    "icon": "app_35_media_0_65c15eee3398336420839254ec1c064f.png",
+    "title": "TEAM VIEWER",
+    "partner": {
+      "id": 31,
+      "name": "TEAM VIEWER"
+    },
+    "baseline": "Solution de gestion à distance des devices.",
+    "description": "Teamviewer permet d'assister à distance des appareils mobiles de manière très simple, partout dans le monde, et d'enregistrer toutes les données clients et connexions dans une base de données.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.teamviewer.teamviewer.market.mobile",
+    "visuals": [],
+    "craft": [
+      2
+    ],
+    "category": [
+      5
+    ],
+    "action": []
+  },
+  {
+    "id": 36,
+    "folder": "medias",
+    "icon": "app_36_media_0_73140bdbc841e51a4b1d2ee97d862571.png",
+    "title": "UBI TRANSPORT",
+    "partner": {
+      "id": 33,
+      "name": "UBI TRANSPORT"
+    },
+    "baseline": "Solution de de géolocalisation, de suivi et de sécurisation de véhicules de transport.",
+    "description": "Ubi Transports est un éditeur de logiciels, intégrateur de solutions de mobilité. La société est spécialiste de l’intégration de technologies innovantes au service de la chaîne de mobilité.  \r\nBasées sur les technologies de l’information, de la communication et de l’identification, les solutions de l'entreprise permettent de valoriser des systèmes de transports plus intelligents.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "",
+    "visuals": [],
+    "craft": [
+      12,
+      11
+    ],
+    "category": [
+      3
+    ],
+    "action": []
+  },
+  {
+    "id": 37,
+    "folder": "medias",
+    "icon": "app_37_media_0_9747f22bbe874ced143d5a54c9d855c9.png",
+    "title": "USALES",
+    "partner": {
+      "id": 34,
+      "name": "URBANS"
+    },
+    "baseline": "Gestion d'activité commerciale (consultation et création de contacts, bons de commande, note de frais, dashboard).",
+    "description": "Urbans développe des solutions à destination de flottes de commerciaux itinérants: l'application Usales leur permet de préparer et de gérer des rendez-vous clients de A à Z : \r\ncréez des fiches de contacts, visualisez les sur une map pour optimiser vos rendez-vous, gérez vos notes de frais, créez des bons de commandes, faites les signer et envoyez les directement depuis votre tablette.\r\nVisualisez votre activité sous forme de dashboard.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "",
+    "visuals": [],
+    "craft": [
+      1
+    ],
+    "category": [
+      6
+    ],
+    "action": []
+  },
+  {
+    "id": 38,
+    "folder": "medias",
+    "icon": "app_38_media_0_d47a085d2445c7c80dea6d15f5d6f87c.png",
+    "title": "VM WARE HORIZON CLIENT",
+    "partner": {
+      "id": 35,
+      "name": "VM WARE"
+    },
+    "baseline": "La Workspace Suite de VMWare vous permet de virtualiser votre poste de travail Windows sur appareil Android .",
+    "description": "La Workspace Suite de VMWare vous permet de virtualiser votre poste de travail Windows sur appareil Android à partir d'un Cloud sécurisé. Toutes les données sont synchronisées automatiquement et vous permet d'accéder à l'ensemble de vos documents d'entreprise.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.vmware.myvmware",
+    "visuals": [],
+    "craft": [
+      7,
+      5,
+      4,
+      10,
+      1
+    ],
+    "category": [
+      5
+    ],
+    "action": []
+  },
+  {
+    "id": 39,
+    "folder": "medias",
+    "icon": "app_39_media_0_87cb9b02bd463f81a7ab54daf66335fb.png",
+    "title": "VOXER",
+    "partner": {
+      "id": 36,
+      "name": "VOXER"
+    },
+    "baseline": "Application Talkie Walkie.",
+    "description": "Voxer est la prochaine génération de l'application Push-to-talk qui se distingue des autres en fournissant la voix en direct qui est simultanément enregistré, délivrée sur un quelconque réseau de données, et stocké dans le nuage.\r\nAvec Voxer, on peut instantanément envoyer des fichiers audio ou du texte, des photos, et partager notre localisation, écouter directement le message d'une personne ou ultérieurement et bien évidamment intéragir avec celle-ci. ",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.rebelvox.voxer",
+    "visuals": [],
+    "craft": [
+      12,
+      9
+    ],
+    "category": [
+      3
+    ],
+    "action": []
+  },
+  {
+    "id": 40,
+    "folder": "medias",
+    "icon": "app_40_media_0_1261e6d1b2066e8c2665823be8897965.png",
+    "title": "WRIKE",
+    "partner": {
+      "id": 37,
+      "name": "WRIKE"
+    },
+    "baseline": "Wrike est un outil collaboratif de gestion de projet avancé, autorisant planification, discussion et partage de documents.",
+    "description": "Wrike permet à ses utilisateurs d'ajuster la planification du projet, de hiérarchiser les tâches, de suivre la programmation et de collaborer avec des coéquipiers en ligne. Ses fonctions principales sont : Flux d'activité en temps réel , Diagrammes de Gantt dynamiques (chronologiques), Partage de fichier et édition en ligne, Gestion de la charge de travail et suivi des temps, Applications Android, Extension Outlook et Intégration à Dropbox et Google Docs, Rapports personnalisés, Discussions,  Hiérarchisation des tâches.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.wrike",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      7,
+      6,
+      5,
+      4,
+      10,
+      2,
+      1
+    ],
+    "category": [
+      3
+    ],
+    "action": []
+  },
+  {
+    "id": 41,
+    "folder": "medias",
+    "icon": "app_41_media_0_4644835884a72f4708c431062a89b6ec.png",
+    "title": "SIGNificant",
+    "partner": {
+      "id": 38,
+      "name": "XYZMO"
+    },
+    "baseline": "Signature Electronique.",
+    "description": "Entreprise spécialisée dans les solutions digitales pour les signatures electroniques. On peut recevoir des documents signés n'importe où et n'importe quand. Les documents peuvent être signés directement sur tablette et mobile hors connexion.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.xyzmo.signature",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      7,
+      4,
+      10,
+      2,
+      1
+    ],
+    "category": [
+      5
+    ],
+    "action": []
+  },
+  {
+    "id": 42,
+    "folder": "medias",
+    "icon": "app_42_media_0_330ac8f9ff7e5d02e591aadd84f39ac0.png",
+    "title": "YAMMER",
+    "partner": {
+      "id": 20,
+      "name": "MICROSOFT"
+    },
+    "baseline": "Application de réseau social d'entreprise privé.",
+    "description": "Application de travail collaboratif organisée autour d'un réseau social privé : échanger des documents, discuter en instantané, publier des informations sur des groupes, envoyer/recevoir des notifications sont tant de fonctions assurées par YAMMER.",
+    "pictos": {
+      "gcn": "true",
+      "smb": "true"
+    },
+    "url": "https://play.google.com/store/apps/details?id=com.yammer.v1",
+    "visuals": [],
+    "craft": [
+      12,
+      9,
+      11,
+      6,
+      5,
+      4,
+      10,
+      2,
+      1
+    ],
+    "category": [
+      3
+    ],
+    "action": []
+  }
+]

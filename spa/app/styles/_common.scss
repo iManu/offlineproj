@@ -945,7 +945,7 @@ label[for="nav-trigger"] {
         position: absolute;
         pointer-events: none;
         border-color: rgba(255, 255, 255, 0);
-        border-top-color: colors('basic', 'white');;
+        border-top-color: colors('basic', 'white');
         border-width: 15px;
         margin-left: -15px;
       }
@@ -959,7 +959,7 @@ label[for="nav-trigger"] {
         position: absolute;
         pointer-events: none;
         border-color: rgba(255, 255, 255, 0);
-        border-right-color: colors('basic', 'white');;
+        border-right-color: colors('basic', 'white');
         border-width: 20px;
         margin-top: -20px;
 
@@ -1305,8 +1305,9 @@ $modalW: 400;
     position: relative;
     @include grid-media-query(palm) {
       box-shadow: inset -3px 0 6px rgba(0,0,0,.3);
+      padding: 20px;
     }
-    @include grid-media-query(desk) {
+    @include grid-media-query(lapandup) {
       padding: 30px 35px;
     }
     .carousel-img {
@@ -1496,6 +1497,8 @@ $modalW: 400;
 
     height: 100%;
     min-height: 1px;
+
+    padding: 0 10px;
 }
 [dir='rtl'] .slick-slide
 {
@@ -1504,6 +1507,7 @@ $modalW: 400;
 .slick-slide img
 {
     display: block;
+    box-shadow: 0 0 6px rgba(0,0,0,.4);
 }
 .slick-slide.slick-loading img
 {
@@ -1554,13 +1558,12 @@ $modalW: 400;
     line-height: 0;
 
     position: absolute;
-    top: 50%;
+    top: 0;
 
     display: block;
 
-    width: 20px;
-    height: 20px;
-    margin-top: -10px;
+    width: 30px;
+    height: 100%;
     padding: 0;
 
     cursor: pointer;
@@ -1618,11 +1621,15 @@ $modalW: 400;
     height: 16px;
     width: 11px;
     position: absolute;
+    left: 9px;
 }
 
 .slick-next
 {
     right: -25px;
+    @include grid-media-query(lap) {
+      right: -31px;
+    }
 }
 
 .slick-next:before
@@ -1632,10 +1639,12 @@ $modalW: 400;
     height: 16px;
     width: 11px;
     position: absolute;
+    left: 9px;
 }
 
 
 /* Dots */
+/*
 .slick-slider
 {
     margin-bottom: 30px;
@@ -1723,7 +1732,7 @@ $modalW: 400;
     opacity: .75;
     color: black;
 }
-
+*/
 
 
 
