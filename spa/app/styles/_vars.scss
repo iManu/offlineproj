@@ -144,7 +144,7 @@ $z-layers: (
 
     // SPECIAL CASE : Header & footer for samsung.com don't support border-box !!
     // so, it's applied only for #content childrens
-    #content *{
+    *{
         &,
         &:before,
         &:after{
