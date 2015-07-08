@@ -63,18 +63,32 @@ $alphawidth-lap: 46px;
 $panelwidth-desk: 266px;
 $alphawidth-desk: 66px;
 
-
 /**
  * .Nav
  * Outside global wrapper
  */
 .Nav {
-	background: colors('menu', 'bg', 'global');
+	background-color: colors('menu', 'bg', 'global');
+  background-image: url(../images/gfx/submenupix.gif);
+  background-repeat: repeat-y;
 	//width: 100%;
   @include grid-media-query(palm) {
+    background-image: none;
     width: $panelwidth;
+    &:after {
+      content: "";
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 15%;
+      background-color: colors('menu', 'bg', 'sub');
+      height: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
   }
   @include grid-media-query(lap) {
+    background-position: -11px 0px;
     width: $panelwidth-lap + 15px;
   }
   @include grid-media-query(desk) {
@@ -96,13 +110,56 @@ $alphawidth-desk: 66px;
     vertical-align: top;
   }
   &__left {
+
     width: 85%;
     @include grid-media-query(lap) {
       width: $panelwidth-lap - $alphawidth-lap;
+      background-position: 0 $panelwidth-lap;
     }
     @include grid-media-query(desk) {
       width: $panelwidth-desk - $alphawidth-desk;
     }
+    /*&:after {
+      content : '';
+      background-image: url(../images/gfx/submenupix.gif);
+      background-repeat: repeat-y;
+      position: absolute;
+      top: calc(100% + 85px);
+      left: 0;
+      width: 100%;
+      height: auto;
+      z-index: -1;
+
+      @include grid-media-query(palm) {
+        width: $panelwidth;
+      }
+      @include grid-media-query(lap) {
+        background-position: -11px 0;
+      }
+      @include grid-media-query(desk) {
+        background-position: 0 0;
+      }
+    }*/
+    /*&:after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 81px;
+      background-color: colors('menu', 'bg', 'sub');
+      height: calc(100vh + 85px);
+      z-index: -1;
+
+      /*
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -80px;
+      width: 80px;
+      background-color: colors('menu', 'bg', 'sub');
+      height: calc(100%);
+      z-index: -1;*/
+    //}
   }
   &__right {
     width: 15%;
@@ -346,7 +403,7 @@ $alphawidth-desk: 66px;
   }
   &__search {
     background: colors('menu', 'bg', 'global');
-    color: colors('text', 'filterbtn');
+    color: colors('menu', 'button', 'normal');
     height: 60px;
     position: relative;
     width: 80%;
@@ -450,9 +507,9 @@ $alphawidth-desk: 66px;
   &__item {
     background-color: colors('menu', 'bg', 'sub');
     transition: background-color .3s ease-out;
-	&:hover {
-    	background-color: darken(colors('menu', 'bg', 'sub'), 2%);
-	}
+  	&:hover {
+      	background-color: darken(colors('menu', 'bg', 'sub'), 2%);
+  	}
   }
   &__check {
     position: absolute;
@@ -529,6 +586,14 @@ $alphawidth-desk: 66px;
          line-height: 0.8;
       }
     }
+    @include grid-media-query(tabactive-p) {
+      @include font-size(61px, false);
+      margin: 63px 0 35px 30px;
+      span {
+        display: block;
+         line-height: 0.8;
+      }
+    }
     @include grid-media-query(lap) {
       @include font-size(48px, false);
       margin: 58px calc(20px + #{$panelwidth-lap}) 30px 20px;
@@ -562,7 +627,14 @@ $alphawidth-desk: 66px;
       right: $panelwidth-lap + 20px;
       top: 27px;
       &--two {
-        right: 0;
+        right: 2%;
+      }
+    }
+    @include grid-media-query(tabactive-p) {
+      right: $panelwidth-lap - 20px;
+      top: 27px;
+      &--two {
+        right: 3%;
       }
     }
     @include grid-media-query(desk) {
@@ -612,21 +684,33 @@ $alphawidth-desk: 66px;
     background-color: colors('basic', 'white');
     @include grid-media-query(palm) {
       padding: 18px;
-      height: 207px;
+      height: 170px;
       width: 100%;
-      margin: 0 0 20px 0;
+      margin: 0 0 15px 0;
     }
     @include grid-media-query(lap) {
       padding: 14px;
-      height: 167px;
+      height: 145px;
       width: 40%;
-      margin: 0 20px 20px 0;
+      margin: 0 15px 15px 0;
+    }
+    @include grid-media-query(tabactive-p) {
+      padding: 14px;
+      height: 145px;
+      width: 90%;
+      margin: 0 15px 15px 0;
+    }
+    @include grid-media-query(tabactive-l) {
+      padding: 14px;
+      height: 145px;
+      width: 40%;
+      margin: 0 15px 15px 0;
     }
     @include grid-media-query(desk) {
       padding: 18px;
-      height: 207px;
-      width: 296px;
-      margin: 0 25px 25px 0;
+      height: 170px;
+      width: 260px;
+      margin: 0 15px 15px 0;
     }
   }
   &__header {
@@ -638,14 +722,13 @@ $alphawidth-desk: 66px;
     }
     &--left {
       height: 70px;
-      width: 23%;
+      width: 25%;
       @include grid-media-query(lap) {
         height: 56px;
-        width: 23%;
       }
     }
     &--right {
-      width: 77%;
+      width: 75%;
     }
   }
   &__title {
@@ -659,7 +742,7 @@ $alphawidth-desk: 66px;
     }
     @include grid-media-query(lap) {
       //@include font-size(16px, false);
-      font-size: 1vw;
+      font-size: 1.2vw;
       margin: 9px 0 0 13px;
     }
     @include grid-media-query(desk) {
@@ -677,7 +760,7 @@ $alphawidth-desk: 66px;
       margin: 5px 0 0 16px;
     }
     @include grid-media-query(lap) {
-      @include font-size(12px, false);
+      @include font-size(10px, false);
       margin: 4px 0 0 13px;
     }
     @include grid-media-query(desk) {
@@ -711,17 +794,17 @@ $alphawidth-desk: 66px;
     font-weight: 400;
     @include grid-media-query(palm) {
       @include font-size(12px, false);
-      height: 100px;
+      height: 70px;
       margin-top: 18px;
     }
     @include grid-media-query(lap) {
       @include font-size(10px, false);
-      height: 75px;
+      height: 55px;
       margin-top: 15px;
     }
     @include grid-media-query(desk) {
       @include font-size(12px, false);
-      height: 100px;
+      height: 70px;
       margin-top: 18px;
     }
   }
@@ -936,7 +1019,7 @@ label[for="nav-trigger"] {
     &:before {
       position: absolute;
       @include grid-media-query(palm) {
-        top: 100%;
+        top: 99%;
         left: 60px;
         border: solid transparent;
         content: " ";
@@ -950,7 +1033,7 @@ label[for="nav-trigger"] {
         margin-left: -15px;
       }
       @include grid-media-query(lapandup) {
-        right: 100%;
+        right: 99%;
         top: 120px;
         border: solid transparent;
         content: " ";
@@ -1132,7 +1215,10 @@ $modalW: 400;
     width: 100%;
   }
   @include grid-media-query(lap) {
-    width: calc( 100% - #{$panelwidth-lap} );
+    width: calc( 100% - 185px );
+  }
+  @include grid-media-query(tabactive-p) {
+    width: calc( 100% - 185px );
   }
   @include grid-media-query(desk) {
     width: calc( 100% - #{$panelwidth-desk} );
@@ -1185,6 +1271,10 @@ $modalW: 400;
     top: 150px;
     width: calc(100% - 40px);
   }
+  @include grid-media-query(tabactive-p) {
+    top: 230px;
+    width: 90%;
+  }
   @include grid-media-query(desk) {
     top: 130px;
     width: calc(100% - 40px);
@@ -1207,6 +1297,9 @@ $modalW: 400;
     padding: 20px 40px 45px 40px;
     @include grid-media-query(palm) {
       padding: 25px 25px 45px 25px;
+    }
+    @include grid-media-query(tabactive-p) {
+      padding: 25px 25px 45px 20px;
     }
   }
   &-pictos {

@@ -213,6 +213,8 @@ $responsive:            true !default;
 $breakpoints: (
     'palm' '(max-width: 480px)',
     'lap' '(min-width: 481px) and (max-width: 1024px)',
+    'tabactive-p' '(min-width: 481px) and (max-width: 780px)',
+    'tabactive-l' '(min-width: 781px) and (max-width: 962px)',
     'lapandup' '(min-width: 481px)',
     'portable' '(max-width: 1024px)',
     'desk' '(min-width: 1025px)'
@@ -249,7 +251,7 @@ $breakpoints: (
 
 
 // Responsive helper to JS technique
-body:after {
+/*body:after {
   display:none;
   @include grid-media-query(palm) {
     content: 'palm';
@@ -260,10 +262,10 @@ body:after {
   @include grid-media-query(desk) {
     content: 'desk';
   }
-  /*@include grid-media-query(desk-wide) {
+  @include grid-media-query(desk-wide) {
     content: 'desk-wide';
-  }*/
-}
+  }
+}*/
 
 
 

@@ -252,6 +252,30 @@ module.exports = View.extend({
               }
             },
             {
+              breakpoint: 963,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: false,
+                dots: false,
+                adaptiveHeight: true,
+                centerMode: false,
+                variableWidth: true
+              }
+            },
+            {
+              breakpoint: 602,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: false,
+                dots: false,
+                adaptiveHeight: true,
+                centerMode: false,
+                variableWidth: true
+              }
+            },
+            {
               breakpoint: 480,
               settings: {
                 slidesToShow: 1,

@@ -29,15 +29,13 @@ module.exports = View.extend({
     var filters =  store.getFilters(),
       filterCrafts = filters[0].crafts,
       filterCategories = filters[0].categories,
-      filterPartners = filters[0].partners/*,
-      filterActions = filters[0].actions*/
+      filterPartners = filters[0].partners
     ;
     return {
       alphabet: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
       filterCrafts: filterCrafts,
       filterCategories: filterCategories,
-      filterPartners: filterPartners/*,
-      filterActions: filterActions*/
+      filterPartners: filterPartners
     };
   },
   qsRegex:'',
@@ -72,7 +70,7 @@ module.exports = View.extend({
 
         filter: function() {
           var $this = $(this);
-          var searchResult = that.qsRegex ? $this.find('.js-sort-title, .js-actions').text().match( that.qsRegex ) : true;
+          var searchResult = that.qsRegex ? $this.find('.js-sort-title, .js-baseline').text().match( that.qsRegex ) : true;
           var buttonResult = that.buttonFilter ? $this.is( that.buttonFilter ) : true;
           return searchResult && buttonResult;
         }
@@ -105,7 +103,7 @@ module.exports = View.extend({
       }).trigger(trigger);
   },
   $submitter: null,
-  $idList: {'craft':[], 'category': [], 'partner': [], 'action':[], 'letter':[]},
+  $idList: {'craft':[], 'category': [], 'partner': [], 'letter':[]},
   $isogrid: {},
   $nothing: {},
   toggleFilterList : function toggleFilterList(e) {
@@ -192,7 +190,7 @@ module.exports = View.extend({
   }, 250),
   clearFilters: function clearFilters() {
     this.qsRegex = '';
-    this.$idList = {'craft':[], 'category': [], 'partner': [], 'action':[], 'letter':[]};
+    this.$idList = {'craft':[], 'category': [], 'partner': [], 'letter':[]};
 
     $('.js-craft-button, .js-category-button, .js-partner-button').find('span').removeClass('is-list-elem-check');
     $('.js-search').val('');

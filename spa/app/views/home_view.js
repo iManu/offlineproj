@@ -19,7 +19,7 @@ module.exports = View.extend({
   	'click .js-burger-btn': 'ariaBurger',
     'click .js-legacy': 'popinLegal',
     'click .js-legacy-close': 'popinLegalClose',
-    'click .Nav__logo': 'easterActions',
+    //'click .Nav__logo': 'easterActions',
     'click .js-modal-close': 'closeModal'
   },
   // Le template principal
@@ -44,11 +44,13 @@ module.exports = View.extend({
     // popin
     this.popinElem = $('.js-popin-legal');
     // easter egg to see actions
-    this.eastClicks = 0;
+    //this.eastClicks = 0;
     /**
      * taggerEngine
      */
-    setTimeout(function() { $('body').find('[data-tag]').taggerEngine(); }, 1);
+    setTimeout(function() {
+      $('body').find('[data-tag]').taggerEngine({ clean: true });
+    }, 1);
 
     // orientation
     /*
@@ -60,7 +62,8 @@ module.exports = View.extend({
     window.setTimeout(reorient, 0);
     */
 
-
+    // FastClick
+    FastClick.attach(document.body);
 
   },
 
@@ -84,7 +87,7 @@ module.exports = View.extend({
       this.popinLegalClose();
     }
   },
-  easterActions: function easterActions(e) {
+  /*easterActions: function easterActions(e) {
   	this.eastClicks += 1;
   	var that = this,
   			$actions = $('.js-actions');
@@ -95,7 +98,7 @@ module.exports = View.extend({
   		}
   		that.eastClicks = 0;
   	}, 1000);
-  },
+  },*/
   popinElem: {},
   popinLegal: function popinLegal() {
     this.popinElem[ ( !this.popinElem.hasClass('is-popin') ? 'add' : 'remove' ) + 'Class' ]('is-popin');

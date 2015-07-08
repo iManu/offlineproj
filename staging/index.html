@@ -34,8 +34,88 @@
   <script src="javascripts/vendor.js"></script>
   <script src="javascripts/app.js"></script>
   <script>require('initialize');</script>
+  <!-- omniture -->
+  <script>
+         var  siteName = "b2b_solutions-mobilites",
+           pageName = "index",
+           siteType = "Microsites B2B",
+           siteTitle="Solutions Mobilites";
+  </script>
+   <!-- /omniture -->
 </head>
 <body>
 
 </body>
+<input type="hidden" id="microsite" name="microsite" value="microsite"/>
+<input type="hidden" id="pid" name="pid" value="no"/ >
+
+    <script language="JavaScript" type="text/javascript">
+    function eventTrack(e_name,e_type) {
+      s.linkTrackVars = 'eVar33,events';
+      s.linkTrackEvents = 'event45';
+      s.eVar33 = 'fr:'+siteName+':'+pageName+':'+e_name;
+      s.events = 'event45';
+      s.tl(this,e_type,'fr:campaign:local:'+siteName+':'+e_name);
+    };
+    </script>
+
+    <script language="JavaScript" type="text/javascript">
+    function eventPage(p_name) {
+              s.pageName ='fr:campaign:local:'+siteName+':'+p_name;
+              s.hier1 = 'fr>campaign>local>'+siteName+'>'+p_name;
+              s.prop5 = 'fr:campaign:local:'+siteName+':'+p_name;
+              s.eVar33 = '';
+              s.events = '';
+              var s_code=s.t();
+              if (s_code) document.write(s_code);
+
+                           s_pName = "fr:"+siteName+":"+p_name;
+                           s_siteName=(typeof siteName != "undefined")?siteName:"";
+                           s_siteType=(typeof siteType != "undefined")?siteType:"";
+                           s_siteTitle=(typeof siteTitle != "undefined")?siteTitle:"";
+                           s_adv.events="";
+              var s_adv_code=s_adv.t();
+              if (s_adv_code) document.write(s_adv_code);
+    };
+    </script>
+
+    <!-- SiteCatalyst code version: H.25.5.
+    Copyright 1997-2008 Omniture, Inc. More info available at
+    http://www.omniture.com -->
+   <script language="JavaScript" type="text/javascript" src="//www.samsung-microsites.fr/omniture/s_code_micrositep4.js"></script>
+                 <script language="JavaScript" type="text/javascript">
+                  /* You may give each page an identifying name, server, and channel on the  next lines. */
+                 s.pageName="fr:campaign:local:"+siteName+":"+pageName;
+                 s.hier1="fr>campaign>local>"+siteName+">"+pageName;
+                 s.channel="fr:campaign";
+                 s.prop1="fr";
+                 s.prop2="fr:campaign";
+                 s.prop3="fr:campaign:local" ;
+                 s.prop4="fr:campaign:local:"+siteName;
+                 s.prop5="fr:campaign:local:"+siteName+":"+pageName;
+
+                 /************* LOCALIZE THE RSID AND DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+                  var s_code=s.t();if(s_code)document.write(s_code);
+    </script>
+
+    <script type="text/javascript" src="//www.samsung.com/fr/common/js/omni/s_code_fr_samsung_solution_adversitement_prod.js"></script>
+
+    <script language="JavaScript" type="text/javascript">
+    s_pName = "fr:"+siteName+":"+pageName;
+    s_siteName=(typeof siteName != "undefined")?siteName:"";
+    s_siteType=(typeof siteType != "undefined")?siteType:"";
+    s_siteTitle=(typeof siteTitle != "undefined")?siteTitle:"";
+
+    /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+    //if(advjsTrackFlag){var s_adv_code=s_adv.t();if(s_adv_code)document.write(s_adv_code)};
+    var s_adv_code=s_adv.t();
+    if (s_adv_code) document.write(s_adv_code);
+    </script>
+
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img
+src="http://nmetrics.samsung.com/b/ss/sssamsung4fr/1/H.25.5--NS/0"
+height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.5. -->
 </html>
