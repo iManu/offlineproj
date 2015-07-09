@@ -29,8 +29,11 @@ module.exports = View.extend({
     var filters =  store.getFilters(),
       filterCrafts = filters[0].crafts,
       filterCategories = filters[0].categories,
-      filterPartners = filters[0].partners
+      filterPartners = filters[0].partners,
+      appList = store.getAppsList()
     ;
+    this.totalApps = appList.length;
+
     return {
       alphabet: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
       filterCrafts: filterCrafts,
@@ -44,7 +47,7 @@ module.exports = View.extend({
     this.fetchFilters();
     this.$isogrid = $('.js-apps-list');
     this.$nothing = $('.js-noresults');
-
+    this.$nbresults = $('.js-nbresults');
     var that = this;
     // Isotope init (http://isotope.metafizzy.co/)
     // http://codepen.io/desandro/pen/mCdbD
@@ -91,7 +94,6 @@ module.exports = View.extend({
           failure_limit: Math.max($imgs.length - 1, 0),
           event: 'lazylazy'
       });
-
 
     }, 1);
 
@@ -140,10 +142,13 @@ module.exports = View.extend({
     if ( !this.$isogrid.data('isotope').filteredItems.length ) {
       // Aucun résultats !
       this.nothingFound('show');
+    } else {
+      this.setNbresults(this.$isogrid.data('isotope').filteredItems.length);
     }
   },
   elemCheck: function listCheck(e, elemName) {
   	this.nothingFound('hide');
+    this.$nbresults.html('');
   	var that = this,
       target = e.target,
       checkElem = $(target),
@@ -176,6 +181,7 @@ module.exports = View.extend({
   },
   searchBox: _.debounce(function searchBox(e) {
   	this.nothingFound('hide');
+    this.$nbresults.html('');
     var target = e.target,
       searchElem = $(target),
       research = searchElem.val()
@@ -186,10 +192,19 @@ module.exports = View.extend({
     if ( !this.$isogrid.data('isotope').filteredItems.length ) {
       // Aucun résultats !
       this.nothingFound('show');
+    } else {
+      this.setNbresults(this.$isogrid.data('isotope').filteredItems.length);
     }
   }, 250),
+  setNbresults: function setNbresults(nb) {
+    var sentence = (nb > 1) ? 'résultats trouvés' : 'résultat trouvé';
+    if( nb !== this.totalApps ) {
+      this.$nbresults.html( nb + ' ' + sentence );
+    }
+  },
   clearFilters: function clearFilters() {
     this.qsRegex = '';
+    this.$nbresults.html('');
     this.$idList = {'craft':[], 'category': [], 'partner': [], 'letter':[]};
 
     $('.js-craft-button, .js-category-button, .js-partner-button').find('span').removeClass('is-list-elem-check');

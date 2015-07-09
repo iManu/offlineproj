@@ -59,9 +59,9 @@ input[type="radio"] {
 $panelwidth: 100%;
 $alphawidth: 46px;
 $panelwidth-lap: 235px;
-$alphawidth-lap: 46px;
+$alphawidth-lap: 21%;
 $panelwidth-desk: 266px;
-$alphawidth-desk: 66px;
+$alphawidth-desk: 22%; //66px;
 
 /**
  * .Nav
@@ -69,8 +69,8 @@ $alphawidth-desk: 66px;
  */
 .Nav {
 	background-color: colors('menu', 'bg', 'global');
-  background-image: url(../images/gfx/submenupix.gif);
-  background-repeat: repeat-y;
+  /*background-image: url(../images/gfx/submenupix.gif);
+  background-repeat: repeat-y;*/
 	//width: 100%;
   @include grid-media-query(palm) {
     background-image: none;
@@ -88,11 +88,33 @@ $alphawidth-desk: 66px;
     }
   }
   @include grid-media-query(lap) {
-    background-position: -11px 0px;
+    //background-position: -11px 0px;
     width: $panelwidth-lap + 15px;
+    /*&:after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 183px;
+      width: 21%;
+      background-color: colors('menu', 'bg', 'sub');
+      height: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }*/
   }
   @include grid-media-query(desk) {
     width: $panelwidth-desk + 15px;
+    /*&:after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 201px;
+      width: 23%;
+      background-color: colors('menu', 'bg', 'sub');
+      height: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }*/
   }
 	height: 100%;
   //position: fixed;
@@ -113,11 +135,11 @@ $alphawidth-desk: 66px;
 
     width: 85%;
     @include grid-media-query(lap) {
-      width: $panelwidth-lap - $alphawidth-lap;
+      width: calc(#{$panelwidth-lap} - #{$alphawidth-lap});
       background-position: 0 $panelwidth-lap;
     }
     @include grid-media-query(desk) {
-      width: $panelwidth-desk - $alphawidth-desk;
+      width: calc(#{$panelwidth-desk} - #{$alphawidth-desk});
     }
   }
   &__right {
@@ -357,7 +379,7 @@ $alphawidth-desk: 66px;
     }
   }
   &__li-search {
-    background: colors('menu', 'bg', 'global') url('../images/gfx/magnify.png') 91% center no-repeat;
+    background: colors('menu', 'bg', 'global') url('../images/gfx/ddcc2f_magnify.png') 91% center no-repeat;
   }
   &__search {
     background: colors('menu', 'bg', 'global');
@@ -604,6 +626,18 @@ $alphawidth-desk: 66px;
       }
     }
   }
+  &__nbresults {
+    color: colors('menu', 'button', 'normal');
+    @include font-size(13px, false);
+    height: 20px;
+    @include grid-media-query(lap) {
+      padding-left: 20px;
+    }
+    @include grid-media-query(desk) {
+      padding-left: 40px;
+    }
+
+  }
   @include grid-media-query(palm) {
     padding: 0 14px 0 12px;
   }
@@ -614,11 +648,11 @@ $alphawidth-desk: 66px;
 .Content {
   @include grid-media-query(lap) {
     //margin: 58px calc( #{$panelwidth-lap}) 100px 20px;
-    margin: 58px 190px 100px 20px;
+    margin: 28px 190px 100px 20px;
   }
   @include grid-media-query(desk) {
     //margin: 47px calc(35px + #{$panelwidth-desk}) 100px 40px;
-    margin: 47px 235px 100px 40px;
+    margin: 17px 235px 100px 40px;
   }
   &__nothing {
     height: 100%;

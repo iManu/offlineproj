@@ -30,8 +30,7 @@ module.exports = View.extend({
   afterRender: function() {
 
     this.burgerElem = this.$el.find('.js-burger-menu');
-    this.burgerElem.siblings('.js-burger-btn').is(':checked')
-      ? this.burgerElem.attr('aria-expanded', false) : this.burgerElem.attr('aria-expanded', true);
+    this.burgerElem.siblings('.js-burger-btn').is(':checked') ? this.burgerElem.attr('aria-expanded', false) : this.burgerElem.attr('aria-expanded', true);
     a11y.expandService(this.burgerElem);
 
     // On met en cache le marqueur online/offline
@@ -109,6 +108,7 @@ module.exports = View.extend({
     });
   },
   popinLegalClose: function popinLegalClose() {
+    _.delay(function() { return null }, 1);
     if(this.popinElem.hasClass('is-popin')) {
       this.popinElem.removeClass('is-popin');
       this.popinButton.removeClass('is-pop');
