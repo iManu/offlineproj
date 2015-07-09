@@ -83,10 +83,6 @@ module.exports = View.extend({
   burgerElem: {},
   ariaBurger: function ariaBurger() {
     a11y.expandService(this.burgerElem);
-    // on referme la popin si elle est ouverte
-    if( this.popinElem.hasClass('is-popin') ) {
-      this.popinLegalClose();
-    }
   },
   /*easterActions: function easterActions(e) {
   	this.eastClicks += 1;
@@ -103,12 +99,21 @@ module.exports = View.extend({
   popinElem: {},
   popinButton: {},
   popinLegal: function popinLegal() {
-    this.popinElem[ ( !this.popinElem.hasClass('is-popin') ? 'add' : 'remove' ) + 'Class' ]('is-popin');
-    this.popinButton[ ( !this.popinButton.hasClass('is-pop') ? 'add' : 'remove' ) + 'Class' ]('is-pop');
+    var that = this;
+    _.defer(function() {
+      that.popinElem[ ( !that.popinElem.hasClass('is-popin') ? 'add' : 'remove' ) + 'Class' ]('is-popin');
+      that.popinButton[ ( !that.popinButton.hasClass('is-pop') ? 'add' : 'remove' ) + 'Class' ]('is-pop');
+      $('body').on('click.popinopen', function() {
+        that.popinLegalClose();
+      });
+    });
   },
   popinLegalClose: function popinLegalClose() {
-    this.popinElem.removeClass('is-popin');
-    this.popinButton.removeClass('is-pop');
+    if(this.popinElem.hasClass('is-popin')) {
+      this.popinElem.removeClass('is-popin');
+      this.popinButton.removeClass('is-pop');
+      $('body').off('click.popinopen');
+    }
   },
   // Réaction à la notif de passage online/offline : on ajuste le marqueur
   syncMarker: function() {
