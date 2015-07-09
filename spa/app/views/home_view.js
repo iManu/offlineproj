@@ -43,6 +43,7 @@ module.exports = View.extend({
 
     // popin
     this.popinElem = $('.js-popin-legal');
+    this.popinButton = $('.js-legacy');
     // easter egg to see actions
     //this.eastClicks = 0;
     /**
@@ -100,11 +101,14 @@ module.exports = View.extend({
   	}, 1000);
   },*/
   popinElem: {},
+  popinButton: {},
   popinLegal: function popinLegal() {
     this.popinElem[ ( !this.popinElem.hasClass('is-popin') ? 'add' : 'remove' ) + 'Class' ]('is-popin');
+    this.popinButton[ ( !this.popinButton.hasClass('is-pop') ? 'add' : 'remove' ) + 'Class' ]('is-pop');
   },
   popinLegalClose: function popinLegalClose() {
     this.popinElem.removeClass('is-popin');
+    this.popinButton.removeClass('is-pop');
   },
   // Réaction à la notif de passage online/offline : on ajuste le marqueur
   syncMarker: function() {

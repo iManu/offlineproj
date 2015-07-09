@@ -119,47 +119,6 @@ $alphawidth-desk: 66px;
     @include grid-media-query(desk) {
       width: $panelwidth-desk - $alphawidth-desk;
     }
-    /*&:after {
-      content : '';
-      background-image: url(../images/gfx/submenupix.gif);
-      background-repeat: repeat-y;
-      position: absolute;
-      top: calc(100% + 85px);
-      left: 0;
-      width: 100%;
-      height: auto;
-      z-index: -1;
-
-      @include grid-media-query(palm) {
-        width: $panelwidth;
-      }
-      @include grid-media-query(lap) {
-        background-position: -11px 0;
-      }
-      @include grid-media-query(desk) {
-        background-position: 0 0;
-      }
-    }*/
-    /*&:after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      right: 0;
-      width: 81px;
-      background-color: colors('menu', 'bg', 'sub');
-      height: calc(100vh + 85px);
-      z-index: -1;
-
-      /*
-      content: "";
-      position: absolute;
-      top: 0;
-      right: -80px;
-      width: 80px;
-      background-color: colors('menu', 'bg', 'sub');
-      height: calc(100%);
-      z-index: -1;*/
-    //}
   }
   &__right {
     width: 15%;
@@ -201,7 +160,6 @@ $alphawidth-desk: 66px;
     list-style-type: none;
     padding-bottom: 80px;
     width: 100%;
-
   }
 }
 /**
@@ -265,7 +223,6 @@ $alphawidth-desk: 66px;
     &:active, &:focus {
     	outline: 1px dotted colors('menu', 'bg', 'sub');
     }
-
     &:after {
       content: '\25bc';
       position: absolute;
@@ -999,7 +956,7 @@ label[for="nav-trigger"] {
     transition: color .1s linear;
     text-align: left;
     width: 100%;
-    &:hover {
+    &:hover, &.is-pop {
       color: colors('menu', 'button', 'normal');
     }
   }
@@ -1047,7 +1004,7 @@ label[for="nav-trigger"] {
       }
       @include grid-media-query(lapandup) {
         right: 99%;
-        top: 120px;
+        top: 135px;
         border: solid transparent;
         content: " ";
         height: 0;
@@ -1260,6 +1217,9 @@ $modalW: 400;
   @include grid-media-query(lap) {
     width: 92%;
   }
+  @include grid-media-query(tabactive-p) {
+    width: 86%;
+  }
   @include grid-media-query(desk) {
     width: 97%;
   }
@@ -1309,7 +1269,7 @@ $modalW: 400;
   margin-bottom: 45px;
   pointer-events: auto;
   opacity: 1;
-  overflow-y: scroll;
+  //overflow-y: scroll;
   transition: opacity .6s;
 
 }
@@ -1717,7 +1677,7 @@ $modalW: 400;
     font-size: 20px;
     line-height: 1;
 
-    opacity: .75;
+    opacity: .60;
     color: white;
 
     -webkit-font-smoothing: antialiased;
