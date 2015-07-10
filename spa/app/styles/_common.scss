@@ -7,7 +7,7 @@
 html {
   height: 100%;
   width: 100%;
-	overflow-y: scroll;
+	//overflow-y: scroll;
 	overflow-x: hidden;
   // Prevent text size change on orientation change.
   -webkit-text-size-adjust: 100%;
@@ -59,9 +59,9 @@ input[type="radio"] {
 $panelwidth: 100%;
 $alphawidth: 46px;
 $panelwidth-lap: 235px;
-$alphawidth-lap: 21%;
+$alphawidth-lap: 46px;
 $panelwidth-desk: 266px;
-$alphawidth-desk: 22%; //66px;
+$alphawidth-desk: 66px; //66px;
 
 /**
  * .Nav
@@ -90,21 +90,21 @@ $alphawidth-desk: 22%; //66px;
   @include grid-media-query(lap) {
     //background-position: -11px 0px;
     width: $panelwidth-lap + 15px;
-    /*&:after {
+    &:after {
       content: "";
       position: fixed;
       top: 0;
-      left: 183px;
+      left: 189px;
       width: 21%;
       background-color: colors('menu', 'bg', 'sub');
       height: 100%;
       min-height: 100%;
       z-index: -1;
-    }*/
+    }
   }
   @include grid-media-query(desk) {
     width: $panelwidth-desk + 15px;
-    /*&:after {
+    &:after {
       content: "";
       position: fixed;
       top: 0;
@@ -114,7 +114,7 @@ $alphawidth-desk: 22%; //66px;
       height: 100%;
       min-height: 100%;
       z-index: -1;
-    }*/
+    }
   }
 	height: 100%;
   //position: fixed;
@@ -132,7 +132,7 @@ $alphawidth-desk: 22%; //66px;
     vertical-align: top;
   }
   &__left {
-
+    overflow: hidden;
     width: 85%;
     @include grid-media-query(lap) {
       width: calc(#{$panelwidth-lap} - #{$alphawidth-lap});
@@ -145,10 +145,10 @@ $alphawidth-desk: 22%; //66px;
   &__right {
     width: 15%;
     @include grid-media-query(lap) {
-      width: $alphawidth-lap;
+      width: calc(#{$alphawidth-lap} - 1%);
     }
     @include grid-media-query(desk) {
-      width: $alphawidth-desk;
+      width: calc(#{$alphawidth-desk} - 1%);
     }
   }
   &__logo {
@@ -306,6 +306,9 @@ $alphawidth-desk: 22%; //66px;
       &:last-child:after {
         content: unset;
       }
+    }
+    &--partner {
+      width: calc(100% + 17px);
     }
   }
   &__item {
@@ -541,7 +544,7 @@ $alphawidth-desk: 22%; //66px;
     transform: translate3d($panelwidth-lap,0,0);
   }
   @include grid-media-query(desk) {
-    transform: translate3d($panelwidth-desk,0,0);
+    transform: translate3d(#{$panelwidth-desk} - 1px,0,0);
   }
   z-index: z('default');
   /*&:after {
@@ -611,10 +614,17 @@ $alphawidth-desk: 22%; //66px;
         right: 2%;
       }
     }
+    @include grid-media-query(tabactive-l) {
+      &--two {
+        top: -33px;
+
+      }
+    }
     @include grid-media-query(tabactive-p) {
       right: $panelwidth-lap + 20px;
       top: 27px;
       &--two {
+        top: -33px;
         right: 5%;
       }
     }
@@ -915,9 +925,11 @@ label[for="nav-trigger"] {
 }
 
 .nav-trigger:checked ~ .Wrapper {
-	//left: 100%; //calc(100% - 60px);
-	transform: translate3d(100%,0,0);
-	//box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+  @include grid-media-query(palm) {
+  	//left: 100%; //calc(100% - 60px);
+  	transform: translate3d(100%,0,0);
+  	//box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+  }
 }
 
 // for project's use case
@@ -950,7 +962,7 @@ label[for="nav-trigger"] {
       transform: translate3d($panelwidth-lap,0,0);
     }
     @include grid-media-query(desk) {
-      transform: translate3d($panelwidth-desk,0,0);
+      transform: translate3d($panelwidth-desk - 1px,0,0);
     }
   		//box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
 	}
@@ -1003,16 +1015,16 @@ label[for="nav-trigger"] {
     transition: opacity .3s;
     z-index: -1;
     @include grid-media-query(palm) {
-      bottom: 100px;
+      bottom: 70px;
       height: auto;
       left: 20px;
       padding-bottom: 30px;
       width: 80%;
     }
     @include grid-media-query(lapandup) {
-      bottom: 20px;
+      bottom: 10px;
       height: auto;
-      left: 150px;
+      left: 130px;
       padding-bottom: 35px;
       width: 280px;
     }
@@ -1038,7 +1050,7 @@ label[for="nav-trigger"] {
       }
       @include grid-media-query(lapandup) {
         right: 99%;
-        top: 135px;
+        top: 155px;
         border: solid transparent;
         content: " ";
         height: 0;
@@ -1245,7 +1257,8 @@ $modalW: 400;
   z-index: 1;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  @include grid-media-query(palm) {
+  width: 100%;
+  /*@include grid-media-query(palm) {
     width: 100%;
   }
   @include grid-media-query(lap) {
@@ -1256,6 +1269,21 @@ $modalW: 400;
   }
   @include grid-media-query(desk) {
     width: 97%;
+  }*/
+}
+.inside-wrap {
+  position: relative;
+  @include grid-media-query(palm) {
+    margin-right: 0;
+  }
+  @include grid-media-query(lap) {
+    margin-right: 8%;
+  }
+  @include grid-media-query(tabactive-p) {
+    margin-right: 14%;
+  }
+  @include grid-media-query(desk) {
+    margin-right: 3%;
   }
 }
 
@@ -1326,11 +1354,19 @@ $modalW: 400;
       position: absolute;
       top: 260px;
     }
+    @include grid-media-query(tabactive-p) {
+      text-align: left;
+      position: absolute;
+      top: 210px;
+    }
   }
   &-left, &-right {
     display: inline-block;
     vertical-align: top;
     @include grid-media-query(palm) {
+      display: block;
+    }
+    @include grid-media-query(tabactive-p) {
       display: block;
     }
   }
@@ -1341,11 +1377,20 @@ $modalW: 400;
       width: 100%;
       max-width: 100%;
     }
+    @include grid-media-query(tabactive-p) {
+      width: 100%;
+      max-width: 100%;
+    }
   }
   &-right {
     padding: 0 4%;
     width: 67%;
     @include grid-media-query(palm) {
+      padding: 0;
+      max-width: 90%;
+      width: 90%;
+    }
+    @include grid-media-query(tabactive-p) {
       padding: 0;
       max-width: 90%;
       width: 90%;
@@ -1367,6 +1412,9 @@ $modalW: 400;
     @include grid-media-query(palm) {
       padding: 60px 0 30px 0;
     }
+    @include grid-media-query(tabactive-p) {
+      padding: 60px 0 10px 0;
+    }
   }
   &-desc {
     height: 85px;
@@ -1374,6 +1422,10 @@ $modalW: 400;
     @include grid-media-query(portable) {
       height: 120px;
       max-height: 120px;
+    }
+    @include grid-media-query(tabactive-p) {
+      height: 140px;
+      max-height: 140px;
     }
   }
   &-link {
@@ -1405,6 +1457,11 @@ $modalW: 400;
       position: relative;
       left: -48%;
     }
+    @include grid-media-query(tabactive-p) {
+      left: 0;
+      padding: 15px;
+      width: 260px;
+    }
   }
   &-carousel {
     background-color: colors('carousel', 'bg');
@@ -1416,11 +1473,18 @@ $modalW: 400;
       box-shadow: inset -3px 0 6px rgba(0,0,0,.3);
       padding: 20px;
     }
+    @include grid-media-query(tabactive-p) {
+      box-shadow: inset -3px 0 6px rgba(0,0,0,.3);
+      padding: 20px;
+    }
     @include grid-media-query(lapandup) {
       padding: 30px 35px;
     }
     .carousel-img {
       @include grid-media-query(palm) {
+        height: 300px;
+      }
+      @include grid-media-query(tabactive-p) {
         height: 300px;
       }
       @include grid-media-query(lapandup) {

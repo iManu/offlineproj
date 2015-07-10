@@ -20,7 +20,8 @@ module.exports = View.extend({
     'click .js-legacy': 'popinLegal',
     'click .js-legacy-close': 'popinLegalClose',
     //'click .Nav__logo': 'easterActions',
-    'click .js-modal-close': 'closeModal'
+    'click .js-modal-close': 'closeModal',
+    'click .js-tgt-blank': 'targetBlank'
   },
   // Le template principal
   template: require('./templates/home'),
@@ -74,6 +75,11 @@ module.exports = View.extend({
       mydata: 'fake',
       otherdata: 'fake'
     };
+  },
+  targetBlank: function targetBlank(e) {
+    e.preventDefault();
+    window.open( $(e.target).attr('href'), '_blank');
+    return false;
   },
   closeModal: function closeModal() {
     $('.modal').removeClass('show');

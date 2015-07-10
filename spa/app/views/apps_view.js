@@ -177,6 +177,7 @@ module.exports = View.extend({
 
     $dummy.css('WebkitTransform', 'translate3d(' + (item.offset().left - 265) + 'px, ' + (item.offset().top + 371) + 'px, 0px) scale3d(' + item.outerWidth()/that.gridItemsContainer.outerWidth() + ',' + item.outerHeight()/that.getViewport('y') + ',1)');
     $dummy.css('transform', 'translate3d(' + (item.offset().left - 265) + 'px, ' + (item.offset().top + 371) + 'px, 0px) scale3d(' + item.outerWidth()/that.gridItemsContainer.outerWidth() + ',' + item.outerHeight()/that.getViewport('y') + ',1)');
+
 /*
 
     $dummy.css('WebkitTransform', 'translate3d(' + item.css('left') + ', ' + item.css('top') + ', 0px) scale3d(' + item.outerWidth()/that.gridItemsContainer.outerWidth() + ',' + item.outerHeight()/that.getViewport('y') + ',1)');
@@ -225,30 +226,32 @@ module.exports = View.extend({
       that.bodyEl.addClass('noscroll');
 
       that.isAnimating = false;
-
+    });
       // init carousel
       if(cnxSvc.isOnline()) {
-        that.contentItems.find('.app-carousel').slick({
+        $(that.contentItems[that.currentItem]).find('.app-carousel').slick({
           dots: false,
           arrows: true,
-          infinite: false,
+          infinite: true,
           adaptiveHeight: true,
           centerMode: false,
           variableWidth: true,
           speed: 300,
           slidesToShow: 3,
           slidesToScroll: 1,
+          lazyLoad: 'ondemand',
           responsive: [
             {
               breakpoint: 1024,
               settings: {
                 slidesToShow: 3,
                 slidesToScroll: 1,
-                infinite: false,
+                infinite: true,
                 dots: false,
                 adaptiveHeight: true,
                 centerMode: false,
-                variableWidth: true
+                variableWidth: true,
+                lazyLoad: 'ondemand'
               }
             },
             {
@@ -256,11 +259,12 @@ module.exports = View.extend({
               settings: {
                 slidesToShow: 2,
                 slidesToScroll: 1,
-                infinite: false,
+                infinite: true,
                 dots: false,
                 adaptiveHeight: true,
                 centerMode: false,
-                variableWidth: true
+                variableWidth: true,
+                lazyLoad: 'ondemand'
               }
             },
             {
@@ -268,11 +272,12 @@ module.exports = View.extend({
               settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                infinite: false,
+                infinite: true,
                 dots: false,
                 adaptiveHeight: true,
                 centerMode: false,
-                variableWidth: true
+                variableWidth: true,
+                lazyLoad: 'ondemand'
               }
             },
             {
@@ -280,11 +285,12 @@ module.exports = View.extend({
               settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                infinite: false,
+                infinite: true,
                 dots: false,
                 adaptiveHeight: true,
                 centerMode: false,
-                variableWidth: true
+                variableWidth: true,
+                lazyLoad: 'ondemand'
               }
             }
             // You can unslick at a given breakpoint now by adding:
@@ -294,7 +300,7 @@ module.exports = View.extend({
         });
       }
 
-    });
+
 
   },
 

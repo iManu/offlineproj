@@ -29,11 +29,8 @@ module.exports = View.extend({
     var filters =  store.getFilters(),
       filterCrafts = filters[0].crafts,
       filterCategories = filters[0].categories,
-      filterPartners = filters[0].partners,
-      appList = store.getAppsList()
+      filterPartners = filters[0].partners
     ;
-    this.totalApps = appList.length;
-
     return {
       alphabet: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
       filterCrafts: filterCrafts,
@@ -49,6 +46,9 @@ module.exports = View.extend({
     this.$nothing = $('.js-noresults');
     this.$nbresults = $('.js-nbresults');
     var that = this;
+    var appList = appList = store.getAppsList();
+    this.totalApps = appList.length;
+    this.setNbresults(this.totalApps);
     // Isotope init (http://isotope.metafizzy.co/)
     // http://codepen.io/desandro/pen/mCdbD
     // http://codepen.io/gpetrioli/pen/yqcvd
@@ -198,9 +198,9 @@ module.exports = View.extend({
   }, 250),
   setNbresults: function setNbresults(nb) {
     var sentence = (nb > 1) ? 'résultats trouvés' : 'résultat trouvé';
-    if( nb !== this.totalApps ) {
+    //if( nb !== this.totalApps ) {
       this.$nbresults.html( nb + ' ' + sentence );
-    }
+    //}
   },
   clearFilters: function clearFilters() {
     this.qsRegex = '';
