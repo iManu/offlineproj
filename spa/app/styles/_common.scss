@@ -52,6 +52,8 @@ input[type="checkbox"],
 input[type="radio"] {
 	cursor: pointer;
 }
+// Bug with fastClick : https://github.com/ftlabs/fastclick/issues/60
+label > * { pointer-events: none; }
 
 /**
  * There is a left panel menu
@@ -532,19 +534,22 @@ $alphawidth-desk: 66px; //66px;
   //position: relative;
   position: absolute;
   //width: calc(100% - 62px);
-  width: 100%;
+
   top: 0;
   bottom: 100%;
   overflow-x: hidden;
 
   @include grid-media-query(palm) {
     transform: translate3d(0,0,0);
+    width: 100%;
   }
   @include grid-media-query(lap) {
     transform: translate3d($panelwidth-lap,0,0);
+    width: calc(100% - #{$panelwidth-lap});
   }
   @include grid-media-query(desk) {
     transform: translate3d($panelwidth-desk - 1px,0,0);
+    width: calc(100% - #{$panelwidth-desk});
   }
   z-index: z('default');
   /*&:after {
@@ -580,11 +585,11 @@ $alphawidth-desk: 66px; //66px;
     }
     @include grid-media-query(lap) {
       @include font-size(48px, false);
-      margin: 58px calc(20px + #{$panelwidth-lap}) 30px 20px;
+      margin: 58px 20px 30px 20px;
     }
     @include grid-media-query(desk) {
       @include font-size(61px, false);
-      margin: 47px calc(35px + #{$panelwidth-desk}) 28px 40px;
+      margin: 47px 40px 28px 40px;
     }
   }
   &__onoff {
@@ -605,10 +610,11 @@ $alphawidth-desk: 66px; //66px;
       top: 30px;
       &--two {
         right: 20px;
+        top: -30px;
       }
     }
     @include grid-media-query(lap) {
-      right: $panelwidth-lap + 20px;
+      right: 20px;
       top: 27px;
       &--two {
         right: 2%;
@@ -621,7 +627,7 @@ $alphawidth-desk: 66px; //66px;
       }
     }
     @include grid-media-query(tabactive-p) {
-      right: $panelwidth-lap + 20px;
+      right: 20px;
       top: 27px;
       &--two {
         top: -33px;
@@ -629,7 +635,7 @@ $alphawidth-desk: 66px; //66px;
       }
     }
     @include grid-media-query(desk) {
-      right: $panelwidth-desk + 35px;
+      right: 35px;
       top: 97px;
       &--two {
         right: 0;
@@ -658,11 +664,11 @@ $alphawidth-desk: 66px; //66px;
 .Content {
   @include grid-media-query(lap) {
     //margin: 58px calc( #{$panelwidth-lap}) 100px 20px;
-    margin: 28px 190px 100px 20px;
+    margin: 28px 20px 100px 20px;
   }
   @include grid-media-query(desk) {
     //margin: 47px calc(35px + #{$panelwidth-desk}) 100px 40px;
-    margin: 17px 235px 100px 40px;
+    margin: 17px 40px 100px 40px;
   }
   &__nothing {
     height: 100%;
@@ -700,7 +706,7 @@ $alphawidth-desk: 66px; //66px;
     @include grid-media-query(tabactive-p) {
       padding: 14px;
       height: 160px;
-      width: 80%;
+      width: 100%;
       margin: 0 15px 15px 0;
     }
     @include grid-media-query(tabactive-l) {
@@ -1227,6 +1233,8 @@ $modalW: 400;
   visibility: hidden;
   z-index: 400;
   overflow: hidden;
+  width: 100%;
+  /*
   @include grid-media-query(palm) {
     width: 100%;
   }
@@ -1238,13 +1246,14 @@ $modalW: 400;
   }
   @include grid-media-query(desk) {
     width: calc( 100% - #{$panelwidth-desk} );
-  }
+  }*/
 }
 
 .Isogrid__detail.content--show {
   height: 100vh;
   pointer-events: auto;
   visibility: visible;
+  background-color: colors('basic', 'lightbg');
 }
 
 /* scroll helper wrap */

@@ -157,7 +157,7 @@ module.exports = View.extend({
       labelCheck = checkElem.siblings('label'),
       spanLabelCheck = labelCheck.find('span.js-label-check')
     ;
-    //console.log(spanLabelCheck)
+    //console.log(checkElem)
     // Les ID cochées/sécochées sont stockées dans un array
     // ça servira pour les filtres
     if( checkElem.is(':checked') ) {
