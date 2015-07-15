@@ -31,6 +31,8 @@ CACHE:
 ./apple-touch-icon-120x120.png
 ./favicon-96x96.png
 ./browserconfig.xml
+./startup-image-601x937.png
+./startup-image-937x601.png
 ./appimg/app_9_media_0_1b551def05820ed3e282441aa560d50e.png
 ./appimg/app_39_media_0_87cb9b02bd463f81a7ab54daf66335fb.png
 ./appimg/app_38_media_0_d47a085d2445c7c80dea6d15f5d6f87c.png

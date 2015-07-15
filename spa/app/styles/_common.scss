@@ -544,7 +544,7 @@ $alphawidth-desk: 66px; //66px;
     transform: translate3d($panelwidth-lap,0,0);
   }
   @include grid-media-query(desk) {
-    transform: translate3d(#{$panelwidth-desk} - 1px,0,0);
+    transform: translate3d($panelwidth-desk - 1px,0,0);
   }
   z-index: z('default');
   /*&:after {
@@ -1474,7 +1474,7 @@ $modalW: 400;
       padding: 20px;
     }
     @include grid-media-query(tabactive-p) {
-      box-shadow: inset -3px 0 6px rgba(0,0,0,.3);
+      // box-shadow: inset -3px 0 6px rgba(0,0,0,.3);
       padding: 20px;
     }
     @include grid-media-query(lapandup) {
